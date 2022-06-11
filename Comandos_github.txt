@@ -1,0 +1,8 @@
+To make a directory work as a github repository the next command
+must be used on the directory that you want to affect:
+git init
+
+To view the status of the files in the repository, this is the
+command:
+git status
+
