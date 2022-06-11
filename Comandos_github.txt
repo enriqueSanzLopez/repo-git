@@ -33,3 +33,15 @@ If we want to ignore a directory when making git add, or
 git commit, we need to create a file named .gitignore where we
 will write the names of the directories that the git
 commands need to ignore.
+
+To see the branches of the github directory use this command:
+git branch
+
+To create a new branch that can be used to create an alternate
+version of the repository use the command:
+git branch nameOfTheBranch
+
+To change from one branch to the other use the next command:
+git checkout nameOfTheBranch
+
+On the new branch I can change this version of the repository
