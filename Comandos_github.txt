@@ -6,3 +6,18 @@ To view the status of the files in the repository, this is the
 command:
 git status
 
+To stage the unstaged files or directories on the github directory
+this is the command used:
+git add nameOfTheFileOrDirectory
+
+To configurate the user of the directory, the next command is
+needed:
+git config --global user.email "your@example.com"
+git config --global user.name "Your Name"
+
+To save a snapshot of your repository you use the following
+command:
+git commit -m "Message of the snapshot"
+
+To view the information commits use the command:
+git log
