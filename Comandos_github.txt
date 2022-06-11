@@ -21,3 +21,15 @@ git commit -m "Message of the snapshot"
 
 To view the information commits use the command:
 git log
+
+To undo the unsaved changes made to a file use the next command:
+git checkout -- nameOfTheFileOrDirectory
+
+To view the differences in a file between the saved version and
+the unsaved version use this command:
+git diff nameOfTheFileOrDirectory
+
+If we want to ignore a directory when making git add, or
+git commit, we need to create a file named .gitignore where we
+will write the names of the directories that the git
+commands need to ignore.
