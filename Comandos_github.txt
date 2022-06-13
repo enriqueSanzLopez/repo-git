@@ -53,3 +53,6 @@ git branch -D nameOfTheBranch
 To connect your local repository with a new online repository:
 git remote add origin urlOfTheOnlineRepository
 
+To clone a repository what we need to do is to execute this
+command:
+git clone urlOfTheOnlineRepository
