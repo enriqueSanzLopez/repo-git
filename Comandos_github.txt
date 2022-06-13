@@ -45,3 +45,11 @@ To change from one branch to the other use the next command:
 git checkout nameOfTheBranch
 
 On the new branch I can change this version of the repository
+
+To eliminate a branch from the repository, the next command must
+be used:
+git branch -D nameOfTheBranch
+
+To connect your local repository with a new online repository:
+git remote add origin urlOfTheOnlineRepository
+
