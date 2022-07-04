@@ -1,5 +1,7 @@
-from MovimientoDeRed import NumeroCaminos
+from MovimientoDeRed import *;
 from Sucesiones import *;
+from CompruebaAnagrama import *;
+from Histogramas import *;
 print(Fibonacci(6));
 print(Fibonacci(7));
 print(Fibonacci(8));
@@ -7,3 +9,6 @@ print(Fibonacci(5));
 print(Fibonacci(50));
 print(NumeroCaminos(2,3));
 print(NumeroCaminos(18,18));
+print(esAnagrama("Nameless", "salesmen"));
+print(rectanguloMaximo([3,2,4,5,7,6,1,3,8,9,11,10,7,5,2,6]));
+print(rectanguloGrande([3,2,4,5,7,6,1,3,8,9,11,10,7,5,2,6]));
