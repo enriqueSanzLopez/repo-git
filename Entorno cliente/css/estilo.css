@@ -1,0 +1,26 @@
+body{
+    background: lightblue;
+    text-align: center;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+}
+article:nth-of-type(odd){
+    background-color: brown;
+}
+article:nth-of-type(even){
+    background-color: aquamarine;
+}
+img{
+    width: 300px;
+    height: 300px;
+}
