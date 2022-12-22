@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrique Sanz López</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EjercicioJS9.css">
+  </head>
+  <body>
+      <h1>Exercise 9</h1>
+      <p>HTML is the standard markup for creating Web pages.<br>
+        HTML stands for Hyper Text Markup Language HTML describes<br>
+        the structure of Web pages using markup HTML elements are<br>
+        the building blocks of HTML pages HTML elements are<br>
+        represented by tags TML tags label pieces of content such as<br>
+        "heading", "paragraph", "table", and so on Browsers do not<br>
+        display the HTML tags, but use them to render the content of<br>
+        th page
+    </p>
+      <p>The declaration represents the document type, and helps<br>
+        browsers to display web pages correctly. It must only appear<br>
+        once, at the top of the page (before any HTML tags). The<br>
+        declaration is not case sensitive. The declaration for HTML5 is:
+    </p>
+      <p id="p3">Web pages can be created and modified by usin professional<br>
+        HTML editors. However, for learning HTML we recommend a<br>
+        simple text editor like Notepad (PC) or TextEdit (Mac). We<br>
+        believe using a simple text editor is a good way to learn HTML.<br>
+        Follow the four steps below to create your first web page with<br>
+        Notepad or TextEdit.
+    </p>
+      <p id="p4">The declaration represents the document type, and helps<br>
+        browsers to display web pages correctly. It must only appear<br>
+        once, at the top of the page (before any HTML tags). The<br>
+        declaration is not case sensitive. The declaration for HTML5 is:
+    </p>
+      <button type="button" id="boton" onclick="aparece()">Read more</button>
+      <script>
+          function aparece(){
+              document.getElementById("p3").style.display="block";
+              document.getElementById("p4").style.display="block";
+              document.getElementById("boton").style.display="none";
+          }
+      </script>
+  </body>
+</html>

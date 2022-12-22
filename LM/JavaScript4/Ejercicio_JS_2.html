@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_2.css">
+</head>
+
+<body>
+    <h1>HTML</h1>
+    <p>HTML is the standard markup for creating Web pages.</p>
+    <main class="contenedor">
+        <div id="red"></div>
+        <div id="blue"></div>
+    </main>
+    <section>
+        <p>Insert the size of the first square:</p>
+        <input id="entrada1" type="number">
+        <p>Insert the size of the second square:</p>
+        <input id="entrada2" type="number">
+    </section>
+    <button type="button" onclick="tamano()">Apply</button>
+    <p id="error1"></p>
+    <p id="error2"></p>
+    <script>
+        function tamano() {
+            let x = document.getElementById("entrada1").value;
+            x = Number(x);
+            if (x > 0) {
+                x = x + "px";
+                document.getElementById("red").style.width = x;
+                document.getElementById("red").style.height = x;
+                document.getElementById("error1").style.display = "none";
+            } else {
+                document.getElementById("error1").innerHTML = "The input of the first square is not valid"
+                document.getElementById("error1").style.display = "block";
+            }
+            let y = document.getElementById("entrada2").value;
+            y = Number(y);
+            if (y > 0) {
+                y = y + "px";
+                document.getElementById("blue").style.width = y;
+                document.getElementById("blue").style.height = y;
+                document.getElementById("error2").style.display = "none";
+            } else {
+                document.getElementById("error2").innerHTML = "The input of the second square is not valid"
+                document.getElementById("error2").style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

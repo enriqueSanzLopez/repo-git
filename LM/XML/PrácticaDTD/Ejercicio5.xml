@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE note_list [
+<!ELEMENT note_list (note+)>
+<!ELEMENT note (to*, from, title, content)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ATTLIST note day CDATA #IMPLIED>
+<!ATTLIST note time CDATA #IMPLIED>
+]>
+
+<note_list>
+    <note>
+        <to>Pedro</to>
+        <from>Laura</from>
+        <title>Reminder</title>
+        <content>Don’t forget your keys</content>
+    </note>
+    <note day="23/01/2010" time="13:15">
+        <to>Miguel</to>
+        <from>Juan</from>
+        <title>Inform</title>
+        <content>I have read your information. Good work!</content>
+    </note>
+</note_list>

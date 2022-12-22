@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrique Sanz López</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EjercicioJS6.css">
+  </head>
+  <body>
+      <h1>Try your luck</h1>
+      <p>Click the button to know how many loves are you going to have in your life:</p>
+      <button type="button" onclick="Aleatorio()">Try it</button>
+      <p id="numero"></p>
+      <p id="texto"></p>
+      <script>
+          function Aleatorio(){
+              let x=Math.floor(Math.random()*21+0);/*Math.floor es para redondear el número hacia abajo, haciendo que el resultado sea entero*/
+              document.getElementById("texto").innerHTML="If yo don't like the answer, you can click again!"
+              document.getElementById("numero").innerHTML=x;
+              document.getElementById("numero").style.padding="10px";
+              document.getElementById("numero").style.border="solid 5px black";
+              document.getElementById("numero").style.width="5vw";
+              document.getElementById("numero").style.textAlign="center";
+          }
+      </script>
+  </body>
+</html>

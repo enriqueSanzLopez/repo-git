@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="style5.css"?>
+
+<!DOCTYPE combinados [
+<!ELEMENT combinados (combinado+)>
+<!ELEMENT combinado (combinacion+)>
+<!ATTLIST combinado resultado CDATA #REQUIRED>
+<!ELEMENT combinacion (#PCDATA)>
+]>
+
+<combinados>
+    <combinado resultado="taronja">
+        <combinacion>vermell</combinacion>
+        <combinacion>groc</combinacion>
+    </combinado>
+    <combinado resultado="gris">
+        <combinacion>blanc</combinacion>
+        <combinacion>negre</combinacion>
+    </combinado>
+    <combinado resultado="verd clar">
+        <combinacion>groc</combinacion>
+        <combinacion>blau</combinacion>
+    </combinado>
+    <combinado resultado="roig">
+        <combinacion>taronja</combinacion>
+        <combinacion>vermell</combinacion>
+    </combinado>
+    <combinado resultado="granat">
+        <combinacion>roig</combinacion>
+        <combinacion>negre</combinacion>
+    </combinado>
+    <combinado resultado="blau clar">
+        <combinacion>blau</combinacion>
+        <combinacion>blanc</combinacion>
+    </combinado>
+</combinados>

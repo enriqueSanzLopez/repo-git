@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Esto es una página de ejemplo</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejemplo.css">
+</head>
+
+<body>
+    <header><h1>Título</h1></header>
+    <section>
+        <h3><i>Complaining form</i></h3>
+        <!--Primer formulario-->
+        <form>
+            <table class="col-s-12 col-12">
+                <tr>
+                    <td class="col-s-2 col-2"><label>Name <span>*</span></label></td>
+                    <td><input type="text" id="fname" name="fname" value=""></td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2"><label>Email <span>*</span></label></td>
+                    <td><input type="email" id="mail" name="correo" value=""></td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2">Telephone</td>
+                    <td><p><input type="tel" id="t1" name="t1" value="" class="col-s-1 col-1"> - <input type="tel" id="t2" name="t2" value="" class="col-s-1 col-1"> - <input type="tel" id="t3" name="t3" value="" class="col-s-1 col-1"></p></td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2">Regarding</td>
+                    <td><select name="ware" class="col-s-3 col-3">
+                        <option value="0">General</option>
+                        <option value="1">Specific</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2 container1" rowspan="2">Message <span>*</span></td>
+                    <td><input type="text" id="dname" name="dname" value="" class="col-s-6 col-6 input texto"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+
+</html>

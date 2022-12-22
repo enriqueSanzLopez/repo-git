@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--lenguaje en catalán-->
+<html lang="ca">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Página de cocina</title>
+    <!--CSS internal-->
+    <style>
+        h1 {
+            /*Formato de títulos*/
+            text-align: center;
+            color: brown;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: larger;
+            background-color: chartreuse;
+            border-style: dotted;
+            padding: 50px;
+            margin: 30px;
+        }
+
+        /*p {
+            text-align: justify;
+            color: cornsilk;
+            background-color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+            border-style: solid;
+            padding: 30px;
+            margin: 10px;
+        }*/
+
+        /*img {
+            height: 50%;
+            width: 50%;
+            border-style: ridge;
+            padding: 20px;
+            margin: 15px;
+        }*/
+        /*Clases usadas para configurar imágenes específicas*/
+        .imagen_basica{
+            height: 60%;
+            width: 40%;
+            border-style: dotted;
+            padding: 10%;
+            margin: 5%;
+        }
+        .imagen_rara{
+            height: 30%;
+            width: 20%;
+            border-style: double;
+            padding: 5%;
+            margin: 10%;
+        }
+        #main{
+            background-color: chocolate;
+            text-align: right;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: small;
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Costelles de porc a l'all</h1>
+    <p>Com fer costelles de porc a l'all. Les receptes amb costella
+        de porc sempre triomfen a casa. És un tipus de tall de carn
+        de porc que solem utilitzar amb freqüència en la nostra
+        cuina i que és molt saborosa.</p>
+    <img src="Costillas-al-ajillo.webp" alt="Imagen de costillas al ajillo">
+    <!--Nuevos párrafos e imágenes con el mismo formato que el primero porque usan el mismo CSS-->
+    <p>Trobareu un munt de propostes, des de la clàssica costella
+        guisada amb salsa, a l'estil americà, costelles amb salsa
+        barbacoa o les socorregudes costelles a forn. Una peça de
+        l'porc molt útil per tenir a casa o per a altres usos com
+        un xurrasco com solem preparar a les barbacoes a Galícia,
+        també anomenades churrascadas.</p>
+        <!--Imágen con la primera clase-->
+        <img src="Costillas2.jpeg" alt="La imagen no funciona" class="imagen_basica">
+        <!--Párrafo con nuevo estilo basado en atributo-->
+    <p id="main">Está en una receta de las de toda la vida, de las que
+        cualquier madre o abuela nos han preparado alguna vez.
+        Su preparación es bastante sencilla y rápida, ideal para
+        novatos en la cocina.</p>
+        <!--Imagen con la segunda clase-->
+        <img src="Costillas3.jpeg" alt="La imagen no funciona" class="imagen_rara">
+</body>
+
+</html>

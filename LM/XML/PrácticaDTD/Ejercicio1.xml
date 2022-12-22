@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!DOCTYPE note [
+<!ELEMENT note (to, from, title, body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
+<note> 
+<to>Pedro</to> 
+<from>Laura</from> 
+<title>Hi</title> 
+<body>At 7:00 in the theatre</body> 
+</note>

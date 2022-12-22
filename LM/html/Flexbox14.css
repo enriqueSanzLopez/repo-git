@@ -1,0 +1,39 @@
+.contenedor{
+    display: flex;
+    /*Cambiar la disposicion del flex*/
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: solid orange;
+}
+.interior{
+    /*Dimensiones de los componentes*/
+    width: 10vw;
+    height: 5vh;
+    background-color: lightcoral;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.interior1{
+    /*Dimensiones de los componentes*/
+    width: 10vw;
+    height: 5vh;
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /*Separar la segunda caja de la tercera*/
+    margin-right: 70vw;
+}
+.interior2{
+    /*Dimensiones de los componentes*/
+    width: 10vw;
+    height: 5vh;
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    /*Parámetros del párrafo*/
+    #parrafo{
+        border: solid blue 10px;
+        width: 25vw;
+        padding: 10px;
+    }

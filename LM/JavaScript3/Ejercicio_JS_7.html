@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_7.css">
+  </head>
+  <body>
+      <h1>Complete the following sentences:</h1>
+      <div>
+          <p>Where </p>
+          <input type="text" id="res1">
+          <p> from?</p>
+      </div>
+      <div>
+          <p>What's </p>
+          <input type="text" id="res2">
+          <p>? Is's an iPod.</p>
+      </div>
+      <div>
+          <input type="text" id="res3">
+          <p> your dad born in Madrid?</p>
+      </div>
+      <div>
+          <p>Today is </p>
+          <input type="text" id="res4">
+          <p> than yesterday.</p>
+      </div><br>
+      <button type="button" onclick="mostrar()">Check</button>
+      <section id="resumen">
+          <h4 id="azul">Check your answers.<br>
+            Shortly one of our teachers will contact you.
+          </h4>
+        <p>Where <span id="sol1"></span> from?<br>
+            What's <span id="sol2"></span>? It's an iPod.<br>
+            <span id="sol3"></span> your dad born in Madrid?<br>
+            Today is <span id="sol4"></span> than yesterday.
+        </p>
+      </section>
+      <script>
+          function mostrar(){
+              let resp1=document.getElementById("res1").value;
+              let resp2=document.getElementById("res2").value;
+              let resp3=document.getElementById("res3").value;
+              let resp4=document.getElementById("res4").value;
+              /*Mostrar la zona oculta*/
+              document.getElementById("resumen").style.display="block";
+              document.getElementById("sol1").innerHTML=resp1;
+              document.getElementById("sol2").innerHTML=resp2;
+              document.getElementById("sol3").innerHTML=resp3;
+              document.getElementById("sol4").innerHTML=resp4;
+          }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+
+header,
+section,
+aside,
+footer,
+nav li {
+    /*Poner distancia del 2% entre el interior y el marco y el borde tiene que ser de 1px y color blanco*/
+    padding: 2%;
+    text-align: center;
+}
+
+nav li:hover{
+    background-color: gray;
+}
+
+/*Mostrar desplegables*/
+nav li:hover .item-content{
+    display: block;
+    background-color: gray;
+    color: black;
+}
+
+/*Eliminar la decoracion de las listas*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Formato de los enlaces*/
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+    background-color: gray;
+}
+
+h3, h4{
+    border-bottom: 1px black solid;
+}
+
+/*Ancho del desplegable*/
+.ventana{
+    width: 32%;
+}
+.ventana2{
+    width: 40%;
+}
+
+nav{
+    background-color: blue;
+}
+
+/*Para menu desplegable*/
+#menu>li>ul{
+    display: none;
+}
+
+#menu>li:hover>ul{
+    display: block;
+}
+
+/*Sacar la lista desplegable de la lista original para evitar expandir el menu*/
+.oculta{
+    position: absolute;
+}
+
+/*Contenedores flex*/
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.container2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+/*Menu desplegable*/
+
+.item{
+    /*Este es para luego ver su contenido*/
+    background-color: gray;
+}
+
+/*Ocultar los desplegables*/
+.item-content{
+    display: none;
+}
+
+/*URLs desplegable*/
+
+.url{
+    color: blue;
+}
+
+/*Anchos para diferentes pantallas*/
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 550px) {
+
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+
+} 

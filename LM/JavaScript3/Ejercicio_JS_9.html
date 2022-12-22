@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_9.css">
+  </head>
+  <body>
+      <h1>Calculate the final price</h1>
+      <div>
+          <p>Item price:</p>
+          <input type="number" id="in1">
+          <p>€</p>
+      </div>
+      <div>
+          <p>Discount:</p>
+          <input type="number" id="in2">
+          <p>%</p>
+      </div>
+      <button type="button" onclick="revela()">Calculate</button>
+      <p id="oculto">The final price is: <span id="solucion"></span>€</p>
+      <script>
+          function revela(){
+              let precio=document.getElementById("in1").value;
+              let descuento=document.getElementById("in2").value;
+              precio=Math.round(precio-precio*descuento/100);
+              document.getElementById("oculto").style.display="block";
+              document.getElementById("solucion").innerHTML=precio;
+          }
+      </script>
+  </body>
+</html>

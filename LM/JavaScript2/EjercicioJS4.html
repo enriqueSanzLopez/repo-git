@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrique Sanz López</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EjercicioJS4.css">
+  </head>
+  <body>
+      <h1>Select a template for this text:</h1>
+      <main class="contenedor" id="contenedor">
+        <h1 id="h1">Title</h1>
+        <h4 id="h4">Subtitle</h4>
+        <p id="p">This is an example of a paragraph</p>
+      </main>
+      <div>
+          <button type="button" onclick="estilo(0)">Template 1</button>
+          <button type="button" onclick="estilo(1)">Template 2</button>
+          <button type="button" onclick="estilo(2)">Template 3</button>
+      </div>
+      <script>
+        function estilo(x){
+          let Color;
+          let Fuente;
+          let Tamano;
+          let Fondo;
+          let Alineamiento;
+          let Estilo;
+          switch(x){
+            case 0:/*Primer boton*/
+            Color="orange";
+            Tamano="large";
+            Fondo="purple";
+            Fuente="'Times New Roman', Times, serif";
+            Alineamiento="center";
+            Estilo="italic";
+            break;
+            case 1:/*Segundo boton*/
+            Color="gray";
+            Tamano="large";
+            Fondo="yellow";
+            Fuente="Arial, Helvetica, sans-serif";
+            Alineamiento="left";
+            Estilo="italic";
+            break;
+            case 2:/*Tercer boton*/
+            Color="white";
+            Tamano="large";
+            Fondo="blue";
+            Fuente="'Times New Roman', Times, serif";
+            Alineamiento="right";
+            Estilo="normal";
+            break;
+            default:/*En caso de valor invalido*/
+            break;
+          }
+          document.getElementById("contenedor").style.color=Color;
+          document.getElementById("contenedor").style.backgroundColor=Fondo;
+          document.getElementById("contenedor").style.fontSize=Tamano;
+          document.getElementById("contenedor").style.textAlign=Alineamiento;
+          document.getElementById("contenedor").style.fontFamily=Fuente;
+          document.getElementById("contenedor").style.fontStyle=Estilo;
+        }
+      </script>
+  </body>
+</html>

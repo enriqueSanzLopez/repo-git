@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Holamundo",
+            "request": "launch",
+            "mainClass": "Holamundo",
+            "projectName": "LM_de310854"
+        },
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open Tabla.html",
+            "file": "c:\\Users\\Usuario\\Desktop\\LM\\"
+        }
+    ]
+}

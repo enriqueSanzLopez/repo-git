@@ -1,0 +1,19 @@
+ .contenedor{
+    display: flex;
+    /*Cambiar la disposicion del flex*/
+    justify-content: center;
+    border-collapse: collapse;
+    margin: 0px;
+}
+.interior{
+    /*Dimensiones de los componentes*/
+    padding-top: 2em;
+    width: 24vw;
+    height: auto;
+}
+.interior2{
+    /*Dimensiones de los componentes*/
+    padding-bottom: 2em;
+    width: 48vw;
+    height: auto;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE computing [
+<!ELEMENT  computing (comput+)>
+<!ELEMENT comput (Datar)>
+<!ATTLIST comput Descripcio CDATA #REQUIRED>
+<!ELEMENT Datar (Dia, Mes, Any)>
+<!ELEMENT Dia (#PCDATA)>
+<!ELEMENT Mes (#PCDATA)>
+<!ELEMENT Any (#PCDATA)>
+]>
+
+<computing>
+    <comput Descripcio="IBM presenta el primer PC">
+        <Datar>
+            <Dia>12</Dia>
+            <Mes>8</Mes>
+            <Any>1981</Any>
+        </Datar>
+    </comput>
+    <comput Descripcio="Fundació Google">
+        <Datar>
+            <Dia>4</Dia>
+            <Mes>9</Mes>
+            <Any>1998</Any>
+        </Datar>
+    </comput>
+    <comput Descripcio="Fundació Facebook">
+        <Datar>
+            <Dia>4</Dia>
+            <Mes>2</Mes>
+            <Any>2004</Any>
+        </Datar>
+    </comput>
+    <comput Descripcio="Creación COBOLD">
+        <Datar>
+            <Dia>1</Dia>
+            <Mes>5</Mes>
+            <Any>1959</Any>
+        </Datar>
+    </comput>
+    <comput Descripcio="Creación Linux">
+        <Datar>
+            <Dia>25</Dia>
+            <Mes>8</Mes>
+            <Any>1991</Any>
+        </Datar>
+    </comput>
+    <comput Descripcio="Inicio de Wikipedia">
+        <Datar>
+            <Dia>15</Dia>
+            <Mes>1</Mes>
+            <Any>2001</Any>
+        </Datar>
+    </comput>
+</computing>

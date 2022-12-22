@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_1.css">
+  </head>
+  <body>
+      <h1>Geeting program</h1>
+      <p>Write your name:</p>
+      <input id="entrada">
+      <button type="button" onclick="saludo()">Submit</button>
+      <p id="texto"></p>
+      <script>
+          function saludo(){
+              let nombre=document.getElementById("entrada").value;
+              document.getElementById("texto").innerHTML="Good afternoon "+nombre;
+          }
+      </script>
+  </body>
+</html>

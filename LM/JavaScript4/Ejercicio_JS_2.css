@@ -1,0 +1,23 @@
+#blue{
+    width: 30px;
+    height: 30px;
+    border: solid blue 10px;
+    margin: 5px;
+}
+
+#red{
+    width: 30px;
+    height: 30px;
+    border: solid red 10px;
+    margin: 5px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+section{
+    margin-bottom: 5px;
+}

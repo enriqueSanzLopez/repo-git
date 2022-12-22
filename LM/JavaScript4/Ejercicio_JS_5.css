@@ -1,0 +1,25 @@
+*{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    box-sizing: border-box;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+}
+
+span{
+    color: blue;
+    font-weight: bold;
+}
+
+#resumen{
+    display: none;
+}
+
+#exp1, #exp2, #exp3, #exp4{
+    color: black;
+}

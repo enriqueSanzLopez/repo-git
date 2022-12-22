@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE animals [
+  <!ELEMENT animals (animal*)>
+  <!ELEMENT animal (#PCDATA)>
+]>
+
+<animals>
+  <animal>Poodle</animal>
+  <animal>Siamese</animal>
+</animals>

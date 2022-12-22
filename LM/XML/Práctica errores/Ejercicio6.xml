@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE writers [
+  <!ELEMENT writers (writer*)>
+  <!ELEMENT writer (name, date_of_birth)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT date_of_birth (#PCDATA)>
+]>
+
+<writers>
+  <writer>
+    <name>M. Vargas Llosa</name>
+    <date_of_birth>28/03/1936</date_of_birth>
+  </writer>
+  <writer>
+    <name>Milan Kundera</name>
+    <date_of_birth>01/04/929</date_of_birth>
+  </writer>
+</writers>

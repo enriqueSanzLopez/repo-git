@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<poligono>
+    <triangulo base="7" altura="5" />
+    <triangulo base="2" altura="6" />
+    <triangulo base="3" altura="3" />
+</poligono>

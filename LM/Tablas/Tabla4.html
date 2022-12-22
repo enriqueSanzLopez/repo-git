@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!--Título de la página-->
+    <title>Tabla 4</title>
+    <!--CSS interno-->
+    <style>
+        th {
+            text-align: center;
+            border: 2px solid black;
+            font-weight: bolder;
+        }
+
+        table {
+            border: solid 2px black;
+
+        }
+
+        td {
+            border: solid 2px black;
+            padding: 10px 30px 10px 0px;
+        }
+
+        .columna {
+            text-align: center;
+            border: 2px solid black;
+            font-weight: bolder;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!--Tabla 4-->
+        <table>
+            <!--Fila 1-->
+            <tr>
+                <th> </th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+            <!--Fila 2-->
+            <tr>
+                <td class="columna">Morning</td>
+                <!--Fusionar celdas en HTML con colspan y rowspan-->
+                <td rowspan="2">Work</td>
+                <td rowspan="3">Relax</td>
+            </tr>
+            <!--Fila 3-->
+            <tr>
+                <td class="columna">Afternoon</td>
+            </tr>
+            <!--Fila 4-->
+            <tr>
+                <td class="columna">Evening</td>
+                <td>Dinner</td>
+
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

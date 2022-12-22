@@ -1,0 +1,18 @@
+section{
+    /*Ocultar hasta que se indique lo contrario*/
+    display: none;
+    border: solid black 5px;
+}
+
+*{
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+input, textarea{
+    width: 90vw;
+}
+
+textarea{
+    height: 15vh;
+}

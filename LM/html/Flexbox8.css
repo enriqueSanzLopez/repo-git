@@ -1,0 +1,19 @@
+.contenedor{
+    display: flex;
+    /*Cambiar la disposicion del flex*/
+    justify-content: center;
+    align-items: flex-start;
+    border: solid orange;
+}
+.interior{
+    /*Dimensiones de los componentes*/
+    width: 10vw;
+    height: 9vh;
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 15vh;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_8.css">
+  </head>
+  <body>
+      <h1>Calculate how much rent you can pay according to your salary</h1>
+      <p>To have a nice and relaxing life the value of your next rent must be less than 40% of your income</p>
+      <p>Enter your monthly income:</p>
+      <input id="min" type="number"><br>
+      <button type="button" id="boton" onclick="resultado()">Calculate</button>
+      <p id="solucion">Your rent must be as maximun <span id="resultado"></span>€</p>
+      <script>
+          function resultado(){
+              let minimo=document.getElementById("min").value;
+              minimo=Math.floor(0.4*minimo);
+              document.getElementById("solucion").style.display="block";
+              document.getElementById("resultado").innerHTML=minimo;
+          }
+      </script>
+  </body>
+</html>

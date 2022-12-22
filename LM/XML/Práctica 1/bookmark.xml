@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE libreria [
+<!ELEMENT libreria (libro+)>
+<!ELEMENT libro (marcador, texto, url)>
+<!ELEMENT marcador (#PCDATA)>
+<!ELEMENT texto (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+]>
+
+<libreria>
+    <libro>
+        <marcador>Tutorials point</marcador>
+        <texto>Computing tutorials</texto>
+        <url>https://www.tutorialspoint.com/</url>
+    </libro>
+    <libro>
+        <marcador>Wikipedia</marcador>
+        <texto>A free encyclopedia</texto>
+        <url>http://www.wikipedia.org/</url>
+    </libro>
+    <libro>
+        <marcador>W3C</marcador>
+        <texto>World Wide Web Consortium.</texto>
+        <url>http://www.w3.org/</url>
+    </libro>
+    <libro>
+        <marcador>W3schools</marcador>
+        <texto>Learn to code</texto>
+        <url>https://www.w3schools.com/</url>
+    </libro>
+    <libro>
+        <marcador>Github</marcador>
+        <texto>Start a project</texto>
+        <url>https://github.com/</url>
+    </libro>
+    <libro>
+        <marcador>Youtube</marcador>
+        <texto>View videos online</texto>
+        <url>https://www.youtube.com/</url>
+    </libro>
+</libreria>

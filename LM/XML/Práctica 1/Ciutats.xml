@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE cities [
+<!ELEMENT cities (city+)>
+<!ELEMENT city (name, country)>
+<!ATTLIST city continent CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+]>
+
+<cities>
+    <city continent="Asia">
+        <name>New Delhi</name>
+        <country>India</country>
+    </city>
+    <city continent="Europa">
+        <name>Lisboa</name>
+        <country>Portugal</country>
+    </city>
+    <city continent="Àfrica">
+        <name>El Caire</name>
+        <country>Egipte</country>
+    </city>
+    <city continent="Europa">
+        <name>Valencia</name>
+        <country>España</country>
+    </city>
+    <city continent="Asia">
+        <name>Tokyo</name>
+        <country>Japón</country>
+    </city>
+    <city continent="Europa">
+        <name>París</name>
+        <country>Francia</country>
+    </city>
+</cities>

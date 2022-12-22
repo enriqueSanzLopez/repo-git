@@ -1,0 +1,57 @@
+body{
+    /*Crear el contenedor de la pagina*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav{
+    /*Color de fondo*/
+    background-color: #A9DFBF;
+    /*Dimensiones de nav*/
+    width: 10vw;
+    height: 33.8em;
+    /*Separar del borde al Nav*/
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+}
+header{
+    /*Dimensiones del header*/
+    width: 80vw;
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+    padding-bottom: 3em;
+    background-color: #2ECC71;
+}
+.contenedor{
+    /*Crear el contenedor de la pagina*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+article{
+    /*Dimensiones del article*/
+    height: 20em;
+    width: 70vw;
+    /*Separar el article del borde*/
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+}
+footer{
+    /*Dimensiones del footer*/
+    width: 70vw;
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+    padding-bottom: 3em;
+    background-color: #2ECC71;
+}
+aside{
+    /*Dimensiones del aside*/
+    height: 26.9em;
+    width: 8.5vw;
+    /*Separar el article del borde*/
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+    text-align: left;
+    /*Color de fondo*/
+    background-color: bisque;
+}

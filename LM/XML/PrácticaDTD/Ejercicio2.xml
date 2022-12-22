@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tag [
+<!ELEMENT tag (name, street, city, country, zip_code)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT zip_code (#PCDATA)>
+]>
+
+<tag>
+<name>Roberto</name>
+<street>c/ Mayor, 82</street>
+<city>Madrid</city>
+<country>Spain</country>
+<zip_code>39343</zip_code>
+</tag>

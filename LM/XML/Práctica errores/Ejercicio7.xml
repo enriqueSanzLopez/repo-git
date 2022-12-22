@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE musicians [
+  <!ELEMENT musicians (musician*)>
+  <!ELEMENT musician (name, nickname, date_of_birth)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT nickname (#PCDATA)>
+  <!ELEMENT date_of_birth (#PCDATA)>
+]>
+
+<musicians>
+  <musician>
+    <name>Antonio Vivaldi</name>
+    <nickname>redheaded priest</nickname>
+    <date_of_birth>04/03/1678</date_of_birth>
+  </musician>
+  <musician>
+    <name>Johann Sebastian Bach</name>
+    <nickname>old wig</nickname>
+    <date_of_birth>21/04/1685</date_of_birth>
+  </musician>
+</musicians>

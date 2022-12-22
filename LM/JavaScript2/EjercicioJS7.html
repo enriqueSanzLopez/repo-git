@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrique Sanz López</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EjercicioJS7.css">
+  </head>
+  <body>
+      <h1>Psychotechnical test</h1>
+      <p>Find a relation between the following animals and delete th wrong one:</p>
+      <!--Tabla usada para alinear los botones y las imágenes-->
+      <table>
+          <tr>
+              <!--Fila 1 Imágenes-->
+              <td><img src="https://www.mundoprimaria.com/wp-content/uploads/2020/08/cuento-pez-oro.jpg" alt="Enlace roto" id="img1"></td>
+              <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_8oImwtItp1eQ1lGAtfy46rc0R0N-QKTMYw&usqp=CAU" alt="Enlace roto" id="img2"></td>
+              <td><img src="https://st.depositphotos.com/1578496/3959/i/600/depositphotos_39590521-stock-photo-tickells-blue-flycatcher-bird.jpg" alt="Enlace roto" id="img3"></td>
+              <td><img src="https://www.casadelaciencia.csic.es/sites/default/files/images/wasspspyder1.jpg" alt="Enlace roto" id="img4"></td>
+          </tr>
+          <tr>
+              <!--Fila 2 Botones-->
+              <td><button type="button" onclick="document.getElementById('img1').style.display='none'">Delete</button></td>
+              <td><button type="button" onclick="document.getElementById('img2').style.display='none'">Delete</button></td>
+              <td><button type="button" onclick="document.getElementById('img3').style.display='none'">Delete</button></td>
+              <td><button type="button" onclick="document.getElementById('img4').style.display='none'">Delete</button></td>
+          </tr>
+      </table>
+  </body>
+</html>

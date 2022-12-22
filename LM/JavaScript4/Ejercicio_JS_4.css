@@ -1,0 +1,13 @@
+*{
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+#oculto{
+    display: none;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+}

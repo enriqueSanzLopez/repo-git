@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE numbers [
+  <!ELEMENT numbers (number+)>
+<!ELEMENT number (#PCDATA)>]>
+
+<numbers>
+  <number>50</number>
+</numbers>

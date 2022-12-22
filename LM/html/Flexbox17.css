@@ -1,0 +1,46 @@
+header{
+    /*Dimensiones del header*/
+    width: 90vw;
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+    padding-bottom: 3em;
+    background-color: #2ECC71;
+}
+footer{
+    /*Dimensiones del header*/
+    width: 90vw;
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+    padding-bottom: 3em;
+    background-color: #2ECC71;
+}
+.contenedor{
+    /*Distribuir el conenido del div*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*Dimensionar el div*/
+    width: 91.5vw;
+    height: 20em;
+    /*Color de fondo*/
+    background-color: bisque;
+}
+article{
+    background-color: white;
+    width: 70vw;
+    /*Separar el article del borde*/
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+}
+nav{
+    width: 10vw;
+    /*Separar el nav del borde*/
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+}
+aside{
+    width: 10vw;
+    /*Separar el article del borde*/
+    padding-top: 0.1em;
+    padding-left: 1.5vw;
+}

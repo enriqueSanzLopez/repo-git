@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_4.css">
+  </head>
+  <body>
+      <h1>HTML</h1>
+      <p>HTML is the standard markup for creating Web pages.</p>
+      <main class="contenedor">
+          <div id="red"></div>
+          <div id="blue"></div>
+      </main>
+      <section>
+          <p>Insert the size of the first square:</p>
+          <input id="entrada1">
+          <p>Insert the size of the second square:</p>
+          <input id="entrada2">
+      </section>
+      <button type="button" onclick="tamano()">Apply</button>
+      <script>
+          function tamano(){
+              let x=document.getElementById("entrada1").value+"px";
+              let y=document.getElementById("entrada2").value+"px";
+              document.getElementById("red").style.width=x;
+              document.getElementById("red").style.height=x;
+              document.getElementById("blue").style.width=y;
+              document.getElementById("blue").style.height=y;
+          }
+      </script>
+  </body>
+</html>

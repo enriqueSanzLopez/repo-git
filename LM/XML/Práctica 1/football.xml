@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE copa [
+<!ELEMENT copa (equipo+)>
+<!ELEMENT equipo (nombre, ciudad, entrenamiento, footbolista+)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT ciudad (#PCDATA)>
+<!ELEMENT entrenamiento (#PCDATA)>
+<!ELEMENT footbolista (nombre, nacionalidad)>
+<!ATTLIST footbolista posicion CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>
+]>
+
+<copa>
+    <equipo>
+        <nombre>Valencia FC</nombre>
+        <ciudad>Valencia</ciudad>
+        <entrenamiento></entrenamiento>
+        <footbolista posicion="Delantero">
+            <nombre>Bryan Gil</nombre>
+            <nacionalidad>Español</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Delantero">
+            <nombre>Maxi Gómez</nombre>
+            <nacionalidad>Uruguayo</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Delantero">
+            <nombre>Gonçalo Guedes</nombre>
+            <nacionalidad>Portugués</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Centrocampista">
+            <nombre>Carlos Soler</nombre>
+            <nacionalidad>Español</nacionalidad>
+        </footbolista>
+    </equipo>
+    <equipo>
+        <nombre>FC Barcelona</nombre>
+        <ciudad>Barcelona</ciudad>
+        <entrenamiento></entrenamiento>
+        <footbolista posicion="Centrocampista">
+            <nombre>Pedri</nombre>
+            <nacionalidad>Español</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Delantero">
+            <nombre>Ousmane Dembélé</nombre>
+            <nacionalidad>Francés</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Delantero">
+            <nombre>Pierre-Emerick Aubameyang</nombre>
+            <nacionalidad>Francés</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Centrocampista">
+            <nombre>Gavi</nombre>
+            <nacionalidad>Español</nacionalidad>
+        </footbolista>
+    </equipo>
+    <equipo>
+        <nombre>Real Madrid Club de Fúbol</nombre>
+        <ciudad>Madrid</ciudad>
+        <entrenamiento></entrenamiento>
+        <footbolista posicion="Delantero">
+            <nombre>Karim Benzema</nombre>
+            <nacionalidad>Francés</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Delantero">
+            <nombre>Vinícius Júnior</nombre>
+            <nacionalidad>Brasileño</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Delantero">
+            <nombre>Gareth Bale</nombre>
+            <nacionalidad>Galés</nacionalidad>
+        </footbolista>
+        <footbolista posicion="Guardameta">
+            <nombre>Thibaut Courtois</nombre>
+            <nacionalidad>Belga</nacionalidad>
+        </footbolista>
+    </equipo>
+</copa>

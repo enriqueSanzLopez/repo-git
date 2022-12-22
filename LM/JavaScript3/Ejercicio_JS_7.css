@@ -1,0 +1,21 @@
+*{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    box-sizing: border-box;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+}
+
+span, #azul{
+    color: blue;
+    font-weight: bold;
+}
+
+#resumen{
+    display: none;
+}

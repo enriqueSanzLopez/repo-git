@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE calendar [
+  <!ELEMENT calendar (contact*)>
+  <!ELEMENT contact (name, land_line*, mobile*)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT land_line (#PCDATA)>
+  <!ELEMENT mobile (#PCDATA)>
+]>
+
+<calendar>
+  <contact>
+    <name>City Hall</name>
+    <land_line>010</land_line>
+  </contact>
+  <contact>
+    <name>Emergency</name>
+    <land_line>112 (Europe)</land_line>
+    <mobile>Unknown</mobile>
+    <land_line>911 (USA)</land_line>
+  </contact>
+</calendar>

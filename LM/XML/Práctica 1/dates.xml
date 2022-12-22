@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="style4.css"?>
+
+<!DOCTYPE fechas [
+<!ELEMENT fechas (fecha+)>
+<!ELEMENT fecha (Dia, Mes)>
+<!ELEMENT Dia (#PCDATA)>
+<!ELEMENT Mes (#PCDATA)>
+]>
+
+<fechas>
+    <fecha>
+        <Dia>12</Dia>
+        <Mes>Gener</Mes>
+    </fecha>
+    <fecha>
+        <Dia>7</Dia>
+        <Mes>Abril</Mes>
+    </fecha>
+    <fecha>
+        <Dia>25</Dia>
+        <Mes>Octubre</Mes>
+    </fecha>
+    <fecha>
+        <Dia>27</Dia>
+        <Mes>Maig</Mes>
+    </fecha>
+    <fecha>
+        <Dia>24</Dia>
+        <Mes>Juny</Mes>
+    </fecha>
+    <fecha>
+        <Dia>26</Dia>
+        <Mes>Febrer</Mes>
+    </fecha>
+</fechas>

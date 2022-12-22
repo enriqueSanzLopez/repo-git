@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrique Sanz López</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EjercicioJS2.css">
+  </head>
+  <body>
+      <h1>What Can JavaScript Do?</h1>
+      <p id="hora"></p>
+      <p id="estilos">JaqvaScript can change the style of an HTML element.</p>
+      <button type="button" onclick="parrafo()" id="boton">Click me!</button>
+      <script>
+          const d=new Date();
+          document.getElementById("hora").innerHTML=d;
+          function parrafo(){ document.getElementById("estilos").style.fontSize="30px";
+document.getElementById("estilos").style.backgroundColor="orange";
+          }
+      </script>
+  </body>
+</html>
