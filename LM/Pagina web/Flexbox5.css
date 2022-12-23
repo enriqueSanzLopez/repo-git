@@ -1,0 +1,14 @@
+.contenedor{
+    display: flex;
+    /*Cambiar la disposicion del flex*/
+    justify-content: center;
+}
+.interior{
+    /*Ponerle un fondo a los componentes*/
+    background-color: blue;
+    /*Dimensiones de los componentes*/
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 90vw;
+    margin: 1em;
+} 

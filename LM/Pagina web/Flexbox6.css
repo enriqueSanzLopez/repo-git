@@ -1,0 +1,11 @@
+.contenedor{
+    display: flex;
+    /*Cambiar la disposicion del flex*/
+    justify-content: center;
+}
+.interior{
+    /*DImensiones de los componentes*/
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 16vw;
+}

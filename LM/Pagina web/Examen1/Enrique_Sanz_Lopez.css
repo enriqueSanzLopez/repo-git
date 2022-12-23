@@ -1,0 +1,117 @@
+body{
+    background-color: wheat;
+}
+.tablehead{
+    background-color: darkblue;
+    border-collapse: collapse;
+    color: ivory;
+    text-align: center;
+    padding: 5px 30px 5px 30px;
+}
+.table{
+    border: crimson solid 2px;
+}
+tr:hover{
+    background-color: darkkhaki;
+}
+td{
+    text-align: center;
+}
+#arriba{
+    /*Marcador de subida de los signos*/
+}
+article{
+    /*Introducir fondo y borde del artículo*/
+    background-color: lightgrey;
+    border: black solid;
+}
+iframe{
+    /*Introducir borde de la imagen*/
+    border: green solid 10px;
+    /*Centrar el iframe*/
+    margin-left: 25%;
+    margin-right: 35%;
+    /*Dimensiones*/
+    width: 300px;
+    height: 80%;
+}
+img{
+    /*Introducir dimensiones de la imagen*/
+    width: 30%;
+    height: 30%;
+    /*Borde de la imagen*/
+    border: double violet;
+    /*Centrar la imagen*/
+    margin-left: auto;
+    margin-right: auto;
+    /*Controlar que no se quede pegado a la URL*/
+    display: flex;
+}
+a{
+    /*Para que no haya subrayado en los enlaces*/
+    text-decoration: none;
+    /*Color de los enlaces*/
+    color: darkred;
+    /*Ponerlos en negrita*/
+    font-weight: bold;
+}
+.l_principal{
+    /*Lista desordenada*/
+    /*Color de letra*/
+    color: orange;
+    /*Color de fondo*/
+    background-color: gray;
+    /*Borde*/
+    border: solid tomato;
+    /*Separación de elementos*/
+    margin: 5px;
+}
+.l_anidada{
+    /*Lista anidada*/
+    /*Color de letra*/
+    color: sienna;
+    /*Color de fondo*/
+    background-color: lightblue;
+    /*Bordes*/
+    border-top: solid mediumseagreen;
+    border-left: solid black;
+    border-bottom: solid mediumseagreen;
+    border-right: solid mediumseagreen;
+    /*Separación*/
+    margin: 5px;
+    /*Puntuado con cuadrados*/
+    list-style-type: square;
+}
+.fila4{
+    /*Color de fondo de la fila de datos central*/
+    background-color: ivory;
+}
+.verde{
+    /*Color de los datos en verde*/
+    color: green;
+}
+.rojo{
+    /*Color de los datos en rojo*/
+    color: crimson;
+}
+h2{
+    /*Los títulos de las secciones*/
+    /*Alineado*/
+    text-align: right;
+    /*Color*/
+    color: olive;
+    /*En negrita*/
+    font-weight: bold;
+}
+h4{
+    /*Títulos secundarias*/
+    /*Alineado*/
+    text-align: center;
+    /*En negrita*/
+    font-weight: bold;
+}
+.asia{
+    /*Clase del texto de asia*/
+    text-align: center;
+    /*Versaletess debería venir aquí*/
+}

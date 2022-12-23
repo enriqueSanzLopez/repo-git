@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--Lenguaje catalán-->
+<html lang="ca">
+
+<head>
+    <title>Enrique Sanz López</title>
+    <!--Metadatos-->
+    <meta charset="UTF-8">
+    <meta name="Primer examen de Lenguaje de marcas" content="HTML con CSS externo">
+    <meta name="Autor: Enrique Sanz Lopez" content="Elementos del examen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Llamar al CSS externo-->
+    <link rel="stylesheet" href="Enrique_Sanz_Lopez.css">
+</head>
+
+<body>
+    <header>
+        <h2 id="arriba">Dades de mercat</h2>
+    </header>
+    <section>
+
+        <!--Título de la sección-->
+        <h4>Taula 1</h4>
+        <table>
+            <!--Fila 1-->
+            <thead>
+                <tr>
+                    <th class="tablehead" rowspan="2">Dades de mercat</th>
+                    <th class="tablehead" colspan="3">Index</th>
+                </tr>
+                <!--Fila 2-->
+                <tr>
+                    <td class="tablehead">Stoxx 600</td>
+                    <td class="tablehead">Euro Stoxx 50</td>
+                    <td class="tablehead">S&P 500</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Fila 3-->
+                <tr>
+                    <td>Valor</td>
+                    <td>342,36</td>
+                    <td>2958,21</td>
+                    <td>3269,96</td>
+                </tr>
+                <!--Fila 4-->
+                <tr class="fila4">
+                    <td>Canvi (%)</td>
+                    <td class="verde">+0,18%</td>
+                    <td class="rojo">-0.06%</td>
+                    <td class="rojo">-1.21%</td>
+                </tr>
+                <!--Fila 5-->
+                <tr>
+                    <td>YTD(%)</td>
+                    <td class="rojo">-18,43%</td>
+                    <td class="rojo">-22,01%</td>
+                    <td class="verde">0,37%</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--Bookmark de retorno arriba-->
+        <a href="#arriba">&#11014 Anar cap a dalt</a>
+    </section>
+    <!--Artículo 1-->
+    <section>
+        <h2>Noticies</h2>
+        <article>
+            <h4>Àsia pateix la 'pitjor recessió que es recorde'</h4>
+            <a href="https://www.bbc.com/news/business-54626025"
+                alt="El enlace no funciona">https://www.bbc.com/news/business-54626025</a>
+            <fieldset><img src="wetmarket.jpg" alt="Mercat de peix">
+                <legend>Mercat de peix</legend>
+            </fieldset>
+            <p class="asia">Àsia Pacífic es recuperarà de la seua pitjor recessió que es recorde, diu el Fons Monetari Internacional
+                (FMI).</p>
+            <!--Lista del artículo desordenada-->
+            <ul>
+                <li class="l_principal">Les previsions de creixement per a la regió s'han tornat a rebaixar, aquesta
+                    vegada del -1,6% al
+                    -2,2% per a enguany.</li>
+                <li class="l_principal">No obstant això, el raig d'esperança apunta a una recuperació de quasi el 7%
+                    l'any vinent, segons
+                    l'FMI.</li>
+                <li class="l_principal">La Xina jugarà paper important en el creixement de la regió l'any vinent, i les
+                    seues últimes dades
+                    mostren una recuperació contínua de la desacceleració causada pel virus.</li>
+                <li class="l_principal">Però encara hi ha molts núvols negres en l'horitzó a mesura que països, inclosos
+                    Índia, Filipines i
+                    Malàisia, continuen lluitant contra les infeccions per Covid-19.
+                    <ul>
+                        <li class="l_anidada">L'organització que pot prestar $ 1 bilió als seus membres</li>
+                        <li class="l_anidada">L'FMI actualitza el pronòstic de 2020 per a l'economia mundial</li>
+                        <li class="l_anidada">La pobresa extrema 'llesta per al seu primer augment des de 1998'</li>
+                    </ul>
+                </li>
+                <li class="l_principal">"Les cicatrius seran profundes", va dir l'FMI, assenyalant una menor inversió
+                    que tindrà un efecte
+                    va dominar a mitjan dècada.</li>
+            </ul>
+            <a href="#arriba">&#11014 Anar cap a dalt</a>
+        </article>
+    </section>
+    <!--Sección iframe-->
+    <footer>
+        <h2>Wikipedia IFRAME</h2>
+        <!--La URL está puesta a mano-->
+        <iframe src="https://ca.wikipedia.org/wiki/Sean_Connery" title="Iframe de la wikipeedia"></iframe>
+    </footer>
+</body>
+
+</html>

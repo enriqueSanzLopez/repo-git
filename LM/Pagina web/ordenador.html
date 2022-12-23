@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--Etiqueta de lenguaje en catalán-->
+<html lang="ca">
+
+<head>
+    <!--Metadatos-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Título de la página-->
+    <title>Construir tu PC</title>
+    <!--Estilos CSS internos-->
+    <style>
+        /*Estilo enlaces*/
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: white;
+            background-color: red;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        /*Estilo navegación*/
+        .menu {
+            /*Poner el menú en fila en lugar de columna*/
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /*Justificar la posición de la navegación*/
+            justify-content: center;
+            /*Eliminar los puntos de la lista*/
+            list-style-type: none;
+        }
+
+        .col {
+            /*Color del menú como un gradiente*/
+            background-image: linear-gradient(to bottom, black, white);
+            /*Ajustar el ancho del menú*/
+            width: 20%;
+        }
+
+        nav li {
+            padding: 1em;
+            border: solid green;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .img1 {
+            width: 30%;
+            height: 30%;
+            margin: auto;
+            border: 1px solid red;
+            padding: 2px;
+            /*Alinear la imagen como un texto*/
+            float: left;
+            display: block;
+        }
+
+        .img2 {
+            width: 30%;
+            height: 40%;
+            margin: 0px 20px 0px 20px;
+            border: 2px dotted blue;
+            float: right;
+            display: block;
+        }
+
+        .img3{
+            width: 3%;
+            height: 3%;
+        }
+
+        #arriba {
+            /*Bookmark*/
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #abajo {
+            /*Abajo*/
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .flexcontainer {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+        }
+        .ordered{
+            /*Cambiar el estilo de la lista ordenada para que se indique con alpha*/
+            list-style-type: upper-alpha;
+        }
+        .unordered{
+            /*Cambiar el estilo de la lista desordenada a cuadrados*/
+            list-style-type: square;
+        }
+        iframe{
+            /*Estilo del iframe*/
+            border: 1px solid green;
+            width: 500px;
+            height: 50%;
+            padding: 5px;
+            margin: 10px;
+            display: block;
+            margin-left: 25%;
+            margin-right: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 id="arriba">Com construir el teu PC</h2>
+    </header>
+    <!--Navegador-->
+    <nav>
+        <ul class="menu">
+            <li class="col">
+                <a href="https://www.profesionalreview.com/2019/02/06/componentes-de-un-ordenador/">Components</a>
+            </li>
+            <li class="col">
+                <a href="https://www.guiahardware.es/category/perifericos/">Periferics</a>
+            </li>
+            <li class="col">
+                <a href="https://www.guiahardware.es/como-montar-tu-propio-ordenador/">Com muntar-ho</a>
+            </li>
+            <li class="col">
+                <a href="https://sites.google.com/view/pabloalvareznuriamolina/como-se-instala-un-sistema-operativo">Instal·lar
+                    el SO</a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <header>
+            <h1>Introducció</h1>
+        </header>
+        <a href="#abajo"><img class="img3" src="https://cdn.icon-icons.com/icons2/93/PNG/256/arrow_down_16740.png" alt="Enlace roto"></a>
+        <p>Centenars de reviews, milers de notícies i un munt de tutorials són
+            els que portem a les nostres esquenes, i encara no havia arribat
+            l'hora de crear un article orientat als que s'estan iniciant al món
+            de la informàtica i els ordinadors per proporcionar-los el
+            coneixement bàsic de quins són els components d'un ordinador i
+            quina funció compleixen cadascun.
+
+            Amb aquesta guia, pretenem que els que menys saben d'ordinadors
+            s'emportin una idea força completa de quins components hi ha i les
+            últimes tendències avui dia, per així saber com començar a muntar
+            el seu propi PC.</p>
+        <div class="flexcontainer">
+            <img class="img1"
+                src="https://microocasion.es/3471-large_default/lote-de-ordenador-lenovo-m91-i5-con-pantalla-17.jpg"
+                alt="Enlace roto">
+            <img class="img2"
+                src="https://static.wixstatic.com/media/630bac_1399d4c37496400da0d67c596d429ae2~mv2.png/v1/fill/w_566,h_409,al_c,q_95/630bac_1399d4c37496400da0d67c596d429ae2~mv2.webp"
+                alt="Enlace roto">
+        </div>
+        <!--Lista ordenada de periféricos de entrada-->
+        <h4>Exemples de entradas a l'ordinador</h4>
+        <ol>
+            <li class="ordered">Teclat</li>
+            <li class="ordered">Micròfon</li>
+            <li class="ordered">Ratolí</li>
+        </ol>
+        <!--Lista desordenada de periféricos de salida-->
+        <h4>Exemples de sortides a l'ordinador</h4>
+        <ul>
+            <li class="unordered">Monitor
+                <ul>
+                    <!--Lista anidada-->
+                    <li>Tub de raigs catòdics</li>
+                    <li>Pantalla de cristall líquid</li>
+                    <li>Pantalla de plasma</li>
+                </ul>
+            </li>
+            <li class="unordered">Altaveu</li>
+            <li class="unordered">Impressora</li>
+        </ul>
+        <!--Lista descriptiva-->
+        <h4>Alguns conceptes a tenir en compte</h4>
+        <dl>
+            <dt>Potencia necessaria</dt>
+            <dd>Ni ha dos tipus de potencies a tenir en compta a l'hora de construir un
+                ordinador, la potencia elèctrica y la potencia de processament. El bon
+                aprofitament de l'energia elèctrica depen de la font d'alimentació, mentres
+                que la potencia de processament depen dels processadors.
+            </dd>
+            <dt>Espai</dt>
+            <dd>Es important comprobar l'espai que ocupen els components de l'ordinador
+                per a comprar una carcassa adequada.
+            </dd>
+            <dt>Ventilació</dt>
+            <dd>La bona ventilació d'un ordinador es un assumpte clau per al bon funcionament de
+                l'ordinador perque una pujada de les temperatures pot fer malbé als components.
+            </dd>
+            <dt>Sistema operatiu</dt>
+            <dd>Ni ha que tindre en compte que el hardware de l'ordinador no conté el sistema
+                operatiu i aurà que instal·lar-ho posteriorment.</dd>
+            <dt>Adaptador xarxa</dt>
+            <dd>L'adaptador xarxa no es un component necessari per al funcionament de l'ordinador
+                pero avui dia la majoria de les aplicacións es descarreguen de internet i es recomanable
+                tindre una bona conexió a internet.
+            </dd>
+        </dl>
+        <!--Iframe-->
+        <iframe src="https://es.wikipedia.org/wiki/Hardware" title="Wikipedia components de hardware"></iframe>
+        <a id="abajo" href="#arriba"><img class="img3" src="https://cdn.icon-icons.com/icons2/1094/PNG/512/uparrow_78484.png" alt="Enlace roto"></a>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        header,
+        section,
+        aside,
+        footer,
+        nav li {
+            padding: 2%;
+            border: 1px solid white;
+        }
+
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .violet {
+            background-color: violet;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .container2 {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+        }
+
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 550px) {
+
+            /* For tablets: */
+            .col-s-1 {
+                width: 8.33%;
+            }
+
+            .col-s-2 {
+                width: 16.66%;
+            }
+
+            .col-s-3 {
+                width: 25%;
+            }
+
+            .col-s-4 {
+                width: 33.33%;
+            }
+
+            .col-s-5 {
+                width: 41.66%;
+            }
+
+            .col-s-6 {
+                width: 50%;
+            }
+
+            .col-s-7 {
+                width: 58.33%;
+            }
+
+            .col-s-8 {
+                width: 66.66%;
+            }
+
+            .col-s-9 {
+                width: 75%;
+            }
+
+            .col-s-10 {
+                width: 83.33%;
+            }
+
+            .col-s-11 {
+                width: 91.66%;
+            }
+
+            .col-s-12 {
+                width: 100%;
+            }
+
+
+            li {
+                height: 110px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            /* For desktop: */
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container2">
+        <header class="violet col-9 col-s-9">
+            <h1>Header</h1>
+        </header>
+    </div>
+    <div class="container2">
+        
+
+        <nav class="col-3 col-s-3 ">
+            <ul class="container">
+                <li class="pink col-4 col-s-4">Link</li>
+                <li class="pink col-4 col-s-4">Link</li>
+                <li class="pink col-4 col-s-4">Link</li>
+            </ul>
+        </nav>
+
+        <article class="col-6 col-s-12">
+            <section class="red">
+                <h2>Title</h2>
+                <p>Section 1</p>
+            </section>
+
+            <section class="blue">
+                <h2>Title</h2>
+                <p>Section 1</p>
+            </section>
+
+            <section class="green">
+                <h2>Title</h2>
+                <p>Section 1</p>
+            </section>
+        </article>
+
+        <aside class="yellow col-3 col-s-12">
+            <h2>Aside1</h2>
+            <p>Aside</p>
+        </aside>
+
+    </div>
+    <footer class="purple col-12 col-s-12">
+        <p>Footer</p>
+    </footer>
+
+</body>
+
+</html>

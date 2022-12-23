@@ -1,0 +1,19 @@
+.contenedor{
+    display: flex;
+    /*Cambiar la disposicion del flex*/
+    justify-content: space-between;
+}
+.interior{
+    /*Ponerle un fondo a los componentes*/
+    background-color: blue;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 10vw;
+}
+#central{
+    background-color: blue;
+    /*Ampliar la casilla central*/
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 70vw;
+}

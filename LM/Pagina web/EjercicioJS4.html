@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrique Sanz López</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EjercicioJS4.css">
+  </head>
+  <body>
+      <h1>Select a template for this text:</h1>
+      <main class="contenedor" id="contenedor">
+        <h1 id="h1">Title</h1>
+        <h4 id="h4">Subtitle</h4>
+        <p id="p">This is an example of a paragraph</p>
+      </main>
+      <div>
+          <button type="button" onclick="t1()">Template 1</button>
+          <button type="button" onclick="t2()">Template 2</button>
+          <button type="button" onclick="t3()">Template 3</button>
+      </div>
+      <script>
+          function t1(){
+              document.getElementById("contenedor").style.backgroundColor="purple";
+              document.getElementById("contenedor").style.color="orange";
+              document.getElementById("h1").style.textAlign="center"
+              document.getElementById("h4").style.textAlign="center"
+              document.getElementById("p").style.textAlign="center"
+          }
+          function t2(){
+              document.getElementById("contenedor").style.backgroundColor="yellow";
+              document.getElementById("contenedor").style.color="gray";
+              document.getElementById("h1").style.textAlign="left"
+              document.getElementById("h4").style.textAlign="left"
+              document.getElementById("p").style.textAlign="left"
+          }
+          function t3(){
+              document.getElementById("contenedor").style.backgroundColor="blue";
+              document.getElementById("contenedor").style.color="white";
+              document.getElementById("h1").style.textAlign="right"
+              document.getElementById("h4").style.textAlign="right"
+              document.getElementById("p").style.textAlign="right"
+          }
+      </script>
+  </body>
+</html>

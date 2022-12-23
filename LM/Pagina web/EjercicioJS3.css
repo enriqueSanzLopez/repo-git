@@ -1,0 +1,26 @@
+div{
+    width: 20vw;
+    height: 20vh;
+    margin: 10px;
+}
+
+#rojo{
+    border: red solid 5px;
+}
+
+#azul{
+    border: blue solid 5px;
+}
+
+#verde{
+    border: green solid 5px;
+}
+
+#amarillo{
+    border: yellow solid 5px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+}

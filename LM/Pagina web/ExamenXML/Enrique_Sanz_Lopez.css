@@ -1,0 +1,30 @@
+/*Centrar todo el texto*/
+*{
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+/*Mostrar como tabla*/
+documento{
+    display: table;
+    margin: 10px;
+}
+/*Mostrar como fila de la tabla*/
+titulos, equipo{
+    display: table-row;
+}
+/*Mostrar el contenido de la tabla*/
+nombre, victorias, derrotas, empates, titulo{
+    display: table-cell;
+    background-color: lightblue;
+    padding: 5px;
+}
+/*Mostrar los títulos de la tabla*/
+titulo{
+    font-weight: bold;
+    background-color:burlywood;
+}
+/*Remarcar los nombres de los equipos*/
+nombre{
+    font-weight: bold;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Formulario2.css">
+</head>
+
+<body>
+    <header><h1>Ejercicio 2</h1></header>
+    <section>
+        <!--Primer formulario-->
+        <fieldset class="pink">
+            <legend>Personal information</legend>
+        <form>
+            <table class="col-s-12 col-12">
+                <tr>
+                    <td class="col-s-2 col-2">
+            <label>Name <span>*</span></label>
+                    </td>
+                    <td>
+            <input type="text" id="fname" name="fname" value="" class="col-s-6 col-6 input"></td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2">
+            <label>Email <span>*</span></label>
+                    </td>
+                    <td>
+            <input type="email" id="email" name="email" value="" class="col-s-6 col-6 input"></td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2">
+            <label>Phone <span>*</span></label>
+                    </td>
+                    <td>
+            <input type="tel" id="tnumber" name="tnumber" value="" class="col-s-6 col-6 input">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-s-2 col-2">
+            <label>Reservation</label>
+                    </td>
+                    <td>
+            <select name="ware" class="col-s-6 col-6 deeppink2">
+                <option value="0">Restaurant</option>
+                <option value="1">Hotel</option>
+            </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </fieldset>
+        <fieldset class="pink">
+            <legend>Message</legend>
+        <form class="pink">
+            <table class="col-s-12 col-12">
+                <tr>
+                    <td rowspan="2" class="col-s-2 col-2 message">
+            <label>Message <span>*</span></label>
+                    </td>
+                    <td>
+                        <textarea class="col-6 col-s-6 texto input"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Submit" class="col-s-2 col-2 deeppink">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </fieldset>
+    </section>
+</body>
+
+</html>

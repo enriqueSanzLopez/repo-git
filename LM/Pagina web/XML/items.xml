@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="Ejercicio3.css"?>
+
+<!DOCTYPE almacen [
+<!ELEMENT almacen (item+)>
+<!ELEMENT item (Nom, Preu)>
+<!ELEMENT Nom (#PCDATA)>
+<!ELEMENT Preu (#PCDATA)>
+]>
+
+<almacen>
+  <item>
+    <Nom>Sofà</Nom>
+    <Preu>642</Preu>
+  </item>
+  <item>
+    <Nom>Taula</Nom>
+    <Preu>305</Preu>
+  </item>
+  <item>
+    <Nom>Làmpada</Nom>
+    <Preu>89</Preu>
+  </item>
+  <item>
+    <Nom>Cadira</Nom>
+    <Preu>39</Preu>
+  </item>
+  <item>
+    <Nom>Llit</Nom>
+    <Preu>39</Preu>
+  </item>
+  <item>
+    <Nom>Escriptori</Nom>
+    <Preu>79</Preu>
+  </item>
+</almacen>

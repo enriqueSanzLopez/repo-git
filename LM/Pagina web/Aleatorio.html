@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_6.css">
+  </head>
+  <body>
+      <h1>JavaScript Math.Random()</h1>
+      <h2>Write a range of integer numbers:</h2>
+      <p>Write the minimun number:</p>
+      
+      <input id="min1" type="number">
+      <p>Write de maximun number:</p>
+      
+      <input id="max1" type="number"><br>
+      <button type="button" id="boton" onclick="aleatorio()">Generate random number
+      </button>
+      <p id="solucion"></p>
+      <script>
+          function aleatorio(){
+              let minimo=document.getElementById("min1").value;
+              let maximo=document.getElementById("max1").value;
+              minimno=Number(minimo);
+              maximo=Number(maximo);
+              let amplitud = (maximo-minimo)*Math.random();
+              
+              let aleatorio=amplitud+minimo;
+              
+              console.log(aleatorio);
+              document.getElementById("solucion").innerHTML=aleatorio;
+          }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="Enrique_Sanz_Lopez.css"?>
+
+<documento>
+  <titulos>
+    <titulo>Nom</titulo>
+    <titulo>Victories</titulo>
+    <titulo>Derrotes</titulo>
+    <titulo>Empats</titulo>
+  </titulos>
+  <equipo>
+    <nombre>Valencia</nombre>
+    <victorias>12</victorias>
+    <derrotas>3</derrotas>
+    <empates>0</empates>
+  </equipo>
+  <equipo>
+    <nombre>Barcelona</nombre>
+    <victorias>15</victorias>
+    <derrotas>2</derrotas>
+    <empates>1</empates>
+  </equipo>
+  <equipo>
+    <nombre>Madrid</nombre>
+    <victorias>13</victorias>
+    <derrotas>5</derrotas>
+    <empates>1</empates>
+  </equipo>
+  <equipo>
+    <nombre>Sevilla</nombre>
+    <victorias>7</victorias>
+    <derrotas>3</derrotas>
+    <empates>2</empates>
+  </equipo>
+</documento>

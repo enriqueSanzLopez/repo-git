@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--Título de la página-->
+    <title>Tabla 5</title>
+    <!--CSS interno-->
+    <style>
+        .table1 {
+            border: solid grey 2px;
+            border-collapse: collapse;
+        }
+
+        td {
+            background-color: red;
+            color: white;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda2 {
+            background-color: green;
+            color: white;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda3 {
+            background-color: black;
+            color: white;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda4 {
+            background-color: white;
+            color: black;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda5 {
+            background-color: orange;
+            color: white;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda6 {
+            background-color: purple;
+            color: white;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 40px;
+            font-size: smaller;
+        }
+
+        #celda7 {
+            background-color: grey;
+            color: black;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda8 {
+            background-color: pink;
+            color: black;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        #celda9 {
+            background-color: yellow;
+            color: black;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 2px solid;
+            padding: 10px 30px 10px 0px;
+            font-size: smaller;
+        }
+
+        .interior {
+            background-color: purple;
+            color: white;
+            text-align: left;
+            border-collapse: collapse;
+            border: white 1px solid;
+            padding: 10px;
+            font-size: smaller;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!--Tabla 5-->
+        <table class="table1">
+            <!--Línea 1-->
+            <tr>
+                <td>cell</td>
+                <td id="celda2">cell</td>
+                <td id="celda3" rowspan="2">cell</td>
+            </tr>
+            <!--Línea 2-->
+            <tr>
+                <td id="celda4" rowspan="2">cell</td>
+                <td id="celda5">cell</td>
+            </tr>
+            <!--Línea 3-->
+            <tr>
+                <td id="celda6" rowspan="2">
+                    <table>
+                        <!--Una tabla dentro de otra-->
+                        <tr>
+                            <td class="interior">cell</td>
+                            <td class="interior">cell</td>
+                        </tr>
+                        <tr>
+                            <td class="interior">cell</td>
+                            <td class="interior">cell</td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="celda7" rowspan="2">cell</td>
+            </tr>
+            <!--Línea 4-->
+            <tr>
+                <td id="celda8" rowspan="2">cell</td>
+            </tr>
+            <!--Línea 5-->
+            <tr>
+                <td id="celda9" colspan="2">cell</td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+</html>

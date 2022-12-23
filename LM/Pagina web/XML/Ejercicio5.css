@@ -1,0 +1,23 @@
+*{
+    border: 1px solid black;
+}
+
+combinado[resultado]{
+    color: grey;
+    font-size: 20px;
+}
+
+combinados{
+    display: table;
+    margin: 10px;
+}
+
+combinado{
+    display: table-row;
+}
+
+combinacion{
+    display: table-cell;
+    padding: 10px;
+    text-align: center;
+}

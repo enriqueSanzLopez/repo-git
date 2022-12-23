@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!--Titulo de la pagina-->
+    <title>Ejercicio 1</title>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ejercicio_JS_5.css">
+  </head>
+  <body>
+      <h1>Write a story</h1>
+      <p>Insert the title of the story:</p>
+      <input type="text" id="titulo">
+      <p>Insert the story:</p>
+      <textarea id="hist"></textarea>
+      <p>Insert the url of an image related with the story:</p>
+      <input type="url" id="imagen"><br>
+      <button type="button" id="boton" onclick="historia()">Apply</button><br>
+      <section id="seccion">
+          <h2 id="t1"></h2>
+          <p id="p1"></p>
+          <img alt="Enlace roto" id="enlace">
+      </section>
+      <script> document.getElementById("seccion").style.display="none"; document.getElementById("seccion").style.border="solid 5px black";
+          function historia(){
+              /*Cambiar la visualización*/
+              document.getElementById("seccion").style.display="block";
+              /*Introducir la historia*/
+              let titulo=document.getElementById("titulo").value;
+              document.getElementById("t1").innerHTML=titulo;
+              let historia=document.getElementById("hist").value;
+              document.getElementById("p1").innerHTML=historia;
+              /*Introducir imagen*/
+              let imagen=document.getElementById("imagen").value;
+              document.getElementById("enlace").src=imagen;
+          }
+      </script>
+  </body>
+</html>

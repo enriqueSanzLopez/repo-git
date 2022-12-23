@@ -1,0 +1,29 @@
+
+Nom{
+    color: blue;
+    font-size: 20px;
+}
+
+Preu{
+    color: green;
+    font-size: 28px;
+}
+
+*{
+    border: 1px solid black;
+}
+
+almacen{
+    display: table;
+    margin: 10px;
+}
+
+item{
+    display: table-row;
+}
+
+Nom, Preu{
+    display: table-cell;
+    padding: 10px;
+    text-align: center;
+}

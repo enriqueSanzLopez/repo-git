@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlario">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Formulario5.css">
+</head>
+
+<body>
+    <header><h1>Ejercicio 5</h1></header>
+    <section>
+        <div class="cabecero">
+            <h1>Sign Up Now!</h1>
+            <h5>Sign up and tell us what you think of the site!</h5>
+        </div>
+        <!--Primer formulario-->
+        <h3 class="apartado">1 First Name & Address</h3>
+        <form class="container2">
+            <label for="fname" class="col-10 col-s-10">Your Full Name</label>
+            <input type="text" id="fname" name="fname" value="" class="col-10 col-s-10"><br>
+            <label for="direccion" class="col-10 col-s-10">Address</label>
+            <textarea id="direccion" name="direccion" class="texto col-10 col-s-10"></textarea><br>
+        </form>
+        <!--Segundo formulario-->
+        <h3 class="apartado">2 Email & Phone</h3>
+        <form class="container2">
+            <label for="mail" class="col-10 col-s-10">Email Address</label>
+            <input type="email" id="mail" name="mail" value="" class="col-10 col-s-10"><br>
+            <label for="pnumber" class="col-10 col-s-10">Phone Number</label>
+            <input type="tel" id="pnumber" name="pnumber" value="" class="col-10 col-s-10"><br>
+        </form>
+        <!--Tercer formulario-->
+        <h3 class="apartado">3 Passwords</h3>
+        <form class="container2">
+            <label for="contras" class="col-10 col-s-10">Password</label>
+            <input type="password" id="contras" name="contras" class="col-10 col-s-10"><br>
+            <label for="concontras" class="col-10 col-s-10">Confirm Password</label>
+            <input type="password" id="concontras" name="contras" class="col-10 col-s-10"><br>
+            <table>
+                <tr>
+                    <td class="col-8 col-s-8">
+                        <input type="submit" value="Enviar" class="submit col-4 col-s-4">
+                    </td>
+                    <td class="container">
+                        <input type="checkbox" id="Agree" name="Agree"  value="You agree to our Terms and Policy">
+                        <p>You agree to our Terms and Policy</p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+
+</html>

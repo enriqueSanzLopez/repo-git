@@ -1,0 +1,27 @@
+Dia{
+    color: brown;
+    font-size: 30px;
+}
+
+Mes{
+    color: magenta;
+    font-size: 30px;
+}
+
+fechas{
+    display: table;
+    border: solid black 2px;
+    margin: 10px;
+}
+
+fecha{
+    display: table-row;
+    border: solid black 2px;
+}
+
+Dia, Mes{
+    display: table-cell;
+    border: solid black 2px;
+    padding: 10px;
+    text-align: center;
+}

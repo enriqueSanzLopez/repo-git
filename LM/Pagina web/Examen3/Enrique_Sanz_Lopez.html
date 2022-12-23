@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <!--Titulo de la pagina-->
+    <title>Enrique Sanz Lopez</title>
+    <!--Metadatos-->
+    <meta charset="utf-8" name="Author: Enrique Sanz López Keywords: Forumlarios, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS interno-->
+    <style>
+        /*Distribuir los formularios*/
+        section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .apartado {
+            /*Dimensiones de cada parte*/
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        img {
+            /*Dimensiones de las imágenes*/
+            width: 20vw;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /*Formato de la leyenda de las imágenes*/
+        figcaption {
+            text-align: center;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /*Separar botones de input*/
+        button {
+            margin: 5px;
+        }
+
+        /*Alinear imagen y leyenda*/
+        #rectangulo,
+        #triangulo,
+        #cuadrado {
+            width: 25vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*Fondos de las imágenes*/
+        #rectangulo {
+            background: brown;
+        }
+
+        #triangulo {
+            background: blue;
+        }
+
+        #cuadrado {
+            background: plum;
+        }
+
+        /*Fondos y colores de texto de los artículos*/
+        #a1,
+        #a3 {
+            background: yellow;
+        }
+
+        #a2 {
+            background: red;
+        }
+
+        /*Fondo y color del título*/
+        h1 {
+            background: blue;
+            text-align: center;
+            color: yellow;
+        }
+        #resultado1, #resultado2, #resultado3{
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Título-->
+    <h1>Examen de JavaScript</h1>
+    <section>
+        <!--Área del rectángulo-->
+        <article class="apartado" id="a1">
+            <h2>Àrea del rectangle</h2>
+            <article id="rectangulo">
+                <img src="rectangle.png" alt="error">
+                <figcaption>Rectagle</figcaption>
+            </article>
+            <p>Altura</p>
+            <input type="number" id="altura"><br>
+            <label>Amplària</label>
+            <input type="number" id="amplaria"><br>
+            <button type="submit" onclick="rectangulo()">Calcular</button>
+            <p id="resultado1"></p>
+        </article>
+        <!--Área del triángulo-->
+        <article class="apartado" id="a2">
+            <h2>Àrea del triangle</h2>
+            <article id="triangulo">
+                <img src="triangle.png" alt="error">
+                <figcaption>Triangle</figcaption>
+            </article>
+            <p>Base</p>
+            <input type="number" id="base"><br>
+            <label>Altura</label>
+            <input type="number" id="altura2"><br>
+            <button type="submit" onclick="triangulo()">Calcular</button>
+            <p id="resultado2"></p>
+        </article>
+        <!--Área del cuadrado-->
+        <article class="apartado" id="a3">
+            <h2>Àrea del quadrat</h2>
+            <article id="cuadrado">
+                <img src="square.png" alt="error">
+                <figcaption>Quadrat</figcaption>
+            </article>
+            <p>Lado</p>
+            <input type="number" id="lado"><br>
+            <button type="submit" onclick="quadrat()">Calcular</button>
+            <p id="resultado3"></p>
+        </article>
+        <script>
+            function rectangulo() {
+                /*Extraer valores*/
+                let alto = document.getElementById("altura").value;
+                /*Pasarlo a número*/
+                alto = Number(alto);
+                let ancho = document.getElementById("amplaria").value;
+                ancho = Number(ancho);
+                /*Calcular el área*/
+                if (alto < 0 || ancho < 0) {
+                    document.getElementById("resultado1").innerHTML = "ERROR! Les dades de altura y amplària no son correctes";
+                } else {
+                    alto = alto * ancho;
+                    document.getElementById("resultado1").innerHTML = "L'àrea es: " + alto;
+                }
+            }
+            function triangulo() {
+                /*Extraer valores*/
+                let base = document.getElementById("base").value;
+                /*Pasarlo a número*/
+                base = Number(base);
+                let alto = document.getElementById("altura2").value;
+                alto = Number(alto);
+                if (alto < 0 || base < 0) {
+                    document.getElementById("resultado2").innerHTML = "ERROR! Les dades de base y altura no son correctes";
+                } else {
+                    /*Calcular el área*/
+                    alto = alto * base / 2;
+                    document.getElementById("resultado2").innerHTML = "L'àrea es: " + alto;
+                }
+            }
+            function quadrat() {
+                /*Extraer valores*/
+                let alto = document.getElementById("lado").value;
+                /*Pasarlo a número*/
+                alto = Number(alto);
+                if (alto < 0) {
+                    document.getElementById("resultado3").innerHTML = "ERROR! El lado no es correcte";
+                } else {
+                    /*Calcular el área*/
+                    alto = alto * alto;
+                    document.getElementById("resultado3").innerHTML = "L'àrea es: " + alto;
+                }
+            }
+        </script>
+    </section>
+</body>
+
+</html>
