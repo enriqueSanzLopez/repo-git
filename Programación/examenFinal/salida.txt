@@ -1,0 +1,15 @@
+JOYERIA
+-------
+El collar tiene una cadena de 12.34 cm. y las siguientes perlas:
+-Perla de platino que pesa 50g. PVP:500.0 €.
+-Perla de oro que pesa 72g. PVP:540.0 €.
+-Perla de oro que pesa 60g. PVP:450.0 €.
+Por lo que el precio total del collar es de 1490.0 €.
+
+DESAYUNO
+--------
+Magdalena de 190.0 g. con forma Cuadrada y lleva papel. PVP:19.0 €.
+Magdalena de 83.0 g. con forma Redonda y no lleva papel. PVP:8.3 €.
+Napolitana de 210.0 g. con relleno de sabor Crema. PVP:21.0 €.
+Napolitana de 332.0 g. con relleno de sabor Chocolate. PVP:33.2 €.
+Por lo que el precio total del desayuno es: 81.5 €.
