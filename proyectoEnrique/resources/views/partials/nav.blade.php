@@ -15,10 +15,10 @@
             <a class="nav-link text-white" href="{{route('events.index')}}">Eventos</a>
         </li>
         <li class="nav-item text-white">
-            <a class="nav-link text-white" href="{{route('lugar')}}">Contacto</a>
+            <a class="nav-link text-white" href="#">Contacto</a>
         </li>
         <li class="nav-item text-white">
-            <a class="nav-link text-white" href="#">Donde estamos</a>
+            <a class="nav-link text-white" href="{{route('lugar')}}">Donde estamos</a>
         </li>
         <!--A partir de aquí son cosas que solo deberían ver los administradores-->
         <li class="nav-item text-white">
