@@ -12,6 +12,8 @@
     <!--Links de iconos-->
     <!--Link al CSS externo-->
     <link rel="stylesheet" href="css/estilo.css">
+    <!--Icono de pestaña-->
+    <link rel="icon" type="image/x-icon" href="img/T.ico">
 </head>
 <body>
     @include('partials.nav')

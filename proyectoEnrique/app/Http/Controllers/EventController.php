@@ -15,6 +15,8 @@ class EventController extends Controller
     public function index()
     {
         //
+        $event=Event::get()->paginate(5);
+        return view('events.index', compact('event'));
     }
 
     /**
@@ -25,6 +27,8 @@ class EventController extends Controller
     public function create()
     {
         //
+        $event=Event::all();
+        return view('events.create', compact('event'));
     }
 
     /**
@@ -36,6 +40,16 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+        $event=new Event();
+        $event->name=$request->get('name');
+        $event->description=$request->get('description');
+        $event->location=$request->get('location');
+        $event->date=$request->get('date');
+        $event->hour=$request->get('hour');
+        $event->tags=$request->get('tags');
+        $event->visible=$request->has('visible')? 1: 0;
+        $event->save();
+        return view('events.guardado', compact('event'));
     }
 
     /**
@@ -47,6 +61,11 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
+        if ($event->visible==0) {
+            return redirect(route('inicio'));
+        } else {
+            return view('events.show', compact('event'));
+        }
     }
 
     /**
@@ -58,6 +77,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        return view('events.edit', compact('event'));
     }
 
     /**

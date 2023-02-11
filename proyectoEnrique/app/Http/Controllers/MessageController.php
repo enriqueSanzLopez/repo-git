@@ -15,6 +15,8 @@ class MessageController extends Controller
     public function index()
     {
         //
+        $message=Message::get()->paginate(5);
+        return view('messages.index', compact('posts'));
     }
 
     /**
@@ -25,6 +27,7 @@ class MessageController extends Controller
     public function create()
     {
         //
+        return view('messages.create', compact('message'));
     }
 
     /**
@@ -36,6 +39,12 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         //
+        $message=new Message();
+        $message->name=$request->get('name');
+        $message->subject=$request->get('subject');
+        $message->text=$request->get('text');
+        $message->save();
+        return view('messages.guardado', compact('message'));
     }
 
     /**
@@ -47,6 +56,7 @@ class MessageController extends Controller
     public function show(Message $message)
     {
         //
+        return view('messages.show', compact('message'));
     }
 
     /**
@@ -81,5 +91,7 @@ class MessageController extends Controller
     public function destroy(Message $message)
     {
         //
+        Message::findOrFail($message->id)->delete();
+        return redirect()->route('messages.index');
     }
 }

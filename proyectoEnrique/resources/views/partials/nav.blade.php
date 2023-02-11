@@ -4,28 +4,47 @@
         <h1>NoTebeo</h1>
     </div>
     <ul class="nav justify-content-end flex-row align-middle text-white">
-        <!--A partir de aquí, solo deberían verlo usuarios logeados-->
+        {{-- Independiente de la sesión se deben mostrar estos enlaces --}}
         <li class="nav-item text-white">
             <a class="nav-link text-white" href="{{route('inicio')}}">Inicio</a>
         </li>
         <li class="nav-item text-white">
-            <a class="nav-link text-white" href="#">Miembros</a>
-        </li>
-        <li class="nav-item text-white">
-            <a class="nav-link text-white" href="{{route('events.index')}}">Eventos</a>
-        </li>
-        <li class="nav-item text-white">
-            <a class="nav-link text-white" href="#">Contacto</a>
+            <a class="nav-link text-white" href="#">Eventos</a>
         </li>
         <li class="nav-item text-white">
             <a class="nav-link text-white" href="{{route('lugar')}}">Donde estamos</a>
         </li>
-        <!--A partir de aquí son cosas que solo deberían ver los administradores-->
-        <li class="nav-item text-white">
-            <a class="nav-link text-white" href="#">Añadir evento</a>
-        </li>
-        <li class="nav-item text-white">
-            <a class="nav-link text-white" href="{{route('messages.index')}}">Mensajes</a>
-        </li>
+        {{-- Solo si no se ha abierto sesión se deben mostrar estos enlaces --}}
+        @if (!isset(Auth::user()->name))
+            <li class="nav-item text-white">
+                <a class="nav-link text-white" href="{{route('registro')}}">Crear cuenta</a>
+            </li>
+            <li class="nav-item text-white">
+                <a class="nav-link text-white" href="{{route('login')}}">Iniciar sesión</a>
+            </li>
+        @else
+            {{-- Solo si se ha abierto sesión se deben mostrar estos enlaces --}}
+            <li class="nav-item text-white">
+                <a class="nav-link text-white" href="#">Miembros</a>
+            </li>
+            <li class="nav-item text-white">
+                <a class="nav-link text-white" href="#">Contacto</a>
+            </li>
+            <li class="nav-item text-white">
+                <a class="nav-link text-white" href="{{route('users.account')}}">Cuenta</a>
+            </li>
+            {{-- Solo si el usuario es administrador --}}
+            @if (isset(Auth::user()->rol) && Auth::user()->rol == 'admin')
+                <li class="nav-item text-white">
+                    <a class="nav-link text-white" href="#">Añadir evento</a>
+                </li>
+                <li class="nav-item text-white">
+                    <a class="nav-link text-white" href="#">Mensajes</a>
+                </li>
+            @endif
+            <li class="nav-item text-white">
+                <a class="nav-link text-white" href="{{route('logout')}}">Cerrar sesión</a>
+            </li>
+        @endif
     </ul>
 </header>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,17 @@ Route::get('lugar', function(){
 Route::resource('events', EventController::class);
 
 Route::resource('messages', MessageController::class);
+
+Route::get('registro', [LoginController::class, 'registerForm']);
+
+Route::post('registro', [LoginController::class, 'register'])->name('registro');
+
+Route::get('login', [LoginController::class, 'loginForm']);
+
+Route::post('login', [LoginController::class, 'login'])->name('login');
+
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('cuenta', function(){
+    return view('auth.account');
+})->name('users.account')->middleware('auth');
