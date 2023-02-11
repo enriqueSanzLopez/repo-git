@@ -49,7 +49,7 @@
                 <input type="text" class="form-control" id="twitch"
                     name="twitch" value="{{ old('twitch') }}">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Crear usuario</button>
         </form>
         {{-- Si hay errores, se muestran aquí --}}
         @if ($errors->any())

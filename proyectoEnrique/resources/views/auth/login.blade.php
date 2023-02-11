@@ -13,7 +13,7 @@
                 <input type="password" class="form-control" id="password" name="password"
                     placeholder="Introduce una contraseña">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Abrir sesión</button>
         </form>
     </main>
 @endsection

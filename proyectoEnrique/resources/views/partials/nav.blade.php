@@ -1,6 +1,6 @@
-<header class="bg-dark text-white">
+<header class="bg-dark text-white sticky-top">
     <div>
-        <img src="img/T.png" class="img-fluid img-thumbnail" alt="Icono de NoTebeo">
+        <img src="{{asset('img/T.png')}}" class="img-fluid img-thumbnail" alt="Icono de NoTebeo">
         <h1>NoTebeo</h1>
     </div>
     <ul class="nav justify-content-end flex-row align-middle text-white">
@@ -14,6 +14,9 @@
         <li class="nav-item text-white">
             <a class="nav-link text-white" href="{{route('lugar')}}">Donde estamos</a>
         </li>
+        <li class="nav-item text-white">
+            <a class="nav-link text-white" href="{{route('messages.create')}}">Contacto</a>
+        </li>
         {{-- Solo si no se ha abierto sesión se deben mostrar estos enlaces --}}
         @if (!isset(Auth::user()->name))
             <li class="nav-item text-white">
@@ -26,9 +29,6 @@
             {{-- Solo si se ha abierto sesión se deben mostrar estos enlaces --}}
             <li class="nav-item text-white">
                 <a class="nav-link text-white" href="#">Miembros</a>
-            </li>
-            <li class="nav-item text-white">
-                <a class="nav-link text-white" href="#">Contacto</a>
             </li>
             <li class="nav-item text-white">
                 <a class="nav-link text-white" href="{{route('users.account')}}">Cuenta</a>

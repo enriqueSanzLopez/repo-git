@@ -15,8 +15,6 @@ class MessageController extends Controller
     public function index()
     {
         //
-        $message=Message::get()->paginate(5);
-        return view('messages.index', compact('posts'));
     }
 
     /**
@@ -27,7 +25,7 @@ class MessageController extends Controller
     public function create()
     {
         //
-        return view('messages.create', compact('message'));
+        return view('messages.create');
     }
 
     /**
@@ -39,12 +37,6 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         //
-        $message=new Message();
-        $message->name=$request->get('name');
-        $message->subject=$request->get('subject');
-        $message->text=$request->get('text');
-        $message->save();
-        return view('messages.guardado', compact('message'));
     }
 
     /**
