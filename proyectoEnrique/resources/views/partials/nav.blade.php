@@ -39,7 +39,7 @@
                     <a class="nav-link text-white" href="#">Añadir evento</a>
                 </li>
                 <li class="nav-item text-white">
-                    <a class="nav-link text-white" href="#">Mensajes</a>
+                    <a class="nav-link text-white" href="{{route('messages.index')}}">Mensajes</a>
                 </li>
             @endif
             <li class="nav-item text-white">

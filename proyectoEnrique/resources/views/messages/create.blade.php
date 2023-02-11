@@ -6,8 +6,13 @@
             @csrf
             <div class="form-group col-md-3">
                 <label for="name">Nombre: </label>
+                @if (isset(Auth::user()->name))
+                <input type="text" class="form-control" id="name" name="name" placeholder="Introduce tu nombre"
+                    value="{{Auth::user()->name}}">
+                @else
                 <input type="text" class="form-control" id="name" name="name" placeholder="Introduce tu nombre"
                     value="{{ old('name') }}">
+                @endif
             </div>
             <div class="form-group col-md-10">
                 <label for="subject">Asunto: </label>
@@ -15,8 +20,8 @@
                     placeholder="Asunto">
             </div>
             <div class="mb-3 col-md-10">
-                <label for="exampleFormControlTextarea1" class="form-label">Ejemplo de textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                <label for="text" class="form-label">Ejemplo de textarea</label>
+                <textarea class="form-control" rows="10" name="text" id="text"></textarea>
             </div>
             <button type="submit" class="btn btn-primary col-md-1">Enviar</button>
         </form>

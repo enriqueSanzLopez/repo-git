@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+use App\Http\Requests\MessageRequest;
 
 class MessageController extends Controller
 {
@@ -15,6 +16,8 @@ class MessageController extends Controller
     public function index()
     {
         //
+        $messages=Message::all();
+        return view('messages.index', compact('messages'));
     }
 
     /**
@@ -34,9 +37,15 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MessageRequest $request)
     {
         //
+        $message=new Message();//Crear objeto de mensaje
+        $message->name=$request->get('name');//Rellenar los campos obligatorios de mensaje
+        $message->subject=$request->get('subject');
+        $message->text=$request->get('text');
+        $message->save();//Guardar el mensaje
+        return redirect('/');//redirigir a la pagina principal
     }
 
     /**
@@ -48,6 +57,8 @@ class MessageController extends Controller
     public function show(Message $message)
     {
         //
+        $message->readed=1;//Actualizar el mensaje a visto
+        $message->save();
         return view('messages.show', compact('message'));
     }
 
