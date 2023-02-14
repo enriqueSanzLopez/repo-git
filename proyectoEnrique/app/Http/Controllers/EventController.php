@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
 {
@@ -27,8 +28,7 @@ class EventController extends Controller
     public function create()
     {
         //
-        $event=Event::all();
-        return view('events.create', compact('event'));
+        return view('events.create');
     }
 
     /**
@@ -42,14 +42,14 @@ class EventController extends Controller
         //
         $event=new Event();
         $event->name=$request->get('name');
-        $event->description=$request->get('description');
+        $event->tags=$request->get('tags');
         $event->location=$request->get('location');
         $event->date=$request->get('date');
         $event->hour=$request->get('hour');
-        $event->tags=$request->get('tags');
-        $event->visible=$request->has('visible')? 1: 0;
+        $event->description=$request->get('description');
+        $event->visible= $request->has('visible')? 1: 0;
         $event->save();
-        return view('events.guardado', compact('event'));
+        return redirect(route('inicio'));
     }
 
     /**

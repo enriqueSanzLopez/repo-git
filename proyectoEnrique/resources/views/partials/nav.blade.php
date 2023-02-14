@@ -36,7 +36,7 @@
             {{-- Solo si el usuario es administrador --}}
             @if (isset(Auth::user()->rol) && Auth::user()->rol == 'admin')
                 <li class="nav-item text-white">
-                    <a class="nav-link text-white" href="#">Añadir evento</a>
+                    <a class="nav-link text-white" href="{{route('events.create')}}">Añadir evento</a>
                 </li>
                 <li class="nav-item text-white">
                     <a class="nav-link text-white" href="{{route('messages.index')}}">Mensajes</a>

@@ -42,7 +42,8 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credenciales = $request->only('name', 'password');
-        if (Auth::guard('web')->attempt($credenciales)) { //Se intenta abrir sesión, si falla, se devuelve a login con un mensaje de error
+        $recordar= (request()->remember) ? true : false;
+        if (Auth::guard('web')->attempt($credenciales, $recordar)) { //Se intenta abrir sesión, si falla, se devuelve a login con un mensaje de error
             $request->session()->regenerate();
             return redirect()->route('users.account');
         } else {
