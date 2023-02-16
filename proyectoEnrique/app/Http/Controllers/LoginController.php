@@ -64,4 +64,8 @@ class LoginController extends Controller
     public function show(User $user){
         return view('auth.show', compact('user'));
     }
+    public function edit(User $user){
+        return view('auth.edit', compact('user'));
+    }
+    public function update(){}
 }
