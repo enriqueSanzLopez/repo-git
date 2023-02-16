@@ -60,6 +60,8 @@ Route::get('member/{user}', [LoginController::class, 'show'])->name('member');
 
 Route::get('edit/{user}', [LoginController::class, 'edit'])->name('edit');
 
+Route::put('update/{user}', [LoginController::class, 'update'])->name('update');
+
 Route::get('cuenta', function(){
     return view('auth.account');
 })->name('users.account')->middleware('auth');

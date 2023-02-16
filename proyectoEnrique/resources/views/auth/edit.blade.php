@@ -2,7 +2,7 @@
 @section('titulo', 'Ajustes')
 @section('contenido')
     <main class="bg-light text-dark" id="lista-events">
-        <form action="" method="POST" class="d-flex flex-column col-md-10 justify-content-center">
+        <form action="{{ route('update', Auth::user()->id) }}" method="POST" class="d-flex flex-column col-md-10 justify-content-center">
             @csrf
             @method('put')
             <div class="form-group">
@@ -42,5 +42,13 @@
             </div><br>
             <button type="submit" class="btn btn-primary col-md-1">Editar</button>
         </form>
+        {{-- Si hay errores, se muestran aquí --}}
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
     </main>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\UserEditRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -67,5 +68,7 @@ class LoginController extends Controller
     public function edit(User $user){
         return view('auth.edit', compact('user'));
     }
-    public function update(){}
+    public function update(UserEditRequest $request, User $user){
+        return 'llega';
+    }
 }
