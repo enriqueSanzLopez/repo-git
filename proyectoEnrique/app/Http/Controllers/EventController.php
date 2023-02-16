@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\EventRequest;
 
 class EventController extends Controller
@@ -16,8 +17,12 @@ class EventController extends Controller
     public function index()
     {
         //
-        $event=Event::get()->paginate(5);
-        return view('events.index', compact('event'));
+        if(Auth::user()->rol=='admin'){//Si es el administrador, se le envian todas para que pueda acceder a ellas y modificarlas
+            $events=Event::all();
+        }else{//Si no, solo ve las visibles
+            $events=Event::where('visible',1)->get();
+        }
+        return view('events.index', compact('events'));
     }
 
     /**
@@ -37,7 +42,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         //
         $event=new Event();
@@ -60,11 +65,12 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
-        if ($event->visible==0) {
-            return redirect(route('inicio'));
+
+        $participa=0;
+        if ($event->visible==1 or Auth::user()->rol=='admin') {
+            return view('events.show', compact('event', 'participa'));
         } else {
-            return view('events.show', compact('event'));
+            return redirect(route('inicio'));
         }
     }
 
@@ -101,5 +107,7 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+        Event::findOrFail($event->id)->delete();
+        return redirect(route('events.index'));
     }
 }

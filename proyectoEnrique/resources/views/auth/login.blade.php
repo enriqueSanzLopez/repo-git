@@ -14,7 +14,7 @@
                     placeholder="Introduce una contraseña">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="remember" name="remember" checked>
+                <input class="form-check-input" type="checkbox" id="remember" name="remember" checked>
                 <label class="form-check-label" for="remember">
                 Recuérdame
                 </label>

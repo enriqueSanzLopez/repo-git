@@ -57,4 +57,11 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
         return redirect('/');
     }
+    public function showMembers(){
+        $users=User::all();//Conseguir todo los miembros de la aplicación
+        return view('auth.members', compact('users'));
+    }
+    public function show(User $user){
+        return view('auth.show', compact('user'));
+    }
 }

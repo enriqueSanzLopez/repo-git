@@ -9,7 +9,7 @@
             <form action="{{route('messages.destroy', $message->id)}}" method="post">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-primary">Borrar</button>
+                <button type="submit" class="btn btn-danger">Borrar</button>
             </form>
         </div>
     </main>

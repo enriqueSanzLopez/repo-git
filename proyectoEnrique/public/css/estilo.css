@@ -51,3 +51,19 @@ table a{
     text-decoration: none;
     color: black;
 }
+#lista-events{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.lista-events{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.card-body h1{
+    text-align: center;
+}
+.card-body p{
+    text-align: justify;
+}

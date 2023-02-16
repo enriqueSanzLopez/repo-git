@@ -9,13 +9,16 @@
             <a class="nav-link text-white" href="{{route('inicio')}}">Inicio</a>
         </li>
         <li class="nav-item text-white">
-            <a class="nav-link text-white" href="#">Eventos</a>
+            <a class="nav-link text-white" href="{{route('events.index')}}">Eventos</a>
         </li>
         <li class="nav-item text-white">
             <a class="nav-link text-white" href="{{route('lugar')}}">Donde estamos</a>
         </li>
         <li class="nav-item text-white">
             <a class="nav-link text-white" href="{{route('messages.create')}}">Contacto</a>
+        </li>
+        <li class="nav-item text-white">
+            <a class="nav-link text-white" href="{{route('members')}}">Miembros</a>
         </li>
         {{-- Solo si no se ha abierto sesión se deben mostrar estos enlaces --}}
         @if (!isset(Auth::user()->name))
@@ -27,9 +30,6 @@
             </li>
         @else
             {{-- Solo si se ha abierto sesión se deben mostrar estos enlaces --}}
-            <li class="nav-item text-white">
-                <a class="nav-link text-white" href="#">Miembros</a>
-            </li>
             <li class="nav-item text-white">
                 <a class="nav-link text-white" href="{{route('users.account')}}">Cuenta</a>
             </li>

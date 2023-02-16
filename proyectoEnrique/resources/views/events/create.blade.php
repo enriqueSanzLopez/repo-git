@@ -32,7 +32,7 @@
                 <textarea class="form-control" rows="10" name="description" id="description"></textarea>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="visible" name="visible" checked>
+                <input class="form-check-input" type="checkbox" id="visible" name="visible" checked>
                 <label class="form-check-label" for="visible">
                 Visible
                 </label>
