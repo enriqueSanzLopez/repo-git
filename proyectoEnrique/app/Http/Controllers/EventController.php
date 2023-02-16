@@ -68,6 +68,14 @@ class EventController extends Controller
     {
 
         $participa=0;
+        if(isset(Auth::user()->name)){//Comprobar si ya está participando o no
+            foreach($event->users as $user){//Reviso a todos los participantes del evento para ver si el usuario es uno de ellos
+                if($user->name==Auth::user()->name){
+                    $participa=1;
+                    break;
+                }
+            }
+        }
         if ($event->visible==1 or Auth::user()->rol=='admin') {
             return view('events.show', compact('event', 'participa'));
         } else {
@@ -119,5 +127,13 @@ class EventController extends Controller
         //
         Event::findOrFail($event->id)->delete();
         return redirect(route('events.index'));
+    }
+    public function borrar(Event $event){
+        if(isset(Auth::user()->name)){//Comprobar si ya está participando o no
+            // EventUser::findOrFail(Auth::user()->id)->delete();
+            return 'te has borrado';
+        }else{
+            return redirect(route('events.index'));
+        }
     }
 }
