@@ -48,7 +48,7 @@
                 <label for="twitch">Cuenta de Twitch (Opcional): </label>
                 <input type="text" class="form-control" id="twitch"
                     name="twitch" value="{{ old('twitch') }}">
-            </div>
+            </div><br>
             <button type="submit" class="btn btn-primary">Crear usuario</button>
         </form>
         {{-- Si hay errores, se muestran aquí --}}

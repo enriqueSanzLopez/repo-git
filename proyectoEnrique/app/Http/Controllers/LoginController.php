@@ -69,6 +69,12 @@ class LoginController extends Controller
         return view('auth.edit', compact('user'));
     }
     public function update(UserEditRequest $request, User $user){
-        return 'llega';
+        $user->password=Hash::make($request->get('password'));
+        $user->birthday = $request->get('birthday');
+        $user->twitter = $request->get('twitter');
+        $user->instagram = $request->get('instagram');
+        $user->twitch = $request->get('twitch');
+        $user->save();
+        return redirect()->route('users.account');
     }
 }

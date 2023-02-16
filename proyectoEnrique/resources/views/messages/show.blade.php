@@ -9,6 +9,7 @@
             <form action="{{route('messages.destroy', $message->id)}}" method="post">
                 @csrf
                 @method('delete')
+                <a href="{{route('messages.index')}}" class="btn btn-secondary col-md-1">Cancelar</a><br><br>
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </form>
         </div>

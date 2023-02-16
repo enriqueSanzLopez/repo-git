@@ -40,6 +40,7 @@
                 <input type="text" class="form-control" id="twitch"
                     name="twitch" value="{{Auth::user()->twitch}}">
             </div><br>
+            <a href="{{route('users.account')}}" class="btn btn-danger col-md-1">Cancelar</a><br>
             <button type="submit" class="btn btn-primary col-md-1">Editar</button>
         </form>
         {{-- Si hay errores, se muestran aquí --}}
