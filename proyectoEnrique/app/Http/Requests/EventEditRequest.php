@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventRequest extends FormRequest
+class EventEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,7 @@ class EventRequest extends FormRequest
             'tags'=>'required|string',
             'location'=>'required|string',
             'date'=>'required|date',
-            'hour'=>'required|date_format:H:i',
+            'hour'=>'required',
             'description'=>'required',
         ];
     }
@@ -46,7 +46,6 @@ class EventRequest extends FormRequest
             'date.required'=>'Tienes que indicar la fecha del evento.',
             'date.date'=>'La fecha del evento tiene que tener un formato de fecha.',
             'hour.required'=>'Tienes que indicar la hora a la que se celebrará el proyecto.',
-            'hour.date_format'=>'La hora del evento tiene que tener un formato de hora:minuto.',
             'description.required'=>'Debes describir el evento.',
         ];
     }

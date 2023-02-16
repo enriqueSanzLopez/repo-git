@@ -6,6 +6,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\EventRequest;
+use App\Http\Requests\EventEditRequest;
 
 class EventController extends Controller
 {
@@ -93,9 +94,18 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(EventEditRequest $request, Event $event)
     {
         //
+        $event->name=$request->get('name');
+        $event->tags=$request->get('tags');
+        $event->location=$request->get('location');
+        $event->date=$request->get('date');
+        $event->hour=$request->get('hour');
+        $event->description=$request->get('description');
+        $event->visible=$request->has('visible')? 1: 0;
+        $event->save();
+        return redirect(route('events.index'));
     }
 
     /**
