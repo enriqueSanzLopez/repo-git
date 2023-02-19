@@ -49,7 +49,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('members', [LoginController::class, 'showMembers'])->name('members');
 
-Route::get('member/{user}', [LoginController::class, 'show'])->name('member');
+Route::get('member/{user}', [LoginController::class, 'show'])->name('member')->middleware('auth');
 
 Route::get('edit/{user}', [LoginController::class, 'edit'])->name('edit')->middleware('auth');
 

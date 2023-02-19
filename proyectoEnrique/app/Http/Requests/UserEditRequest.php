@@ -28,7 +28,7 @@ class UserEditRequest extends FormRequest
             //
             'password'=>['required', 'confirmed', Rules\Password::defaults()],
             'birthday'=>['required', 'date'],
-            // 'image'=>['image'],
+            'image'=>['image'],
         ];
     }
     public function messages()

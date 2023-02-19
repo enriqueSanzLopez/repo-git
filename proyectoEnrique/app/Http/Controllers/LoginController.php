@@ -83,8 +83,10 @@ class LoginController extends Controller
         $user->instagram = $request->get('instagram');
         $user->twitch = $request->get('twitch');
         $user->save();
-        // $image=$request->file('image');//Guardar la imagen
-        // $image->storeAs('public/img/usuarios/', $user->id.'.png');
+        if($request->hasFile('image')){//Se ha enviado imagen de perfil
+            $image=$request->file('image');//Guardar la imagen
+            $image->storeAs('public/img/usuarios/', $user->id.'.png');
+        }
         return redirect()->route('users.account');
     }
 }
