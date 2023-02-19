@@ -13,7 +13,9 @@
                                 @endif
                             </h5>
                             <p class="card-text text-justify">{{$event->description}}</p>
+                            @isset(Auth::user()->id)
                             <a href="{{route('events.show', $event->id)}}" class="btn btn-primary">Consultar</a>
+                            @endisset
                         </div>
                     </div>
                 @empty

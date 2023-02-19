@@ -28,8 +28,10 @@ class LoginController extends Controller
         $user->twitch = $request->get('twitch');
         $user->save(); //Guardar el objeto en la base de datos
         Auth::login($user);
-        // if(strrpos($request->file('image'))==false){}elseif(){}else{}
-        // $request->file('image')->storeAs('public/img/usuarios', $request->get('name')); //Guardar la imagen de usuario
+        if($request->hasFile('image')){//Se ha enviado imagen de perfil
+            $image=$request->file('image');//Guardar la imagen
+            $image->storeAs('public/img/usuarios/', $user->id.'.png');
+        }
         return redirect()->route('users.account');
     }
     public function loginForm()
@@ -75,6 +77,8 @@ class LoginController extends Controller
         $user->instagram = $request->get('instagram');
         $user->twitch = $request->get('twitch');
         $user->save();
+        // $image=$request->file('image');//Guardar la imagen
+        // $image->storeAs('public/img/usuarios/', $user->id.'.png');
         return redirect()->route('users.account');
     }
 }

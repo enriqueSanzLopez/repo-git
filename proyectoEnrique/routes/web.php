@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StaticController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -16,31 +17,23 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('inicio');
+Route::get('/', [StaticController::class, 'inicio'])->name('inicio');
 
-Route::get('politica', function(){
-    return view('cookies.politica');
-})->name('politica');
+Route::get('politica', [StaticController::class, 'politica'])->name('politica');
 
-Route::get('privacidad', function(){
-    return view('cookies.privacidad');
-})->name('privacidad');
+Route::get('privacidad', [StaticController::class, 'privacidad'])->name('privacidad');
 
-Route::get('configuracion', function(){
-    return view('cookies.configuracion');
-})->name('configuracion');
+Route::get('configuracion', [StaticController::class, 'configuracion'])->name('configuracion');
 
-Route::get('terminos', function(){
-    return view('cookies.terminos');
-})->name('terminos');
+Route::get('terminos', [StaticController::class, 'terminos'])->name('terminos');
 
-Route::get('lugar', function(){
-    return view('lugar');
-})->name('lugar');
+Route::get('lugar', [StaticController::class, 'lugar'])->name('lugar');
+
+Route::get('cuenta', [StaticController::class, 'cuenta'])->name('users.account')->middleware('auth');
 
 Route::resource('events', EventController::class);
+
+Route::get('events.apuntar/{event}', [EventController::class, 'apuntar'])->name('events.apuntar');
 
 Route::resource('messages', MessageController::class);
 
@@ -61,7 +54,3 @@ Route::get('member/{user}', [LoginController::class, 'show'])->name('member');
 Route::get('edit/{user}', [LoginController::class, 'edit'])->name('edit');
 
 Route::put('update/{user}', [LoginController::class, 'update'])->name('update');
-
-Route::get('cuenta', function(){
-    return view('auth.account');
-})->name('users.account')->middleware('auth');

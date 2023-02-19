@@ -18,9 +18,13 @@ class EventController extends Controller
     public function index()
     {
         //
-        if(Auth::user()->rol=='admin'){//Si es el administrador, se le envian todas para que pueda acceder a ellas y modificarlas
-            $events=Event::all();
-        }else{//Si no, solo ve las visibles
+        if(isset(Auth::user()->rol)){//Está logeado
+            if(Auth::user()->rol=='admin'){//Si es el administrador, se le envian todas para que pueda acceder a ellas y modificarlas
+                $events=Event::all();
+            }else{//Si no, solo ve las visibles
+                $events=Event::where('visible',1)->get();
+            }
+        }else{//No está logeado
             $events=Event::where('visible',1)->get();
         }
         return view('events.index', compact('events'));
@@ -128,12 +132,21 @@ class EventController extends Controller
         Event::findOrFail($event->id)->delete();
         return redirect(route('events.index'));
     }
-    public function borrar(Event $event){
+    public function apuntar(Event $event){
+        $participa=0;
         if(isset(Auth::user()->name)){//Comprobar si ya está participando o no
-            // EventUser::findOrFail(Auth::user()->id)->delete();
-            return 'te has borrado';
-        }else{
-            return redirect(route('events.index'));
+            foreach($event->users as $user){//Reviso a todos los participantes del evento para ver si el usuario es uno de ellos
+                if($user->name==Auth::user()->name){
+                    $participa=1;
+                    break;
+                }
+            }
+            if($participa==0){//El usuario no estaba apuntado, se procede a apuntarlo
+                $event->users()->attach(Auth::user()->id);
+            }else{//El usuario estaba apuntado, se procede a borrarlo
+                $event->users()->detach(Auth::user()->id);
+            }
         }
+        return redirect(route('events.show', $event->id));
     }
 }

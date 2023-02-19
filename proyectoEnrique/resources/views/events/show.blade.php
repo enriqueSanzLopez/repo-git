@@ -15,9 +15,9 @@
                 <p class="card-text text-justify">{{$event->description}}</p>
                 @if(isset(Auth::user()->name)){{--El usuario está logeado--}}
                     @if ($participa==0)
-                        <a href="{{route('events.index')}}" class="btn btn-primary">Apuntarse</a>
+                        <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-primary">Apuntarse</a>
                     @else
-                        <a href="{{route('events.index')}}" class="btn btn-primary">Borrarse</a>
+                        <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-primary">Borrarse</a>
                     @endif
                     @if(Auth::user()->rol=='admin')
                         <a href="{{route('events.edit', $event->id)}}" class="btn btn-primary">Editar</a>
