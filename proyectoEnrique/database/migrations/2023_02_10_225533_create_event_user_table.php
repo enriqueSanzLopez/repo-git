@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('event_user', function (Blueprint $table) {
-            $table->foreignId('event_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('event_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->unique(['event_id', 'user_id'], 'claves_ajenas');
         });
     }

@@ -19,11 +19,11 @@
                         </div>
                     </div>
                 @empty
-                    <h1>Ha sucedido un error, inténtalo más tarde</h1>
+                    <h1>No hay eventos en estos momentos</h1>
                 @endforelse
             </section>
         @else
-            <h1>No hay eventos preparados en estos momentos</h1>
+            <h1>Ha sucedido un error, inténtalo más tarde</h1>
         @endisset
     </main>
 @endsection
