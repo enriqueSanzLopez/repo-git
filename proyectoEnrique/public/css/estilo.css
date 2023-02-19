@@ -67,3 +67,7 @@ table a{
 .card-body p{
     text-align: justify;
 }
+main img{
+    width: 15vw;
+    height: auto;
+}

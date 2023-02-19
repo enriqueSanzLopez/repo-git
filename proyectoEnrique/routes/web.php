@@ -5,6 +5,7 @@ use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaticController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,10 +48,5 @@ Route::post('login', [LoginController::class, 'login'])->name('login');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('members', [LoginController::class, 'showMembers'])->name('members');
+Route::resource('users', UserController::class);
 
-Route::get('member/{user}', [LoginController::class, 'show'])->name('member')->middleware('auth');
-
-Route::get('edit/{user}', [LoginController::class, 'edit'])->name('edit')->middleware('auth');
-
-Route::put('update/{user}', [LoginController::class, 'update'])->name('update')->middleware('auth');

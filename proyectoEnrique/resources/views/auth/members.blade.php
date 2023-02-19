@@ -12,7 +12,8 @@
                         <tr>
                             <td><img src="{{asset('storage/img/usuarios/'.$user->id.'.png')}}" alt="Imagen de usuario">
                             </td>
-                            <td><a href="{{ route('member', $user->id) }}" alt="Enlace a la hoja de usuario">{{$user->name}}</a></td>
+                            <td><a href="{{ route('users.show', $user->id) }}" alt="Enlace a la hoja de usuario">{{$user->name}}</a></td>
+                            <td><a href="{{ route('users.show', $user->id) }}" alt="Enlace a la hoja de usuario" class="btn btn-primary">Ver</a></td>
                         </tr>
                     @empty
                         <h3>Ha habido un problema, inténtelo más tarde</h3>

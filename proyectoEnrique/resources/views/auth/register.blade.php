@@ -30,7 +30,7 @@
                     name="birthday" value="{{ old('birthday') }}">
             </div>
             <div class="form-group">
-                <label for="image">Imagen de usuario (Opcional): </label>
+                <label for="image">Imagen de usuario: </label>
                 <input type="file" class="form-control" id="image"
                     name="image">
             </div>

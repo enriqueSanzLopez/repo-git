@@ -37,7 +37,7 @@
                 Visible
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary col-md-1">Enviar</button>
+            <button type="submit" class="btn btn-primary col-md-1">Crear</button>
         </form>
         {{-- Si hay errores, se muestran aquí --}}
         @if ($errors->any())

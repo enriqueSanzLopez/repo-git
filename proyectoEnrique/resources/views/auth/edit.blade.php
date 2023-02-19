@@ -2,7 +2,7 @@
 @section('titulo', 'Ajustes')
 @section('contenido')
     <main class="bg-light text-dark" id="lista-events">
-        <form action="{{ route('update', Auth::user()->id) }}" method="POST" class="d-flex flex-column col-md-10 justify-content-center">
+        <form action="{{ route('users.update', Auth::user()->id) }}" method="POST" class="d-flex flex-column col-md-10 justify-content-center">
             @csrf
             @method('put')
             <div class="form-group">
@@ -19,11 +19,6 @@
                 <label for="birthday">Fecha de nacimiento: </label>
                 <input type="date" class="form-control" id="birthday"
                     name="birthday" value="{{Auth::user()->birthday}}">
-            </div>
-            <div class="form-group">
-                <label for="image">Imagen de usuario: </label>
-                <input type="file" class="form-control" id="image"
-                    name="image">
             </div>
             <div class="form-group">
                 <label for="twitter">Cuenta de Twitter: </label>

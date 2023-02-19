@@ -20,7 +20,7 @@
                     placeholder="Asunto">
             </div>
             <div class="mb-3 col-md-10">
-                <label for="text" class="form-label">Ejemplo de textarea</label>
+                <label for="text" class="form-label">Contenido:</label>
                 <textarea class="form-control" rows="10" name="text" id="text"></textarea>
             </div>
             <button type="submit" class="btn btn-primary col-md-1">Enviar</button>

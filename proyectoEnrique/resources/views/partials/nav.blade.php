@@ -18,7 +18,7 @@
             <a class="nav-link text-white" href="{{route('messages.create')}}">Contacto</a>
         </li>
         <li class="nav-item text-white">
-            <a class="nav-link text-white" href="{{route('members')}}">Miembros</a>
+            <a class="nav-link text-white" href="{{route('users.index')}}">Miembros</a>
         </li>
         {{-- Solo si no se ha abierto sesión se deben mostrar estos enlaces --}}
         @if (!isset(Auth::user()->name))

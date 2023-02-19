@@ -12,6 +12,6 @@
             <h3>Twitch: <b>{{Auth::user()->twitch}}</b></h3>
         </div>
         <img src="{{asset('storage/img/usuarios/'.Auth::user()->id.'.png')}}" alt="Imagen de usuario">
-        <a href="{{ route('edit', Auth::user()->id) }}" class="btn btn-primary">Editar</a>
+        <a href="{{ route('users.edit', Auth::user()->id) }}" class="btn btn-primary">Editar</a>
     </main>
 @endsection

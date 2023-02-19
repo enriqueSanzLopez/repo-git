@@ -28,7 +28,6 @@ class UserEditRequest extends FormRequest
             //
             'password'=>['required', 'confirmed', Rules\Password::defaults()],
             'birthday'=>['required', 'date'],
-            'image'=>['image'],
         ];
     }
     public function messages()
@@ -38,7 +37,6 @@ class UserEditRequest extends FormRequest
             'password.confirmed'=>'No has repetido la contraseña correctamente.',
             'birthday.required'=>'La fecha de nacimiento es obligatoria.',
             'birthday.date'=>'La fecha de nacimiento tiene que tener un formato de fecha.',
-            'image.image'=>'La foto tiene que tener un formato de imagen.',
         ];
     }
 }

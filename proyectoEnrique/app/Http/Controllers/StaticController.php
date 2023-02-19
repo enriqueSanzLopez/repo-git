@@ -19,6 +19,9 @@ class StaticController extends Controller
     public function configuracion(){
         return view('cookies.configuracion');
     }
+    public function terminos(){
+        return view('cookies.terminos');
+    }
     public function lugar(){
         return view('lugar');
     }

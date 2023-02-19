@@ -30,7 +30,7 @@ class RegisterRequest extends FormRequest
             'email'=>['required', 'string', 'email', 'unique:users' ],
             'password'=>['required', 'confirmed', Rules\Password::defaults()],
             'birthday'=>['required', 'date'],
-            'image'=>['image'],
+            'image'=>['required', 'image'],
         ];
     }
     public function messages()
@@ -45,6 +45,7 @@ class RegisterRequest extends FormRequest
             'password.confirmed'=>'No has repetido la contraseña correctamente.',
             'birthday.required'=>'La fecha de nacimiento es obligatoria.',
             'birthday.date'=>'La fecha de nacimiento tiene que tener un formato de fecha.',
+            'image.required'=>'Es obligatorio poner una imagen de usuario.',
             'image.image'=>'La foto tiene que tener un formato de imagen.',
         ];
     }
