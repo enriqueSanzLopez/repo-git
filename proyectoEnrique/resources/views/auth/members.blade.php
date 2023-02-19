@@ -10,7 +10,7 @@
                 <tbody>
                     @forelse($users as $user)
                         <tr>
-                            <td></td>{{--Hay que poner las imágenes de usuario y los en laces a la página de miembro--}}
+                            <td><img src="{{asset('storage/img/usuarios/'.$user->id.'.png')}}" alt="Imagen de usuario"></td>
                             <td><a href="{{ route('member', $user->id) }}" alt="Enlace a la hoja de usuario">{{$user->name}}</a></td>
                         </tr>
                     @empty

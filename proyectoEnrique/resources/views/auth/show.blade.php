@@ -2,7 +2,6 @@
 @section('titulo', 'Miembro')
 @section('contenido')
     <main class="bg-light text-dark">
-        {{--Falta poner imagen de perfil--}}
         <div class="d-flex flex-column col-md-10 justify-content-center">
             <h3>Nombre: <b>{{$user->name}}</b></h3>
             <h3>Email: <b>{{$user->email}}</b></h3>
@@ -11,5 +10,6 @@
             <h3>Instagram: <b>{{$user->instagram}}</b></h3>
             <h3>Twitch: <b>{{$user->twitch}}</b></h3>
         </div>
+        <img src="{{asset('storage/img/usuarios/'.$user->id.'.png')}}" alt="Imagen de usuario">
     </main>
 @endsection

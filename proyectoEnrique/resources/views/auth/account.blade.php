@@ -11,6 +11,7 @@
             <h3>Instagram: <b>{{Auth::user()->instagram}}</b></h3>
             <h3>Twitch: <b>{{Auth::user()->twitch}}</b></h3>
         </div>
+        <img src="{{asset('storage/img/usuarios/'.Auth::user()->id.'.png')}}" alt="Imagen de usuario">
         <a href="{{ route('edit', Auth::user()->id) }}" class="btn btn-primary">Editar</a>
     </main>
 @endsection
