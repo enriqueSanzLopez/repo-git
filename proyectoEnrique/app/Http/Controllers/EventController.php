@@ -38,6 +38,11 @@ class EventController extends Controller
     public function create()
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         return view('events.create');
     }
 
@@ -50,6 +55,11 @@ class EventController extends Controller
     public function store(EventRequest $request)
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $event=new Event();
         $event->name=$request->get('name');
         $event->tags=$request->get('tags');
@@ -96,6 +106,11 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         return view('events.edit', compact('event'));
     }
 
@@ -109,6 +124,11 @@ class EventController extends Controller
     public function update(EventEditRequest $request, Event $event)
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $event->name=$request->get('name');
         $event->tags=$request->get('tags');
         $event->location=$request->get('location');
@@ -129,6 +149,11 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         Event::findOrFail($event->id)->delete();
         return redirect(route('events.index'));
     }

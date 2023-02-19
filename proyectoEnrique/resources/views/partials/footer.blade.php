@@ -15,7 +15,7 @@
           <a class="nav-link" href="{{route('terminos')}}">Términos y condiciones de uso</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
+          <a class="nav-link" href="{{route('messages.create')}}">Contacto</a>
         </li>
       </ul>
 </footer>

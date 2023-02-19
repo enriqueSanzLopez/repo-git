@@ -33,7 +33,7 @@ Route::get('cuenta', [StaticController::class, 'cuenta'])->name('users.account')
 
 Route::resource('events', EventController::class);
 
-Route::get('events.apuntar/{event}', [EventController::class, 'apuntar'])->name('events.apuntar');
+Route::get('events.apuntar/{event}', [EventController::class, 'apuntar'])->name('events.apuntar')->middleware('auth');
 
 Route::resource('messages', MessageController::class);
 
@@ -51,6 +51,6 @@ Route::get('members', [LoginController::class, 'showMembers'])->name('members');
 
 Route::get('member/{user}', [LoginController::class, 'show'])->name('member');
 
-Route::get('edit/{user}', [LoginController::class, 'edit'])->name('edit');
+Route::get('edit/{user}', [LoginController::class, 'edit'])->name('edit')->middleware('auth');
 
-Route::put('update/{user}', [LoginController::class, 'update'])->name('update');
+Route::put('update/{user}', [LoginController::class, 'update'])->name('update')->middleware('auth');

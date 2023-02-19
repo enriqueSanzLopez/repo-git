@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Requests\MessageRequest;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -16,6 +17,11 @@ class MessageController extends Controller
     public function index()
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $messages=Message::all();
         return view('messages.index', compact('messages'));
     }
@@ -57,6 +63,11 @@ class MessageController extends Controller
     public function show(Message $message)
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $message->readed=1;//Actualizar el mensaje a visto
         $message->save();
         return view('messages.show', compact('message'));
@@ -94,6 +105,11 @@ class MessageController extends Controller
     public function destroy(Message $message)
     {
         //
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }else if(Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         Message::findOrFail($message->id)->delete();
         return redirect()->route('messages.index');
     }

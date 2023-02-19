@@ -68,9 +68,15 @@ class LoginController extends Controller
         return view('auth.show', compact('user'));
     }
     public function edit(User $user){
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }
         return view('auth.edit', compact('user'));
     }
     public function update(UserEditRequest $request, User $user){
+        if(!isset(Auth::user()->name)){
+            return redirect('inicio');
+        }
         $user->password=Hash::make($request->get('password'));
         $user->birthday = $request->get('birthday');
         $user->twitter = $request->get('twitter');
