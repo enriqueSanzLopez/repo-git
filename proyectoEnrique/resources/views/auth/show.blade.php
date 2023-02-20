@@ -11,5 +11,10 @@
             <h3>Twitch: <b>{{$user->twitch}}</b></h3>
         </div>
         <img src="{{asset('storage/img/usuarios/'.$user->id.'.png')}}" alt="Imagen de usuario">
+        @isset(Auth::user()->id)
+            @if (Auth::user()->id==$user->id)
+                <a href="{{ route('users.edit', Auth::user()->id) }}" class="btn btn-primary">Editar</a>
+            @endif
+        @endisset
     </main>
 @endsection

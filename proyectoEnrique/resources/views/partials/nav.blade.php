@@ -31,7 +31,7 @@
         @else
             {{-- Solo si se ha abierto sesión se deben mostrar estos enlaces --}}
             <li class="nav-item text-white">
-                <a class="nav-link text-white" href="{{route('users.account')}}">Cuenta</a>
+                <a class="nav-link text-white" href="{{route('users.show', Auth::user()->id)}}">Cuenta</a>
             </li>
             {{-- Solo si el usuario es administrador --}}
             @if (isset(Auth::user()->rol) && Auth::user()->rol == 'admin')

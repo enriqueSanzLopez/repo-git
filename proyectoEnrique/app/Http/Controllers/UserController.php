@@ -90,7 +90,7 @@ class UserController extends Controller
         $user->instagram = $request->get('instagram');
         $user->twitch = $request->get('twitch');
         $user->save();
-        return redirect()->route('users.account');
+        return redirect()->route('users.show', Auth::user()->id);
     }
 
     /**

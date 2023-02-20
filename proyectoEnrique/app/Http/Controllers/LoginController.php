@@ -48,7 +48,7 @@ class LoginController extends Controller
         $recordar= (request()->remember) ? true : false;
         if (Auth::guard('web')->attempt($credenciales, $recordar)) { //Se intenta abrir sesión, si falla, se devuelve a login con un mensaje de error
             $request->session()->regenerate();
-            return redirect()->route('users.account');
+            return redirect()->route('users.show', Auth::user()->id);
         } else {
             return view('auth.login');
         }
@@ -59,30 +59,5 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
-    }
-    public function showMembers(){
-        $users=User::all();//Conseguir todo los miembros de la aplicación
-        return view('auth.members', compact('users'));
-    }
-    public function show(User $user){
-        return view('auth.show', compact('user'));
-    }
-    public function edit(User $user){
-        if(!isset(Auth::user()->name)){
-            return redirect('inicio');
-        }
-        return view('auth.edit', compact('user'));
-    }
-    public function update(UserEditRequest $request, User $user){
-        if(!isset(Auth::user()->name)){
-            return redirect('inicio');
-        }
-        $user->password=Hash::make($request->get('password'));
-        $user->birthday = $request->get('birthday');
-        $user->twitter = $request->get('twitter');
-        $user->instagram = $request->get('instagram');
-        $user->twitch = $request->get('twitch');
-        $user->save();
-        return redirect()->route('users.account');
     }
 }

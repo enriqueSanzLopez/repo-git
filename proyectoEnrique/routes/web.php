@@ -36,7 +36,9 @@ Route::resource('events', EventController::class);
 
 Route::get('events.apuntar/{event}', [EventController::class, 'apuntar'])->name('events.apuntar')->middleware('auth');
 
-Route::resource('messages', MessageController::class);
+Route::resource('messages', MessageController::class)->except([
+    'edit', 'update'
+]);
 
 Route::get('registro', [LoginController::class, 'registerForm']);
 
@@ -48,5 +50,7 @@ Route::post('login', [LoginController::class, 'login'])->name('login');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::resource('users', UserController::class);
+Route::resource('users', UserController::class)->except([
+    'create', 'store', 'destroy'
+]);
 
