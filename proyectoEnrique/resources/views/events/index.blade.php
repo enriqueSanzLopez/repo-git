@@ -14,7 +14,21 @@
                             </h5>
                             <p class="card-text text-justify">{{$event->description}}</p>
                             @isset(Auth::user()->id)
-                            <a href="{{route('events.show', $event->id)}}" class="btn btn-primary">Consultar</a>
+                                <a href="{{route('events.show', $event->id)}}" class="btn btn-primary">Consultar</a>
+                                @php
+                                    $participa=0;
+                                    foreach($event->users as $user){//Reviso a todos los participantes del evento para ver si el usuario es uno de ellos
+                                        if($user->name==Auth::user()->name){
+                                            $participa=1;
+                                            break;
+                                        }
+                                    }
+                                @endphp
+                                @if ($participa==0)
+                                    <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-primary">Apuntarse</a>
+                                @else
+                                    <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-danger">Borrarse</a>
+                                @endif
                             @endisset
                         </div>
                     </div>

@@ -17,7 +17,7 @@
                     @if ($participa==0)
                         <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-primary">Apuntarse</a>
                     @else
-                        <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-primary">Borrarse</a>
+                        <a href="{{route('events.apuntar', $event->id)}}" class="btn btn-danger">Borrarse</a>
                     @endif
                     @if(Auth::user()->rol=='admin')
                         <a href="{{route('events.edit', $event->id)}}" class="btn btn-primary">Editar</a>

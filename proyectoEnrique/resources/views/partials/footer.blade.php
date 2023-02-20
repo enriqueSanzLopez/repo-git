@@ -1,6 +1,6 @@
 <footer class="bg-dark text-white">
     <h3>NoTebeo</h3>
-    <h3>Desarrollo Enrique</h3>
+    <h3>Desarrollado por Enrique</h3>
     <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link" href="{{route('politica')}}">Política de cookies</a>
