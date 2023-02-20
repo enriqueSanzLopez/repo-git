@@ -22,7 +22,7 @@ class MessageController extends Controller
         }else if(Auth::user()->rol!='admin'){
             return redirect('inicio');
         }
-        $messages=Message::all();
+        $messages=Message::orderBy('created_at', 'DESC')->get();
         return view('messages.index', compact('messages'));
     }
 
