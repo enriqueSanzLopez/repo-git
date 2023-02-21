@@ -65,7 +65,9 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //
-        if(!isset(Auth::user()->name)){
+        if(!isset(Auth::user()->id)){
+            return redirect('inicio');
+        }else if(Auth::user()->id!=$user->id){
             return redirect('inicio');
         }
         return view('auth.edit', compact('user'));
@@ -81,7 +83,9 @@ class UserController extends Controller
     public function update(UserEditRequest $request, User $user)
     {
         //
-        if(!isset(Auth::user()->name)){
+        if(!isset(Auth::user()->id)){
+            return redirect('inicio');
+        }else if(Auth::user()->id!=$user->id){
             return redirect('inicio');
         }
         $user->password=Hash::make($request->get('password'));

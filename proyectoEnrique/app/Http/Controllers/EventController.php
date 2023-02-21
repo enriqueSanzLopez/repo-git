@@ -20,12 +20,12 @@ class EventController extends Controller
         //
         if(isset(Auth::user()->rol)){//Está logeado
             if(Auth::user()->rol=='admin'){//Si es el administrador, se le envian todas para que pueda acceder a ellas y modificarlas
-                $events=Event::all();
+                $events=Event::where('date', '>', date('Y-m-d'))->get();//El administrador también puede ver los eventos no visibles
             }else{//Si no, solo ve las visibles
-                $events=Event::where('visible',1)->get();
+                $events=Event::where('date', '>', date('Y-m-d'))->where('visible',1)->get();
             }
         }else{//No está logeado
-            $events=Event::where('visible',1)->get();
+            $events=Event::where('date', '>', date('Y-m-d'))->where('visible',1)->get();
         }
         return view('events.index', compact('events'));
     }
@@ -80,7 +80,9 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-
+        if($event->visible==0){//Si el evento no es visible, no se puede acceder a el
+            return redirect(route('events.index'));
+        }
         $participa=0;
         if(isset(Auth::user()->name)){//Comprobar si ya está participando o no
             foreach($event->users as $user){//Reviso a todos los participantes del evento para ver si el usuario es uno de ellos
@@ -158,6 +160,9 @@ class EventController extends Controller
         return redirect(route('events.index'));
     }
     public function apuntar(Event $event){
+        if($event->visible==0){//Si el evento no es visible, no se puede acceder a el
+            return redirect(route('events.index'));
+        }
         $participa=0;
         if(isset(Auth::user()->name)){//Comprobar si ya está participando o no
             foreach($event->users as $user){//Reviso a todos los participantes del evento para ver si el usuario es uno de ellos
