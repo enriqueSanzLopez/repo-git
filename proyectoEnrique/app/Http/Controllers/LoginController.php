@@ -32,7 +32,7 @@ class LoginController extends Controller
             $image=$request->file('image');//Guardar la imagen
             $image->storeAs('public/img/usuarios/', $user->id.'.png');
         }
-        return redirect()->route('users.account');
+        return redirect()->route('users.show', Auth::user()->id);
     }
     public function loginForm()
     {
