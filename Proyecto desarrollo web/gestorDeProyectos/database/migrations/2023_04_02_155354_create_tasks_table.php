@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->enum('rol', ['user', 'admin'])->default('user');
-            $table->rememberToken();
+            $table->foreignId('sprint')->references('id')->on('sprints')->onUpdate('cascade')->onDelete('cascade');
+            $table->enum('state',['Sin empezar', 'En progreso', 'A validar', 'Finalizada', 'En revisión'])->default('Sin empezar');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tasks');
     }
 };
