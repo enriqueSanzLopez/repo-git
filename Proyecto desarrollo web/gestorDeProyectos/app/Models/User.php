@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol',
     ];
 
     /**
@@ -41,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function projects(){
+        return $this->belongsToMany(Project::class);
+    }
+    public function sprints(){
+        return $this->belongsToMany(Sprint::class);
+    }
+    public function tasks(){
+        return $this->belongsToMany(Task::class);
+    }
 }

@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('task_user', function (Blueprint $table) {
-            $table->foreignId('worker')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('task')->references('id')->on('tasks')->onUpdate('cascade')->onDelete('cascade');
-            $table->unique(['worker', 'task'], 'claves_ajenas');
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('task_id')->references('id')->on('tasks')->onUpdate('cascade')->onDelete('cascade');
+            $table->unique(['user_id', 'task_id'], 'claves_ajenas');
         });
     }
 

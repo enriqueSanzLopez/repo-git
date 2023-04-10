@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->foreignId('owner')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('visibility')->default(0);
             $table->text('sprint_planning')->nullable();

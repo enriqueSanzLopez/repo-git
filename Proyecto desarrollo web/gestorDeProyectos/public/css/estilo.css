@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: large;
+}
+
+main {
+    min-height: 72.5vh;
+    align-items: flex-start !important;
+}
+
+nav {
+    background: #7BC1ED !important;
+}
+
+nav img {
+    width: 5vw;
+    height: auto;
+}
+
+nav>div,
+nav>div>a:first-child,
+nav img,
+nav {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+nav ul li a {
+    color: white !important;
+    text-align: center;
+}
+
+nav ul li {
+    padding-left: 2em;
+}
+
+footer,
+footer section,
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+}
+
+footer section {
+    justify-content: space-between;
+}
+
+footer section img {
+    width: 5vw;
+    height: auto;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+#logo-familia {
+    width: 10vw;
+}
+
+.card-body h5 {
+    text-align: center;
+}
+
+.novedades form {
+    min-width: 50vw;
+    margin-top: 10em;
+}
+
+form{
+    min-width: 75vw;
+}
+
+form div {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding-right: 0;
+    margin-right: 0;
+    grid-gap: 1em;
+    margin-top: 1em;
+}
+
+form div input, form div textarea {
+    margin-right: 0;
+    width: auto;
+    border: none;
+    background: rgb(230, 230, 230);
+    border-radius: .5em;
+}
+
+#login{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+form label{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 480px){
+    form div{
+        grid-template-columns: 1fr 4fr;
+    }
+}

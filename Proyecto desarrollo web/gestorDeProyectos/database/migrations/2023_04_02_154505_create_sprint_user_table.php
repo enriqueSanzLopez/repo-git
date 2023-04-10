@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sprint_user', function (Blueprint $table) {
-            $table->foreignId('worker')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('sprint')->references('id')->on('sprints')->onUpdate('cascade')->onDelete('cascade');
-            $table->unique(['worker', 'sprint'], 'claves_ajenas');
+            $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('sprint_id')->references('id')->on('sprints')->onUpdate('cascade')->onDelete('cascade');
+            $table->unique(['user_id', 'sprint_id'], 'claves_ajenas');
         });
     }
 
