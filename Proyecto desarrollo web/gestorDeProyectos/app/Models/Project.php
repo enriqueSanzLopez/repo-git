@@ -12,6 +12,6 @@ class Project extends Model
         return $this->belongsToMany(User::class);
     }
     public function sprints(){
-        return $this->hasMany(Sprint::class);
+        return $this->hasMany(Sprint::class, 'foreign_key');
     }
 }

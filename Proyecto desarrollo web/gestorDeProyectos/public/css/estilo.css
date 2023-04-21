@@ -38,7 +38,8 @@ nav ul li {
 
 footer,
 footer section,
-main {
+main,
+section header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -71,7 +72,7 @@ footer section img {
     margin-top: 10em;
 }
 
-form{
+form {
     min-width: 75vw;
 }
 
@@ -84,27 +85,64 @@ form div {
     margin-top: 1em;
 }
 
-form div input, form div textarea {
+form div input,
+form div textarea {
     margin-right: 0;
     width: auto;
     border: none;
     background: rgb(230, 230, 230);
     border-radius: .5em;
+    padding: .5em;
 }
 
-#login{
+input[type="date"]{
+    width: fit-content;
+}
+
+select{
+    border: none;
+    background: rgb(230, 230, 230);
+    border-radius: .5em;
+}
+
+#login {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
 }
 
-form label{
+form label {
     font-weight: bold;
 }
 
-@media screen and (max-width: 480px){
-    form div{
+.listado {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    width: 60%;
+}
+
+main section {
+    width: 100%;
+}
+
+.caracteristicas {
+    margin-left: 3em;
+    background: white;
+}
+
+.caracteristicas h3 {
+    padding-top: 1em;
+    padding-bottom: .5em;
+}
+
+.novedades{
+    width: 50%;
+}
+
+@media screen and (max-width: 480px) {
+    form div {
         grid-template-columns: 1fr 4fr;
     }
 }

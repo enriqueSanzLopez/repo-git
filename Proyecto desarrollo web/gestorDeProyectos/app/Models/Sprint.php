@@ -12,6 +12,6 @@ class Sprint extends Model
         return $this->belongsToMany(User::class);
     }
     public function project(){
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class, 'project', 'id');
     }
 }

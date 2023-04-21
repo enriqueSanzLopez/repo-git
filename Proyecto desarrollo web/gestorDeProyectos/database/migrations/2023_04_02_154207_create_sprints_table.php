@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('sprints', function (Blueprint $table) {
             $table->id();
             $table->foreignId('project')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
-            $table->date('limit_date')->nullable();
+            $table->date('start_date');
+            $table->date('limit_date');
             $table->text('backlog')->nullable();
             $table->text('description')->nullable();
             $table->text('retrospective')->nullable();

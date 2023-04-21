@@ -21,10 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-	'birthday',
-	'twitter',
-	'instagram',
-	'twitch',
+        'birthday',
+        'twitter',
+        'instagram',
+        'twitch',
     ];
 
     /**
@@ -46,10 +46,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function messages(){
+    public function messages()
+    {
         return $this->hasMany(Message::class);
     }
-    public function events(){
+    public function events()
+    {
         return $this->belongsToMany(Event::class);
     }
 }
