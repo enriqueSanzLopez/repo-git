@@ -23,8 +23,5 @@
             <h1>No hay usuarios registrados</h1>
         @endforelse
     </section>
-    <script src="{{ asset('scripts/change-rol.js') }}">
-        const url_parcial="{{route('inicio')}}";
-        createEvent(url_parcial);
-    </script>
+    <script src="{{asset('scripts/change-rol.js')}}"></script>
 @endsection
