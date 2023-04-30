@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserApiController extends Controller
 {
@@ -63,12 +64,15 @@ class UserApiController extends Controller
         //
     }
 
-    public function rol(User $user){
-        if($_POST['valor']==1){//Si el valor que se entrega es el de administrador se le da el rol de administrador
-            $user->rol='admin';
-        }else{//Si no, se le da el rol de usuario normal
-            $user->rol='user';
+    public function rol(Request $request){
+        if(Auth::user()->rol=='admin'){//Solo se activa si el usuario es administrador
+            $user=User::findOrFail($request->get('id'));
+            if($request->get('valor')==0){//Convertir en usuario normal en caso de que se pida
+                $user->rol='user';
+            }else if($request->get('valor')==1){//Convertir en administrador
+                $user->rol='admin';
+            }
+            $user->save();//Guardar el rol de usuario
         }
-        $user->save();
     }
 }
