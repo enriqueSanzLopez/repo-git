@@ -64,15 +64,21 @@ class UserApiController extends Controller
         //
     }
 
-    public function rol(Request $request){
+    public function rol(){
         if(Auth::user()->rol=='admin'){//Solo se activa si el usuario es administrador
-            $user=User::findOrFail($request->get('id'));
-            if($request->get('valor')==0){//Convertir en usuario normal en caso de que se pida
+            $user=User::findOrFail($_GET['id']);
+            if($_GET['valor']==0){
                 $user->rol='user';
-            }else if($request->get('valor')==1){//Convertir en administrador
+            }else if($_GET['valor']==1){
                 $user->rol='admin';
             }
-            $user->save();//Guardar el rol de usuario
+            // if($request->get('valor')==0){//Convertir en usuario normal en caso de que se pida
+            //     $user->rol='user';
+            // }else if($request->get('valor')==1){//Convertir en administrador
+            //     $user->rol='admin';
+            // }
+            // $user->save();//Guardar el rol de usuario
+            // return response()->json('Todo correcto', 200);
         }
     }
 }

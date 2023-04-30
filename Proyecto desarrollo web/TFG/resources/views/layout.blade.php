@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
         @yield('titulo')
     </title>
@@ -16,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <!--Icono de pestaña-->
     <link rel="icon" type="image/x-icon" href="{{ asset('img/Scrum Admin.png') }}">
+    <!--Link para hacer funcionar JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
