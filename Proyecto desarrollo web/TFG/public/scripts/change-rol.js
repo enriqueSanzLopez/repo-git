@@ -85,6 +85,15 @@ buscador.addEventListener('input', function(){
                 selector.appendChild(rol1);
                 final.appendChild(selector);
                 user.appendChild(final);
+                let borrar=document.createElement('li');
+                borrar.classList.add('list-group-item');
+                let boton=document.createElement('a');
+                boton.setAttribute('class', 'btn btn-danger');
+                boton.setAttribute('href', url_parcial+'/users.borrar/'+response[i]['id']);
+                let botonTexto=document.createTextNode('Eliminar');
+                boton.appendChild(botonTexto);
+                borrar.appendChild(boton);
+                user.appendChild(borrar);
                 lista.appendChild(user);//Guardar el usuario en la lista de los mismos
             }
             generarRol();//Generar los eventos de cambio de rol para los usuarios que se muestren ahora

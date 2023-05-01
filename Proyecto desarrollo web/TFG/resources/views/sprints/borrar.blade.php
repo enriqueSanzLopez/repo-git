@@ -1,7 +1,7 @@
 @extends('layout')
 @section('titulo', 'Eliminar - '.$sprint->name)
 @section('contenido')
-    <div class="card" style="width: 18rem;">
+    <div class="card">
         <div class="card-body">
             <h5 class="card-title">¿Seguro que quieres eliminar el sprint?</h5>
             <section>

@@ -22,7 +22,7 @@
                         </select>
                     </li>
                     <li class="list-group-item">
-                        <a href="#" class="btn btn-danger">Eliminar</a>
+                        <a href="{{route('users.borrar', $user->id)}}" class="btn btn-danger">Eliminar</a>
                     </li>
                 </ul>
             @empty
