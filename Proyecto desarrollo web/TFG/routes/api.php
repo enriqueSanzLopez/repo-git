@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('users.rol', [UserApiController::class, 'rol'])->name('users.rol');
+
+Route::get('users.buscaruser', [UserApiController::class, 'buscarUser'])->name('users.buscaruser');

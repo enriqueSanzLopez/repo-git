@@ -75,4 +75,9 @@ class UserApiController extends Controller
         $user->save();
         return response()->json(['success' => 'Exito en actualizar']);
     }
+
+    public function buscarUser(Request $request){
+        $users=User::where('name', 'like', '%'.$request->get('name').'%')->orWhere('email', 'like', '%'.$request->get('name').'%')->get();
+        return response()->json($users, 200);
+    }
 }

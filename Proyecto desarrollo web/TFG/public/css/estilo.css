@@ -136,6 +136,10 @@ form label {
     width: 60%;
 }
 
+.listado-users .listado-users{
+    width: 100%;
+}
+
 .listado-users ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
