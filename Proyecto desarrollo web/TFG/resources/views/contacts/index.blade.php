@@ -2,6 +2,9 @@
 @section('titulo', 'Contactos')
 @section('contenido')
     <section class="listado-users" id="lugar">
+        <div class="busqueda">
+            <input type="text" id="busqueda" name="busqueda" placeholder="Buscar usuario...">
+        </div>
         @forelse ($users as $user)
             <ul class="list-group list-group-horizontal">
                 <li class="list-group-item">{{ $user->name }}</li>
@@ -23,5 +26,5 @@
             <h1>No hay usuarios registrados</h1>
         @endforelse
     </section>
-    <script src="{{asset('scripts/change-rol.js')}}"></script>
+    <script src="{{ asset('scripts/change-rol.js') }}"></script>
 @endsection
