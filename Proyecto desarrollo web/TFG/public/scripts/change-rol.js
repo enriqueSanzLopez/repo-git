@@ -36,5 +36,61 @@ function generarRol() {
 generarRol();//Generar los eventos de cambio de rol iniciales
 buscador.addEventListener('input', function(){
     let lista=document.getElementById('usuarios');//Conseguir el listado actual de usuario
-    lista.innerHTML='';//Eliminar los componentes de la lista
+    let url_parcial = window.location.href;//Conseguir la URL actual
+    url_parcial = url_parcial.replace("/contacts", "");//Cambiarla por la URL raiz
+    let url = url_parcial + "/api/users.buscaruser"; //URL para la API
+    $.ajax({
+        url: url,
+        type: 'get',
+        data:{
+            name: this.value
+        },
+        success: function(response){
+            lista.innerHTML='';//Eliminar los componentes de la lista
+            for(let i=0;i<response.length;i++){//Generar la lista de usuarios resultante de la búsqueda
+                let user=document.createElement('ul');//Generar usuario
+                user.classList.add('list-group');
+                user.classList.add('list-group-horizontal');
+                let nombre=document.createElement('li');
+                nombre.classList.add('list-group-item');
+                let nombreTexto=document.createTextNode(response[i]['name']);
+                nombre.appendChild(nombreTexto);
+                user.appendChild(nombre);
+                let email=document.createElement('li');
+                email.classList.add('list-group-item');
+                let emailTexto=document.createTextNode(response[i]['email']);
+                email.appendChild(emailTexto);
+                user.appendChild(email);
+                let final=document.createElement('li');
+                final.classList.add('list-group-item');
+                let selector=document.createElement('select');
+                selector.setAttribute('id', 'rol-'+response[i]['id']);
+                selector.setAttribute('name', 'rol');
+                selector.setAttribute('class', 'form-select form-select-lg');
+                let rol0=document.createElement('option');
+                rol0.setAttribute('value', '0');
+                let rol0Texto=document.createTextNode('Usuario');
+                if(response[i]['rol']=='user'){
+                    rol0.setAttribute('selected', 'selected');
+                }
+                rol0.appendChild(rol0Texto);
+                selector.appendChild(rol0);
+                let rol1=document.createElement('option');
+                rol1.setAttribute('value', '1');
+                let rol1Texto=document.createTextNode('Administrador');
+                if(response[i]['rol']=='admin'){
+                    rol1.setAttribute('selected', 'selected');
+                }
+                rol1.appendChild(rol1Texto);
+                selector.appendChild(rol1);
+                final.appendChild(selector);
+                user.appendChild(final);
+                lista.appendChild(user);//Guardar el usuario en la lista de los mismos
+            }
+            generarRol();//Generar los eventos de cambio de rol para los usuarios que se muestren ahora
+        },
+        failure: function(response){
+            console.log(response);
+        }
+    });
 });

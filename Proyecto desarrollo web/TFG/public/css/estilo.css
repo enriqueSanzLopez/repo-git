@@ -133,7 +133,7 @@ form label {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 60%;
+    width: 90%;
 }
 
 .listado-users .listado-users{
@@ -142,7 +142,7 @@ form label {
 
 .listado-users ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
 }
 

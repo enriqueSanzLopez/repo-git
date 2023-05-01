@@ -11,8 +11,7 @@
                     <li class="list-group-item">{{ $user->name }}</li>
                     <li class="list-group-item">{{ $user->email }}</li>
                     <li class="list-group-item">
-                        <select name="rol" id="{{ 'rol-' . $user->id }}" class="form-select form-select-lg"
-                            aria-label=".form-select-lg example">
+                        <select name="rol" id="{{ 'rol-' . $user->id }}" class="form-select form-select-lg">
                             @if ($user->rol == 'admin')
                                 <option value="0">Usuario</option>
                                 <option value="1"selected>Administrador</option>
@@ -21,6 +20,9 @@
                                 <option value="1">Administrador</option>
                             @endif
                         </select>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#" class="btn btn-danger">Eliminar</a>
                     </li>
                 </ul>
             @empty
