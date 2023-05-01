@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SprintController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +90,9 @@ Route::post('tasks.update/{task}', [TaskController::class, 'update'])->name('tas
 //Rutas de contactos
 
 Route::get('contacts', [ContactController::class, 'index'])->name('contacts');
+
+//Rutas de usuarios
+
+Route::get('users.borrar/{user}', [UserController::class, 'borrar'])->name('users.borrar');
+
+Route::get('users.destroy/{user}', [UserController::class, 'destroy'])->name('users.destroy');
