@@ -3,6 +3,11 @@
 @section('contenido')
     <section>
         <header>
+            @if ($project->owner == Auth::user()->id || Auth::user()->rol == 'admin')
+                <input type="hidden" id="rol" value="true" name="rol">
+            @else
+                <input type="hidden" id="rol" value="false" name="rol">
+            @endif
             <h1>{{ $project->name }}</h1>
             @if ($project->owner == Auth::user()->id or Auth::user()->rol == 'admin')
                 {{-- El usuario viendo el proyecto es el propietario del mismo --}}
@@ -62,8 +67,11 @@
             <h3>Trabajadores</h3>
             <section id="listado-trabajadores">
                 @forelse ($project->users as $user)
-                    <ul class="list-group">
+                    <ul class="list-group" id="lista-{{$user->id}}">
                         <li>{{ $user->name }}</li>
+                        @if (Auth::user()->id == $project->owner || Auth::user()->rol == 'admin')
+                            <li class="borrar-user" id="borrar-user-{{ $user->id . '-' . $project->id }}">x</li>
+                        @endif
                         <li class="pequenyo">{{ $user->email }}</li>
                     </ul>
                 @empty

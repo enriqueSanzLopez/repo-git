@@ -1,4 +1,38 @@
 'use strict';
+function desapuntar(){
+    let usuarios=document.getElementsByClassName('borrar-user');
+    for(let i=0;i<usuarios.length;i++){
+        usuarios[i].addEventListener('click', function(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            let proyecto = document.getElementById('proyecto').value;//Conseguir la id del proyecto
+            let url_parcial = window.location.href;//Conseguir la URL actual
+            url_parcial = url_parcial.replace("/projects.show/" + proyecto, "");//Cambiarla por la URL raiz
+            let url = url_parcial + "/api/projects.desapuntar"; //URL para la API
+            let user=this.id.split('-')[2];
+            $.ajax({
+                data: {
+                    project: proyecto,
+                    id: user
+                },
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    console.log('Éxito');
+                    let elemento=document.getElementById('lista-'+user);
+                    elemento.remove();
+                },
+                error: function (data) {
+                    console.log('Fracaso');
+                }
+            });
+        });
+    }
+}
 function apuntar() {
     let usuarios = document.getElementsByClassName('apuntar');
     for (let i = 0; i < usuarios.length; i++) {
@@ -18,7 +52,7 @@ function apuntar() {
             $.ajax({
                 data: {
                     project: proyecto,
-                    id:user
+                    id: user
                 },
                 url: url,
                 type: 'POST',
@@ -33,12 +67,22 @@ function apuntar() {
                     let lista_nombre_texto=document.createTextNode(nombre);
                     lista_nombre.appendChild(lista_nombre_texto);
                     trabajador.appendChild(lista_nombre);
+                    let rol=document.getElementById('rol');
+                    if(rol.value=='true'){
+                        let lista_borrar=document.createElement('li');
+                        lista_borrar.classList.add('borrar-user');
+                        lista_borrar.setAttribute('id', 'borrar-user-'+user+'-'+proyecto);
+                        let lista_borrar_texto=document.createTextNode('x');
+                        lista_borrar.appendChild(lista_borrar_texto);
+                        trabajador.appendChild(lista_borrar);
+                    }
                     let lista_email=document.createElement('li');
                     lista_email.classList.add('pequenyo');
                     let lista_email_texto=document.createTextNode(email);
                     lista_email.appendChild(lista_email_texto);
                     trabajador.appendChild(lista_email);
                     trabajadores.appendChild(trabajador);
+                    desapuntar();
                 },
                 error: function (data) {
                     console.log('Fracaso');
@@ -88,3 +132,4 @@ buscador.addEventListener('input', function () {
         }
     });
 });
+desapuntar();

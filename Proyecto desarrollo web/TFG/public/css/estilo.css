@@ -233,6 +233,28 @@ div.busqueda {
     text-align: center;
 }
 
+ul.list-group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul.list-group li:last-child{
+    min-width: 70%;
+}
+
+ul.list-group li:first-child{
+    min-width: 35%;
+}
+
+.borrar-user{
+    color: red;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 480px) {
     form div {
         grid-template-columns: 1fr 4fr;

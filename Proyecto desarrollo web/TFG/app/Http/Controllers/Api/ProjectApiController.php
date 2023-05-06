@@ -69,4 +69,10 @@ class ProjectApiController extends Controller
         $project->users()->attach($user->id);
         return response()->json(['success' => 'Exito en actualizar']);
     }
+    public function desapuntar(Request $request){
+        $project=Project::findOrFail($request->get('project'));
+        $user = User::findOrFail($request->get('id'));
+        $project->users()->detach($user->id);
+        return response()->json(['success' => 'Exito en actualizar']);
+    }
 }
