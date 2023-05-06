@@ -20,5 +20,19 @@
         <h3>Retrospectiva</h3>
         <p>{{ $sprint->retrospective }}</p>
         <h3>Listado de Tareas</h3>
+        <section class="listado">
+            @forelse ($sprint->tasks as $task)
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $task->name }}</h5>
+                        <p>{{ $task->state }}</p>
+                        <p class="card-text">{{ $task->description }}</p>
+                        <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-primary">Entrar</a>
+                    </div>
+                </div>
+            @empty
+                <h4>No hay tareas en este Sprint</h4>
+            @endforelse
+        </section>
     </section>
 @endsection

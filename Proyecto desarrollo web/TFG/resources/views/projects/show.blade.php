@@ -4,7 +4,7 @@
     <section>
         <header>
             <h1>{{ $project->name }}</h1>
-            @if ($project->owner == Auth::user()->id or Auth::user()->rol=='admin')
+            @if ($project->owner == Auth::user()->id or Auth::user()->rol == 'admin')
                 {{-- El usuario viendo el proyecto es el propietario del mismo --}}
                 <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-primary">Editar</a>
                 <a href="{{ route('sprints.create') }}" class="btn btn-primary">Crear Sprint</a>
@@ -29,8 +29,8 @@
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
                                 <p class="card-text">{{ $sprint->description }}</p>
-                                <p>{{$sprint->start_date}} - {{$sprint->limit_date}}</p>
-                                <a href="{{route('sprints.show', $sprint->id)}}" class="btn btn-primary">Entrar</a>
+                                <p>{{ $sprint->start_date }} - {{ $sprint->limit_date }}</p>
+                                <a href="{{ route('sprints.show', $sprint->id) }}" class="btn btn-primary">Entrar</a>
                             </div>
                         </div>
                     </li>
@@ -38,5 +38,23 @@
             </ul>
         @endif
         <h3>Listado de tareas</h3>
+        <section class="listado">
+            @forelse ($project->sprints as $sprint)
+                @forelse ($sprint->tasks as $task)
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $task->name }}</h5>
+                            <p>{{ $task->state }}</p>
+                            <p class="card-text">{{ $task->description }}</p>
+                            <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-primary">Entrar</a>
+                        </div>
+                    </div>
+                @empty
+                    <h4>No hay tareas en este Sprint</h4>
+                @endforelse
+            @empty
+                <h4>No hay tareas en este Sprint</h4>
+            @endforelse
+        </section>
     </section>
 @endsection
