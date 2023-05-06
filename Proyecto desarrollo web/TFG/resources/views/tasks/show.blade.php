@@ -13,5 +13,14 @@
     <section class="caracteristicas">
         <h3>Descripción</h3>
         <p>{{ $task->description }}</p>
+        <h3>Trabajadores</h3>
+        @forelse ($task->users as $user)
+            <ul class="list-group list-group-horizontal">
+                <li>{{ $user->name }}</li>
+                <li>{{ $user->email }}</li>
+            </ul>
+        @empty
+            <h4>No hay trabajadores</h4>
+        @endforelse
     </section>
 @endsection

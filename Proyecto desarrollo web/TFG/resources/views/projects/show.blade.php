@@ -19,6 +19,15 @@
         <p>{{ $project->backlog }}</p>
         <h3>Sprint planning</h3>
         <p>{{ $project->sprint_planning }}</p>
+        <h3>Trabajadores</h3>
+        @forelse ($project->users as $user)
+            <ul class="list-group list-group-horizontal">
+                <li>{{ $user->name }}</li>
+                <li>{{ $user->email }}</li>
+            </ul>
+        @empty
+            <h4>No hay trabajadores</h4>
+        @endforelse
         <h3>Listado de Sprints</h3>
         @if (count($project->sprints) == 0)
             <h4>No hay Sprints actualmente</h4>
