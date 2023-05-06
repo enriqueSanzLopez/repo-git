@@ -188,6 +188,51 @@ div.busqueda {
     width: 100%;
 }
 
+.contenedor-horizontal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    margin-bottom: 1em;
+}
+
+.contenedor-horizontal section:first-child{
+    width: clamp(300px, 70%, 100%);
+}
+
+.contenedor-horizontal section:last-child{
+    width: clamp(300px, 20%, 100%);
+}
+
+.pequenyo{
+    font-size: small;
+    margin-left: 3em;
+}
+
+.escondido{
+    display: none;
+    background: rgb(236, 236, 236);
+    width: 100%;
+    padding: .5em;
+}
+
+.marcar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5em;
+}
+
+.marcar:hover li{
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
 @media screen and (max-width: 480px) {
     form div {
         grid-template-columns: 1fr 4fr;

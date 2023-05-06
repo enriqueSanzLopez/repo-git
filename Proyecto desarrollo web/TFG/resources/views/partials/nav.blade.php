@@ -29,9 +29,6 @@
                         <a class="nav-link" href="{{ route('tasks') }}">Tareas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contacts') }}">Contactos</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">Cerrar sesión</a>
                     </li>
                     @if (Auth::user()->rol == 'admin')

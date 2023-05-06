@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserApiController;
+use App\Http\Controllers\Api\ProjectApiController;
 
 
 /*
@@ -23,3 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('users.rol', [UserApiController::class, 'rol'])->name('users.rol');
 
 Route::get('users.buscaruser', [UserApiController::class, 'buscarUser'])->name('users.buscaruser');
+
+//Rutas para apuntar usuarios a proyectos, sprints, y tareas
+
+Route::post('projects.apuntar', [ProjectApiController::class, 'apuntar'])->name('projects.apuntar');
