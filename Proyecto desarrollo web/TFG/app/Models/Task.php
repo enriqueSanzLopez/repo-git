@@ -17,4 +17,7 @@ class Task extends Model
     public function sprint(){
         return $this->belongsTo(Sprint::class);
     }
+    public function messages(){
+        return $this->hasMany(TMessage::class);
+    }
 }

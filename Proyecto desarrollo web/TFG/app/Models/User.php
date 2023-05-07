@@ -51,4 +51,10 @@ class User extends Authenticatable
     public function tasks(){
         return $this->belongsToMany(Task::class);
     }
+    public function pmessages(){
+        return $this->hasMany(PMessage::class);
+    }
+    public function tmessages(){
+        return $this->hasMany(TMessage::class);
+    }
 }
