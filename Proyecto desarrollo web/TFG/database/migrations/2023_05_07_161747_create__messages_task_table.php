@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_messages_task', function (Blueprint $table) {
+        Schema::create('messages_task', function (Blueprint $table) {
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('task_id')->references('id')->on('tasks')->onUpdate('cascade')->onDelete('cascade');
             $table->dateTime('fecha', $precision = 0);
