@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Task;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class TaskApiController extends Controller
@@ -67,6 +68,10 @@ class TaskApiController extends Controller
         $task=Task::findOrFail($request->get('task'));
         $user = User::findOrFail($request->get('id'));
         $task->users()->attach($user->id);
+        try{
+            $project=$task->sprint->project;
+            $project->attach($user->id);
+        }catch(Exception $e){}
         return response()->json(['success' => 'Exito en actualizar']);
     }
     public function desapuntar(Request $request){
