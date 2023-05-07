@@ -35,3 +35,7 @@ Route::post('projects.desapuntar', [ProjectApiController::class, 'desapuntar'])-
 Route::post('tasks.apuntar', [TaskApiController::class, 'apuntar'])->name('tasks.apuntar');
 
 Route::post('tasks.desapuntar', [TaskApiController::class, 'desapuntar'])->name('tasks.desapuntar');
+
+//Ruta para cambiar el estado de las tareas
+
+Route::post('tasks.estado', [TaskApiController::class, 'cambiarEstado'])->name('tasks.estado');
