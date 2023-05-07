@@ -3,7 +3,7 @@
 @section('contenido')
     <section>
         <header>
-            @if ($task->sprint->project->owner == Auth::user()->id || Auth::user()->rol == 'admin')
+            @if ($task->sprint->project->owner == Auth::user()->id or Auth::user()->rol == 'admin')
                 <input type="hidden" id="rol" value="true" name="rol">
             @else
                 <input type="hidden" id="rol" value="false" name="rol">
@@ -36,7 +36,7 @@
                 @forelse ($task->users as $user)
                     <ul class="list-group" id="lista-{{ $user->id }}">
                         <li>{{ $user->name }}</li>
-                        @if (Auth::user()->id == $task->sprint->project->owner || Auth::user()->rol == 'admin')
+                        @if (Auth::user()->id == $task->sprint->project->owner or Auth::user()->rol == 'admin')
                             <li class="borrar-user" id="borrar-user-{{ $user->id . '-' . $task->id }}">x</li>
                         @endif
                         <li class="pequenyo">{{ $user->email }}</li>
