@@ -27,6 +27,13 @@ class PMessageApiController extends Controller
     public function store(Request $request)
     {
         //
+        $pMessage=new PMessage();
+        $pMessage->user_id=$request->get('user_id');
+        $pMessage->project_id=$request->get('project_id');
+        $pMessage->fecha=$request->get('fecha');
+        $pMessage->comentario=$request->get('comentario');
+        $pMessage->save();
+        return response()->json(['success' => 'El mensaje se ha guardado en la base de datos']);
     }
 
     /**
