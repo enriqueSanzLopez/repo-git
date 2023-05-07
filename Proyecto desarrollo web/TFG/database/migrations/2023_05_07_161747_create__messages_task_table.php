@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('task_id')->references('id')->on('tasks')->onUpdate('cascade')->onDelete('cascade');
             $table->dateTime('fecha', $precision = 0);
-            $table->text('commentario');
+            $table->text('comment');
             $table->unique(['task_id', 'user_id', 'fecha'], 'claves_ajenas');
         });
     }

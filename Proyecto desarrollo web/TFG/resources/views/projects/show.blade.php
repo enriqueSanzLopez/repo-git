@@ -3,6 +3,7 @@
 @section('contenido')
     <section>
         <header>
+            <input type="hidden" id="user" value="{{Auth::user()->id}}">
             @if ($project->owner == Auth::user()->id || Auth::user()->rol == 'admin')
                 <input type="hidden" id="rol" value="true" name="rol">
             @else
@@ -62,12 +63,42 @@
                     <h4>No hay tareas en este Sprint</h4>
                 @endforelse
             </section>
+            <h3>Comentarios:</h3>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-12">
+                    <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+                        <div class="card-body p-4">
+                            <div class="form-outline mb-4">
+                                <input type="text" id="addANote" class="form-control" placeholder="Añade un comentario..." />
+                            </div>
+                            <div class="card mb-12">
+                                @forelse ($project->messages as $message)
+                                    <div class="card-body" id="lista-comentarios">
+                                        <p>{{$message->comment}}</p>
+
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small mb-0 ms-2">{{$message->user->name}}</p>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <p class="small text-muted mb-0">{{$message->fecha}}</p>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <h4>No hay comentarios</h4>
+                                @endforelse
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </section>
         <section>
             <h3>Trabajadores</h3>
             <section id="listado-trabajadores">
                 @forelse ($project->users as $user)
-                    <ul class="list-group" id="lista-{{$user->id}}">
+                    <ul class="list-group" id="lista-{{ $user->id }}">
                         <li>{{ $user->name }}</li>
                         @if (Auth::user()->id == $project->owner || Auth::user()->rol == 'admin')
                             <li class="borrar-user" id="borrar-user-{{ $user->id . '-' . $project->id }}">x</li>
@@ -85,6 +116,7 @@
             <section class="listado-users escondido" id="usuarios">
             </section>
             <script src="{{ asset('scripts/add-user-project.js') }}"></script>
+            <script src="{{asset('scripts/add-comment-project.js')}}"></script>
         </section>
     </section>
 @endsection

@@ -30,7 +30,7 @@ class TMessageApiController extends Controller
         $tMessage=new TMessage();
         $tMessage->user_id=$request->get('user_id');
         $tMessage->task_id=$request->get('task_id');
-        $tMessage->fecha=$request->get('fecha');
+        $tMessage->fecha=date('Y-m-d H:i:s');
         $tMessage->comentario=$request->get('comentario');
         $tMessage->save();
         return response()->json(['success' => 'Exito en actualizar']);
