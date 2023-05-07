@@ -104,10 +104,15 @@ input[type="date"] {
     width: fit-content;
 }
 
-select {
+select:not(.selectpicker) {
     border: none;
     background: rgb(230, 230, 230);
     border-radius: .5em;
+}
+
+select.selectpicker{
+    width: 30%;
+    min-width: fit-content;
 }
 
 #login {

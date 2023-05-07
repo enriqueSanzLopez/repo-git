@@ -19,15 +19,6 @@
         <p>{{ $sprint->backlog }}</p>
         <h3>Retrospectiva</h3>
         <p>{{ $sprint->retrospective }}</p>
-        <h3>Trabajadores</h3>
-        @forelse ($sprint->users as $user)
-            <ul class="list-group list-group-horizontal">
-                <li>{{ $user->name }}</li>
-                <li>{{ $user->email }}</li>
-            </ul>
-        @empty
-            <h4>No hay trabajadores</h4>
-        @endforelse
         <h3>Listado de Tareas</h3>
         <section class="listado">
             @forelse ($sprint->tasks as $task)
