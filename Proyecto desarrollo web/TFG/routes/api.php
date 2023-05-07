@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserApiController;
 use App\Http\Controllers\Api\ProjectApiController;
 use App\Http\Controllers\Api\TaskApiController;
+use App\Http\Controllers\Api\PMessageApiController;
+use App\Http\Controllers\Api\TMessageApiController;
 
 
 /*
@@ -39,3 +41,9 @@ Route::post('tasks.desapuntar', [TaskApiController::class, 'desapuntar'])->name(
 //Ruta para cambiar el estado de las tareas
 
 Route::post('tasks.estado', [TaskApiController::class, 'cambiarEstado'])->name('tasks.estado');
+
+//Rutas para guardar comentarios en proyectos y tareas
+
+Route::post('pcomments.store', [PMessageApiController::class, 'store'])->name('pcomment.store');
+
+Route::post('tcomments.store', [TMessageApiController::class, 'store'])->name('tcomment.store');
