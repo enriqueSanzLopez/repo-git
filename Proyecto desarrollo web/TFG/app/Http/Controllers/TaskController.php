@@ -34,19 +34,31 @@ class TaskController extends Controller
         return view('tasks.show', compact('task'));
     }
     public function borrar(Task $task){
+        if($task->sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         return view('tasks.borrar', compact('task'));
     }
     public function destroy(Task $task)
     {
+        if($task->sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         Task::findOrFail($task->id)->delete();
         return redirect('tasks');
     }
     public function edit(Task $task)
     {
+        if($task->sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $sprints=Sprint::all();
         return view('tasks.edit', compact('task'))->with('sprints', $sprints);
     }
     public function update(Task $task, TaskEditRequest $request){
+        if($task->sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $task->sprint_id=$request->get('sprint_id');
         $task->name=$request->get('name');
         $task->description=$request->get('description');

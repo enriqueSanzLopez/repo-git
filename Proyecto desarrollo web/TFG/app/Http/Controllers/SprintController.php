@@ -46,10 +46,16 @@ class SprintController extends Controller
     }
     public function edit(Sprint $sprint)
     {
+        if($sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $projects=Project::all();
         return view('sprints.edit', compact('sprint'))->with('projects', $projects);
     }
     public function update(Sprint $sprint, SprintEditRequest $request){
+        if($sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $sprint->project_id=$request->get('project_id');
         $sprint->name=$request->get('name');
         $sprint->start_date=$request->get('start_date');
@@ -62,10 +68,16 @@ class SprintController extends Controller
     }
     public function borrar(Sprint $sprint)
     {
+        if($sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         return view('sprints.borrar', compact('sprint'));
     }
     public function destroy(Sprint $sprint)
     {
+        if($sprint->project->owner!=Auth::user()->id and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         Sprint::findOrFail($sprint->id)->delete();
         return redirect('sprints');
     }

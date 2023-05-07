@@ -35,64 +35,64 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 //Rutas de proyectos
 
-Route::get('projects', [ProjectController::class, 'index'])->name('projects');
+Route::get('projects', [ProjectController::class, 'index'])->name('projects')->middleware('auth');
 
-Route::get('projects.create', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('projects.create', [ProjectController::class, 'create'])->name('projects.create')->middleware('auth');
 
-Route::post('projects.store', [ProjectController::class, 'store'])->name('projects.store');
+Route::post('projects.store', [ProjectController::class, 'store'])->name('projects.store')->middleware('auth');
 
-Route::get('projects.show/{project}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('projects.show/{project}', [ProjectController::class, 'show'])->name('projects.show')->middleware('auth');
 
-Route::get('projects.edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit');
+Route::get('projects.edit/{project}', [ProjectController::class, 'edit'])->name('projects.edit')->middleware('auth');
 
-Route::post('projects.update/{project}', [ProjectController::class, 'update'])->name('projects.update');
+Route::post('projects.update/{project}', [ProjectController::class, 'update'])->name('projects.update')->middleware('auth');
 
-Route::get('projects.borrar/{project}', [ProjectController::class, 'borrar'])->name('projects.borrar');
+Route::get('projects.borrar/{project}', [ProjectController::class, 'borrar'])->name('projects.borrar')->middleware('auth');
 
-Route::get('projects.destroy/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy');
+Route::get('projects.destroy/{project}', [ProjectController::class, 'destroy'])->name('projects.destroy')->middleware('auth');
 
 //Rutas de Sprints
 
-Route::get('sprints', [SprintController::class, 'index'])->name('sprints');
+Route::get('sprints', [SprintController::class, 'index'])->name('sprints')->middleware('auth');
 
-Route::get('sprints.create', [SprintController::class, 'create'])->name('sprints.create');
+Route::get('sprints.create', [SprintController::class, 'create'])->name('sprints.create')->middleware('auth');
 
-Route::post('sprints.store', [SprintController::class, 'store'])->name('sprints.store');
+Route::post('sprints.store', [SprintController::class, 'store'])->name('sprints.store')->middleware('auth');
 
-Route::get('sprints.show/{sprint}', [SprintController::class, 'show'])->name('sprints.show');
+Route::get('sprints.show/{sprint}', [SprintController::class, 'show'])->name('sprints.show')->middleware('auth');
 
-Route::get('sprints.edit/{sprint}', [SprintController::class, 'edit'])->name('sprints.edit');
+Route::get('sprints.edit/{sprint}', [SprintController::class, 'edit'])->name('sprints.edit')->middleware('auth');
 
-Route::post('sprints.update/{sprint}', [SprintController::class, 'update'])->name('sprints.update');
+Route::post('sprints.update/{sprint}', [SprintController::class, 'update'])->name('sprints.update')->middleware('auth');
 
-Route::get('sprints.borrar/{sprint}', [SprintController::class, 'borrar'])->name('sprints.borrar');
+Route::get('sprints.borrar/{sprint}', [SprintController::class, 'borrar'])->name('sprints.borrar')->middleware('auth');
 
-Route::get('sprints.destroy/{sprint}', [SprintController::class, 'destroy'])->name('sprints.destroy');
+Route::get('sprints.destroy/{sprint}', [SprintController::class, 'destroy'])->name('sprints.destroy')->middleware('auth');
 
 //Rutas de Tasks
 
-Route::get('tasks', [TaskController::class, 'index'])->name('tasks');
+Route::get('tasks', [TaskController::class, 'index'])->name('tasks')->middleware('auth');
 
-Route::get('tasks.create', [TaskController::class, 'create'])->name('tasks.create');
+Route::get('tasks.create', [TaskController::class, 'create'])->name('tasks.create')->middleware('auth');
 
-Route::post('tasks.store', [TaskController::class, 'store'])->name('tasks.store');
+Route::post('tasks.store', [TaskController::class, 'store'])->name('tasks.store')->middleware('auth');
 
-Route::get('tasks.show/{task}', [TaskController::class, 'show'])->name('tasks.show');
+Route::get('tasks.show/{task}', [TaskController::class, 'show'])->name('tasks.show')->middleware('auth');
 
-Route::get('tasks.borrar/{task}', [TaskController::class, 'borrar'])->name('tasks.borrar');
+Route::get('tasks.borrar/{task}', [TaskController::class, 'borrar'])->name('tasks.borrar')->middleware('auth');
 
-Route::get('tasks.destroy/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+Route::get('tasks.destroy/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy')->middleware('auth');
 
-Route::get('tasks.edit/{task}', [TaskController::class, 'edit'])->name('tasks.edit');
+Route::get('tasks.edit/{task}', [TaskController::class, 'edit'])->name('tasks.edit')->middleware('auth');
 
-Route::post('tasks.update/{task}', [TaskController::class, 'update'])->name('tasks.update');
+Route::post('tasks.update/{task}', [TaskController::class, 'update'])->name('tasks.update')->middleware('auth');
 
 //Rutas de contactos
 
-Route::get('contacts', [ContactController::class, 'index'])->name('contacts');
+Route::get('contacts', [ContactController::class, 'index'])->name('contacts')->middleware('auth');
 
 //Rutas de usuarios
 
-Route::get('users.borrar/{user}', [UserController::class, 'borrar'])->name('users.borrar');
+Route::get('users.borrar/{user}', [UserController::class, 'borrar'])->name('users.borrar')->middleware('auth');
 
-Route::get('users.destroy/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('users.destroy/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth');

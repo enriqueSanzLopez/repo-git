@@ -46,10 +46,16 @@ class ProjectController extends Controller
     }
     public function edit(Project $project)
     {
+        if(Auth::user()->id!=$project->owner and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         return view('projects.edit', compact('project'));
     }
     public function update(ProjectEditRequest $request, Project $project)
     {
+        if(Auth::user()->id!=$project->owner and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         $project->name = $request->get('name');
         $project->visibility = $request->has('visibility') ? 1 : 0;
         $project->sprint_planning = $request->get('sprint_planning');
@@ -60,10 +66,16 @@ class ProjectController extends Controller
     }
     public function borrar(Project $project)
     {
+        if(Auth::user()->id!=$project->owner and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         return view('projects.borrar', compact('project'));
     }
     public function destroy(Project $project)
     {
+        if(Auth::user()->id!=$project->owner and Auth::user()->rol!='admin'){
+            return redirect('inicio');
+        }
         Project::findOrFail($project->id)->delete();
         return redirect('projects');
     }
