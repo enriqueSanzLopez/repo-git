@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="@isset($_COOKIE['lenguaje'])
+{{$_COOKIE['lenguaje']}}
+@else
+es
+@endisset
+">
 
 <head>
     <meta charset="UTF-8">

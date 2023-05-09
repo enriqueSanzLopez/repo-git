@@ -14,17 +14,17 @@
             </select>
         </div>
         <div>
-            <label for="name"> Nombre*:
+            <label for="name"> {{__('nombre')}}*:
             </label>
             <input type="text" name="name" id="name" value="{{ $task->name }}">
         </div>
         <div>
-            <label for="description">Descripción:</label>
+            <label for="description">{{__('descripcion')}}:</label>
             <textarea rows="10" name="description" id="description">{{ $task->description }}</textarea>
         </div>
         <div id="login">
-            <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-secondary">Cancelar</a>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a href="{{ route('tasks.show', $task->id) }}" class="btn btn-secondary">{{__('cancelar')}}</a>
+            <button type="submit" class="btn btn-primary">{{__('guardar-cambios')}}</button>
         </div>
     </form>
 @endsection

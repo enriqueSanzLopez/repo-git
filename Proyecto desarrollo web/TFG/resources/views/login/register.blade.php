@@ -4,7 +4,7 @@
     <form action="{{route('registroddbb')}}" method="POST">
         @csrf
         <div>
-            <label for="name"> Nombre:
+            <label for="name"> {{__('nombre')}}:
             </label>
             <input type="text" name="name" id="name" value="{{ old('name') }}">
         </div>
@@ -14,17 +14,17 @@
             <input type="email" name="email" id="email" value="{{ old('email') }}">
         </div>
         <div>
-            <label for="password"> Contraseña:
+            <label for="password"> {{__('password')}}:
             </label>
             <input type="password" name="password" id="password" value="{{ old('password') }}">
         </div>
         <div>
-            <label for="password_confirmation"> Repite la Contraseña:
+            <label for="password_confirmation"> {{__('password-confirmation')}}:
             </label>
             <input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password_confirmation') }}">
         </div>
         <div id="login">
-            <button type="submit" class="btn btn-primary">Registrarme</button>
+            <button type="submit" class="btn btn-primary">{{__('registrarme')}}</button>
         </div>
     </form>
     @if ($errors->any())

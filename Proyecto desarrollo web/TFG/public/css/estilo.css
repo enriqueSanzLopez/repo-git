@@ -260,6 +260,12 @@ ul.list-group li:first-child{
     cursor: pointer;
 }
 
+#lang{
+    background: white;
+    width: 10em;
+    padding: .5em;
+}
+
 @media screen and (max-width: 480px) {
     form div {
         grid-template-columns: 1fr 4fr;

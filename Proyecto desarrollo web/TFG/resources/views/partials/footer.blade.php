@@ -1,7 +1,7 @@
 <footer class="bg-dark text-white">
-    <h3>Desarrollado por Enrique Sanz López - 2023</h3>
+    <h3>{{__('creditos')}}</h3>
     <section>
-        <img src="{{ asset('img/IFC.png') }}" alt="Logotipo Familia Informática y comunicaciones" id="logo-familia">
-        <img src="{{ asset('img/logoIESSerpis.jpg') }}" alt="Logotipo IES Serpis">
+        <img src="{{ asset('img/IFC.png') }}" alt="{{__('logo-familia')}}" id="logo-familia">
+        <img src="{{ asset('img/logoIESSerpis.jpg') }}" alt="{{__('logo-serpis')}}">
     </section>
 </footer>

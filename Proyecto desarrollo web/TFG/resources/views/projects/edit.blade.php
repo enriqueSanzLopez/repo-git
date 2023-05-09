@@ -4,7 +4,7 @@
     <form action="{{route('projects.update', $project->id)}}" method="POST">
         @csrf
         <div>
-            <label for="name"> Nombre*:
+            <label for="name"> {{__('nombre')}}*:
             </label>
             <input type="text" name="name" id="name" value="{{ $project->name }}">
         </div>
@@ -17,7 +17,7 @@
             <textarea rows="10" name="backlog" id="backlog">{{ $project->backlog }}</textarea>
         </div>
         <div>
-            <label for="description">Descripción:</label>
+            <label for="description">{{__('descripcion')}}:</label>
             <textarea rows="10" name="description" id="description">{{ $project->description }}</textarea>
         </div>
         <div class="form-check">
@@ -28,8 +28,8 @@
             </label>
         </div>
         <div id="login">
-            <a href="{{ route('projects.show', $project->id) }}" class="btn btn-secondary">Cancelar</a>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a href="{{ route('projects.show', $project->id) }}" class="btn btn-secondary">{{__('cancelar')}}</a>
+            <button type="submit" class="btn btn-primary">{{__('guardar-cambios')}}</button>
         </div>
     </form>
 @endsection

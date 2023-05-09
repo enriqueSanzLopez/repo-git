@@ -4,17 +4,17 @@
     <form action="{{route('loginddbb')}}" method="POST">
         @csrf
         <div>
-            <label for="name"> Nombre:
+            <label for="name"> {{__('nombre')}}:
             </label>
             <input type="text" name="name" id="name" value="{{ old('name') }}">
         </div>
         <div>
-            <label for="password"> Contraseña:
+            <label for="password"> {{__('password')}}:
             </label>
             <input type="password" name="password" id="password" value="{{ old('password') }}">
         </div>
         <div id="login">
-            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            <button type="submit" class="btn btn-primary">{{__('login')}}</button>
         </div>
     </form>
     @if ($errors->any())

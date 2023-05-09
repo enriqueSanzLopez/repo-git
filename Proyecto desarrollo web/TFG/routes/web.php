@@ -7,6 +7,12 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SprintController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\App;
+
+App::setLocale('es');
+if(isset($_COOKIE['lenguaje'])){
+    App::setLocale($_COOKIE['lenguaje']);
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +26,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
+
     return view('index');
 })->name('inicio');
 

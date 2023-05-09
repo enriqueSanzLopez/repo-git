@@ -14,16 +14,16 @@
             </select>
         </div>
         <div>
-            <label for="name"> Nombre*:
+            <label for="name"> {{__('nombre')}}*:
             </label>
             <input type="text" name="name" id="name" value="{{ old('name') }}">
         </div>
         <div>
-            <label for="description">Descripción:</label>
+            <label for="description">{{__('descripcion')}}:</label>
             <textarea rows="10" name="description" id="description">{{ old('description') }}</textarea>
         </div>
         <div id="login">
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <button type="submit" class="btn btn-primary">{{__('crear')}}</button>
         </div>
     </form>
     @if ($errors->any())

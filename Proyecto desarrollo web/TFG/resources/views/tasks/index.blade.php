@@ -1,9 +1,9 @@
 @extends('layout')
 @section('titulo', 'Tareas')
 @section('contenido')
-    <a href="{{route('tasks.create')}}" class="btn btn-primary">Crear tarea</a>
+    <a href="{{route('tasks.create')}}" class="btn btn-primary">{{__('crear-task')}}</a>
     @if (count($tasks) == 0)
-        <h1>No hay Tareas</h1>
+        <h1>{{__('no-task')}}</h1>
     @else
         <section class="listado">
             @foreach ($tasks as $task)
@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $task->name }}</h5>
                         <p class="card-text">{{ $task->description }}</p>
-                        <a href="{{route('tasks.show', $task->id)}}" class="btn btn-primary">Entrar</a>
+                        <a href="{{route('tasks.show', $task->id)}}" class="btn btn-primary">{{__('entrar')}}</a>
                     </div>
                 </div>
             @endforeach

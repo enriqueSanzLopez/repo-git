@@ -4,7 +4,7 @@
     <form action="{{ route('sprints.store') }}" method="POST">
         @csrf
         <div>
-            <label for="project_id">Proyecto*:</label>
+            <label for="project_id">{{__('proyecto')}}*:</label>
             <select name="project_id" id="project_id">
                 @forelse ($projects as $project)
                     <option value="{{ $project->id }}">{{ $project->name }}</option>
@@ -14,16 +14,16 @@
             </select>
         </div>
         <div>
-            <label for="name"> Nombre*:
+            <label for="name"> {{__('nombre')}}*:
             </label>
             <input type="text" name="name" id="name" value="{{ old('name') }}">
         </div>
         <div>
-            <label for="start_date">Fecha de inicio*:</label>
+            <label for="start_date">{{__('fecha-inicio')}}*:</label>
             <input type="date" name="start_date" id="start_date" value="{{ old('start_date') }}">
         </div>
         <div>
-            <label for="limit_date">Fecha límite*:</label>
+            <label for="limit_date">{{__('fecha-limite')}}*:</label>
             <input type="date" name="limit_date" id="limit_date" value="{{ old('limit_date') }}">
         </div>
         <div>
@@ -31,7 +31,7 @@
             <textarea rows="10" name="backlog" id="backlog">{{ old('backlog') }}</textarea>
         </div>
         <div>
-            <label for="description">Descripción:</label>
+            <label for="description">{{__('descripcion')}}:</label>
             <textarea rows="10" name="description" id="description">{{ old('description') }}</textarea>
         </div>
         <div>
@@ -39,7 +39,7 @@
             <textarea rows="10" name="retrospective" id="retrospective">{{ old('retrospective') }}</textarea>
         </div>
         <div id="login">
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <button type="submit" class="btn btn-primary">{{__('crear')}}</button>
         </div>
     </form>
     @if ($errors->any())
