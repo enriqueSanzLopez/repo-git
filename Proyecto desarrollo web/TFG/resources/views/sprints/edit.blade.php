@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Editar - ' . $sprint->start_date)
+@section('titulo', __('editar').' - ' . $sprint->start_date)
 @section('contenido')
     <form action="{{route('sprints.update', $sprint->id)}}" method="POST">
         @csrf

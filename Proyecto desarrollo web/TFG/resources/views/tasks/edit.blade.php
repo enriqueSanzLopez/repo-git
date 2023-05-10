@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Editar - ' . $task->name)
+@section('titulo', __('editar').' - ' . $task->name)
 @section('contenido')
     <form action="{{route('tasks.update', $task->id)}}" method="POST">
         @csrf

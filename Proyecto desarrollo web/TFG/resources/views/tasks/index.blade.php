@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Tareas')
+@section('titulo', __('tareas'))
 @section('contenido')
     <a href="{{route('tasks.create')}}" class="btn btn-primary">{{__('crear-task')}}</a>
     @if (count($tasks) == 0)

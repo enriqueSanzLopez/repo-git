@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Usuarios')
+@section('titulo', __('users'))
 @section('contenido')
     <section class="listado-users">
         <div class="busqueda">

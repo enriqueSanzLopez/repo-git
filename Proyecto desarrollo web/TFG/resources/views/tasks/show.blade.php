@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Tarea - ' . $task->name)
+@section('titulo', __('tareas')' - ' . $task->name)
 @section('contenido')
     <section>
         <header>

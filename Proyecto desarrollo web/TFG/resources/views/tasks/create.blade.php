@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Crear tarea')
+@section('titulo', __('crear-task'))
 @section('contenido')
     <form action="{{route('tasks.store')}}" method="POST">
         @csrf

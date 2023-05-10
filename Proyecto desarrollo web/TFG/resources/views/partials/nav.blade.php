@@ -39,17 +39,26 @@
                 @endif
                 <li>
                     <select name="lang" id="lang">
-                        <option value="es" @if ($_COOKIE['lenguaje']=='es')
+                        <option value="es"
+                        @isset($_COOKIE['lenguaje'])
+                        @if ($_COOKIE['lenguaje']=='es')
                         selected='selected'
                         @endif
+                        @endisset
                         >Español</option>
-                        <option value="en" @if ($_COOKIE['lenguaje']=='en')
+                        <option value="en"
+                        @isset($_COOKIE['lenguaje'])
+                        @if ($_COOKIE['lenguaje']=='en')
                         selected='selected'
                         @endif
+                        @endisset
                         >English</option>
-                        <option value="ca" @if ($_COOKIE['lenguaje']=='ca')
+                        <option value="ca"
+                        @isset($_COOKIE['lenguaje'])
+                        @if ($_COOKIE['lenguaje']=='ca')
                         selected='selected'
                         @endif
+                        @endisset
                         >Català</option>
                     </select>
                     <script src="{{ asset('scripts/select-lang.js') }}"></script>

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Registro')
+@section('titulo', __('registro'))
 @section('contenido')
     <form action="{{route('registroddbb')}}" method="POST">
         @csrf

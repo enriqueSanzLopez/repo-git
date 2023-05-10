@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Proyectos')
+@section('titulo', __('proyectos'))
 @section('contenido')
     <a href="{{ route('projects.create') }}" class="btn btn-primary">{{__('crear-proyecto')}}</a>
     @if (count($projects) == 0)

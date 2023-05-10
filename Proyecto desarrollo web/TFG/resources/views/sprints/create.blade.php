@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Crear sprint')
+@section('titulo', __('crear').' sprint')
 @section('contenido')
     <form action="{{ route('sprints.store') }}" method="POST">
         @csrf

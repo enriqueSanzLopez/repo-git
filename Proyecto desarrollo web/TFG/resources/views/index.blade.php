@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Inicio')
+@section('titulo', __('inicio'))
 @section('contenido')
     @if (!isset(Auth::user()->name))
         <div class="card" style="width: 18rem;">

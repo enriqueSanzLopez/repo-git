@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', $user->name . ' - Eliminar')
+@section('titulo', $user->name . ' - '.__('eliminar'))
 @section('contenido')
     <div class="card">
         <div class="card-body">

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Eliminar - '.$sprint->name)
+@section('titulo', __('eliminar').' - '.$sprint->name)
 @section('contenido')
     <div class="card">
         <div class="card-body">

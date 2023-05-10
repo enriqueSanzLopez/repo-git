@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Crear proyecto')
+@section('titulo', __('crear-proyecto'))
 @section('contenido')
     <form action="{{route('projects.store')}}" method="POST">
         @csrf

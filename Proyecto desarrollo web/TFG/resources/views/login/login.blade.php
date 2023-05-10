@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Iniciar sesión')
+@section('titulo', __('login'))
 @section('contenido')
     <form action="{{route('loginddbb')}}" method="POST">
         @csrf

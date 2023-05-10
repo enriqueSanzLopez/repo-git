@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', $project->name.' - Editar')
+@section('titulo', $project->name.' - '.__('editar'))
 @section('contenido')
     <form action="{{route('projects.update', $project->id)}}" method="POST">
         @csrf

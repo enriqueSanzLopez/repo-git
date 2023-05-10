@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', 'Eliminar - '.$task->name)
+@section('titulo', __('eliminar').' - '.$task->name)
 @section('contenido')
     <div class="card">
         <div class="card-body">
