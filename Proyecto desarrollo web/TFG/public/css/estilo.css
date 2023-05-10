@@ -266,6 +266,10 @@ ul.list-group li:first-child{
     padding: .5em;
 }
 
+.novedades h1{
+    text-align: center;
+}
+
 @media screen and (max-width: 480px) {
     form div {
         grid-template-columns: 1fr 4fr;

@@ -18,7 +18,16 @@ class TaskController extends Controller
     }
     public function create()
     {
-        $sprints=Sprint::all();
+        if(Auth::user()->rol=='admin'){
+            $sprints=Sprint::all();
+        }else{
+            $projects=Auth::user()->projects;
+            $ids=[];
+            foreach($projects as $project){
+                $ids[]=$project->id;
+            }
+            $sprints=Sprint::whereIn('project_id', $ids)->get();
+        }
         return view('tasks.create', compact('sprints'));
     }
     public function store(TaskCreateRequest $request){

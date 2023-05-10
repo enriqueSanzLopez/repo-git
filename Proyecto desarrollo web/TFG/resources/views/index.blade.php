@@ -13,6 +13,12 @@
     @endif
     <section class="novedades">
         {{-- Aquí irán las novedades --}}
-        <h1>{{__('crea-desarrolla')}}</h1>
+        <h1>
+            @if (!isset(Auth::user()->name))
+            {{__('crea-desarrolla')}}
+            @else
+            {{__('bienvenido')}} {{Auth::user()->name}}
+            @endif
+        </h1>
     </section>
 @endsection

@@ -22,7 +22,11 @@ class SprintController extends Controller
     }
     public function create()
     {
-        $projects=Project::all();
+        if(Auth::user()->rol=='admin'){
+            $projects=Project::all();
+        }else{
+            $projects=Project::where('owner', Auth::user()->id)->get();
+        }
         return view('sprints.create', compact('projects'));
     }
     public function store(SprintCreateRequest $request){

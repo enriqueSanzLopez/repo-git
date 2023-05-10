@@ -29,6 +29,7 @@
             </select>
             <h3>{{__('descripcion')}}</h3>
             <p>{{ $task->description }}</p>
+            <h3>Comentarios</h3>
         </section>
         <section>
             <h3>{{__('trabajadores')}}</h3>
