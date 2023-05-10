@@ -39,13 +39,14 @@ class CommentApiController extends Controller
         ]);
         $user_id=User::findOrFail($validatedData['user'])->id;
         $task_id=Task::findOrFail($validatedData['tarea'])->id;
+        $fecha=date('Y-m-d H:i:s');
         DB::table('comments')->insert([
             'task_id'=>$task_id,
             'user_id'=>$user_id,
             'comment'=>$validatedData['comment'],
-            'date'=>date('Y-m-d H:i:s')
+            'date'=>$fecha
         ]);
-        return response()->json(['success' => 'Exito en actualizar']);
+        return response()->json(['success' => 'Exito en actualizar', 'fecha'=>$fecha]);
     }
 
     /**

@@ -9,6 +9,8 @@
                 <input type="hidden" id="rol" value="false" name="rol">
             @endif
             <input type="hidden" id="user" value="{{Auth::user()->id}}" name="user">
+            <input type="hidden" id="user-name" value="{{Auth::user()->name}}" name="user-name">
+            <input type="hidden" id="user-email" value="{{Auth::user()->email}}" name="user-email">
             <h1>{{ $task->name }}</h1>
             @if ($task->sprint->project->owner == Auth::user()->id or Auth::user()->rol == 'admin')
                 <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary">{{__('editar')}}</a>

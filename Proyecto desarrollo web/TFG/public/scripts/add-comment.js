@@ -22,7 +22,24 @@ boton.addEventListener('click', function () {
         type: 'POST',
         dataType: 'json',
         success: function(data){
-            console.log('Éxito');
+            console.log(data);
+            let comentarios=document.getElementById('comentarios');//Conseguir la zona en la que se ven los comentarios
+            let nuevo=document.createElement('article');//Generar el comentario para que el usuario lo pueda ver
+            let div=document.createElement('div');
+            let nombre=document.createElement('span');
+            let nombreTexto=document.createTextNode(document.getElementById('user-name').value+' - '+document.getElementById('user-email').value);//Conseguir el nombre del usuario del comentario junto con su email
+            nombre.appendChild(nombreTexto);
+            div.appendChild(nombre);
+            let fecha=document.createElement('span');
+            let fechaTexto=document.createTextNode(data['fecha']);//Indicar la fecha del comentario
+            fecha.appendChild(fechaTexto);
+            div.appendChild(fecha);
+            nuevo.appendChild(div);
+            let parrafo=document.createElement('p');//Crear el parrafo de texto con el comentario
+            let parrafoTexto=document.createTextNode(comentario.value);
+            parrafo.appendChild(parrafoTexto);
+            nuevo.appendChild(parrafo);
+            comentarios.appendChild(nuevo);//Insertar el comentario
         },
         failure: function(data){
             console.log('Fracaso');
