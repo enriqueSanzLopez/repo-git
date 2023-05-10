@@ -27,7 +27,7 @@ boton.addEventListener('click', function () {
             let nuevo=document.createElement('article');//Generar el comentario para que el usuario lo pueda ver
             let div=document.createElement('div');
             let nombre=document.createElement('span');
-            let nombreTexto=document.createTextNode(document.getElementById('user-name').value+' - '+document.getElementById('user-email').value);//Conseguir el nombre del usuario del comentario junto con su email
+            let nombreTexto=document.createTextNode(data['name']+' - '+data['email']);//Conseguir el nombre del usuario del comentario junto con su email
             nombre.appendChild(nombreTexto);
             div.appendChild(nombre);
             let fecha=document.createElement('span');

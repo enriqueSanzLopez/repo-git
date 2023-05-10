@@ -46,7 +46,7 @@ class CommentApiController extends Controller
             'comment'=>$validatedData['comment'],
             'date'=>$fecha
         ]);
-        return response()->json(['success' => 'Exito en actualizar', 'fecha'=>$fecha]);
+        return response()->json(['success' => 'Exito en actualizar', 'fecha'=>$fecha, 'name'=>User::findOrFail($validatedData['user'])->name, 'email'=>User::findOrFail($validatedData['user'])->email]);
     }
 
     /**
