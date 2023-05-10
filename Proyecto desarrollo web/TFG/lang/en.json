@@ -56,5 +56,6 @@
     "no-comments":"There are no comments",
     "comments":"Comments",
     "enviar":"Send",
-    "escribir-comment":"Write a comment..."
+    "escribir-comment":"Write a comment...",
+    "imprimir":"Print"
 }
