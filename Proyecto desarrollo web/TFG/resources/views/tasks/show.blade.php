@@ -1,5 +1,5 @@
 @extends('layout')
-@section('titulo', __('tareas')' - ' . $task->name)
+@section('titulo', __('tareas').' - ' . $task->name)
 @section('contenido')
     <section>
         <header>
@@ -30,6 +30,7 @@
             <h3>{{__('descripcion')}}</h3>
             <p>{{ $task->description }}</p>
             <h3>Comentarios</h3>
+            <section class="cometarios" id="comentarios"></section>
         </section>
         <section>
             <h3>{{__('trabajadores')}}</h3>
