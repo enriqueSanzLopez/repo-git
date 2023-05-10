@@ -8,6 +8,7 @@
             @else
                 <input type="hidden" id="rol" value="false" name="rol">
             @endif
+            <input type="hidden" id="user" value="{{Auth::user()->id}}" name="user">
             <h1>{{ $task->name }}</h1>
             @if ($task->sprint->project->owner == Auth::user()->id or Auth::user()->rol == 'admin')
                 <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary">{{__('editar')}}</a>
@@ -29,8 +30,31 @@
             </select>
             <h3>{{__('descripcion')}}</h3>
             <p>{{ $task->description }}</p>
-            <h3>Comentarios</h3>
-            <section class="cometarios" id="comentarios"></section>
+            <h3>{{__('comments')}}</h3>
+            <div id="form-comentario">
+                <input type="text" id="commentario" name="commentario" placeholder="{{__('escribir-comment')}}">
+                <button type="button" id="comment" class="btn btn-primary">{{__('enviar')}}</button>
+                <hr>
+            </div>
+            <section class="cometarios" id="comentarios">
+                @forelse ($task->comments as $comment)
+                    <article>
+                        <div>
+                            <span>
+                                {{$comment->user->name}} - {{$comment->user->email}}
+                            </span>
+                            <span>
+                                {{$comment->date}}
+                            </span>
+                        </div>
+                        <p>
+                            {{$comment->comment}}
+                        </p>
+                    </article>
+                @empty
+                    <h4>{{__('no-comments')}}</h4>
+                @endforelse
+            </section>
         </section>
         <section>
             <h3>{{__('trabajadores')}}</h3>
@@ -53,6 +77,7 @@
             </div>
             <section class="listado-users escondido" id="usuarios">
             </section>
+            <script src="{{ asset('scripts/add-comment.js') }}"></script>
             <script src="{{ asset('scripts/add-user-task.js') }}"></script>
             <script src="{{ asset('scripts/change-task-status.js') }}"></script>
         </section>

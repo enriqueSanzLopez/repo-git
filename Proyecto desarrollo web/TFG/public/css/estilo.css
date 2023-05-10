@@ -270,6 +270,45 @@ ul.list-group li:first-child{
     text-align: center;
 }
 
+#comentarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    background: gray;
+    padding: .5em;
+    border-radius: .5em;
+}
+
+#comentarios>*{
+    min-width: 98%;
+}
+
+#comentarios article{
+    background: white;
+    padding: .5em;
+    border-radius: .5em;
+    margin-bottom: .5em;
+}
+
+#comentarios article div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#comentarios article div span{
+    font-size: small;
+}
+
+#form-comentario input{
+    width: clamp(50px, 80%, 100%);
+    padding: .25em;
+}
+
 @media screen and (max-width: 480px) {
     form div {
         grid-template-columns: 1fr 4fr;

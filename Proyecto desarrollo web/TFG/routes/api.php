@@ -42,4 +42,5 @@ Route::post('tasks.desapuntar', [TaskApiController::class, 'desapuntar'])->name(
 Route::post('tasks.estado', [TaskApiController::class, 'cambiarEstado'])->name('tasks.estado');
 
 //Rutas para guardar comentarios en tareas
-Route::post('comments.store', [CommentApiController::class, 'store'])->name('comments.store');
+// Route::post('comments.store', [CommentApiController::class, 'store'])->name('comments.store');
+Route::apiResource('comments', CommentApiController::class);

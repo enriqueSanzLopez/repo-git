@@ -10,6 +10,7 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $task->name }}</h5>
+                        <h6 class="card-title">{{$task->state}}</h6>
                         <p class="card-text">{{ $task->description }}</p>
                         <a href="{{route('tasks.show', $task->id)}}" class="btn btn-primary">{{__('entrar')}}</a>
                     </div>

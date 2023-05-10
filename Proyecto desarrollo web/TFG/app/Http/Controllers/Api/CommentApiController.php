@@ -4,7 +4,13 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class CommentApiController extends Controller
 {
@@ -26,7 +32,20 @@ class CommentApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'tarea' => 'required|integer',
+            'user' => 'required|integer',
+            'comment' => 'required|string',
+        ]);
+        $user_id=User::findOrFail($validatedData['user'])->id;
+        $task_id=Task::findOrFail($validatedData['tarea'])->id;
+        DB::table('comments')->insert([
+            'task_id'=>$task_id,
+            'user_id'=>$user_id,
+            'comment'=>$validatedData['comment'],
+            'date'=>date('Y-m-d H:i:s')
+        ]);
+        return response()->json(['success' => 'Exito en actualizar']);
     }
 
     /**
