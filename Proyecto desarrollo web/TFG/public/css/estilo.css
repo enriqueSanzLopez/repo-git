@@ -325,4 +325,7 @@ ul.list-group li:first-child {
     .borrar-user {
         display: none !important;
     }
+    *{
+        font-size: medium;
+    }
 }
