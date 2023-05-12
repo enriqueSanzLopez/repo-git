@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\IcalendarGenerator\Components\Calendar;
 use Spatie\IcalendarGenerator\Components\Event;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Response;
 class CalendarApiController extends Controller
 {
     /**
@@ -38,9 +38,10 @@ class CalendarApiController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
+        $user=User::findOrFail($id);
         $calendar=Calendar::create()->name('Calendario de usuario');//Crear el calendario
         $sprints=$user->sprints;//Conseguir todos los sprints del usuario
         foreach($sprints as $sprint){//Recorrer los sprints del usuario para crear los eventos del usuario
@@ -50,7 +51,10 @@ class CalendarApiController extends Controller
             }
             $calendar->event($event);//Una vez creado el evento, se incluye en el calendario
         }
-        return response($calendar->get())->header('Content-Type', 'text/calendar; charset=UTF-8')->header('Content-Disposition', 'attachment; filename="calendar.ics"');//Devolver el calendario
+        // return response($calendar->get())->header('Content-Type', 'text/calendar; charset=UTF-8')->header('Content-Disposition', 'attachment; filename="calendar.ics"');//Devolver el calendario
+        return response()->download($calendar, 'calendar.ics', [
+            'Content-Type' => 'text/calendar',
+        ]);
     }
 
     /**

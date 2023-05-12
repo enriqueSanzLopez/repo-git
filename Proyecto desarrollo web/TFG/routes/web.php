@@ -7,6 +7,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SprintController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CalendarController;
 use Illuminate\Support\Facades\App;
 
 App::setLocale('es');
@@ -104,3 +105,5 @@ Route::get('users.borrar/{user}', [UserController::class, 'borrar'])->name('user
 
 Route::get('users.destroy/{user}', [UserController::class, 'destroy'])->name('users.destroy')->middleware('auth');
 
+//Ruta de calendario
+Route::get('calendar', [CalendarController::class, 'show'])->name('calendar')->middleware('auth');

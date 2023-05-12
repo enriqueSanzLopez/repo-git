@@ -47,4 +47,4 @@ Route::post('tasks.estado', [TaskApiController::class, 'cambiarEstado'])->name('
 Route::apiResource('comments', CommentApiController::class);
 
 //Ruta del calendario
-Route::get('calendar/{user}', [CalendarApiController::class, 'show'])->name('calendar');
+// Route::get('calendar/{id}', [CalendarApiController::class, 'show'])->name('calendar');
