@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CalendarApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserApiController;
@@ -44,3 +45,6 @@ Route::post('tasks.estado', [TaskApiController::class, 'cambiarEstado'])->name('
 //Rutas para guardar comentarios en tareas
 // Route::post('comments.store', [CommentApiController::class, 'store'])->name('comments.store');
 Route::apiResource('comments', CommentApiController::class);
+
+//Ruta del calendario
+Route::get('calendar', [CalendarApiController::class, 'show'])->name('calendar');
