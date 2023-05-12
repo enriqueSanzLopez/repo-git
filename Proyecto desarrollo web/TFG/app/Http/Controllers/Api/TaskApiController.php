@@ -69,7 +69,9 @@ class TaskApiController extends Controller
         $user = User::findOrFail($request->get('id'));
         $task->users()->attach($user->id);
         try{
-            $project=$task->sprint->project;
+            $sprint=$task->sprint;
+            $sprint->attach($user->id);
+            $project=$sprint->project;
             $project->attach($user->id);
         }catch(Exception $e){}
         return response()->json(['success' => 'Exito en actualizar']);
