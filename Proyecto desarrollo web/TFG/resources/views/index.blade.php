@@ -21,8 +21,7 @@
             @endif
             <br>
             <input type="hidden" id="id" value="{{ Auth::user()->id }}">
-            <button type="button" id="calendario" class="btn btn-primary">{{ __('imprimir-calendario') }}</button>
-            <script src="{{ asset('scripts/download-calendar.js') }}"></script>
+            <a href="{{ route('calendar') }}" class="btn btn-primary">{{ __('imprimir-calendario') }}</a>
         </h1>
     </section>
 @endsection

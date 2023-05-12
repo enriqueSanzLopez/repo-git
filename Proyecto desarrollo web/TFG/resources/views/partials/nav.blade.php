@@ -31,6 +31,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">{{__('cerrar-sesion')}}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('calendar') }}">{{__('imprimir-calendario')}}</a>
+                    </li>
                     @if (Auth::user()->rol == 'admin')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contacts') }}">{{__('users')}}</a>

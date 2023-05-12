@@ -24,9 +24,6 @@ class CalendarController extends Controller
             }
             $calendar->event($event);//Una vez creado el evento, se incluye en el calendario
         }
-        return response($calendar->get(), 200, [
-            'Content-Type' => 'text/calendar; charset=utf-8',
-            'Content-Disposition' => 'attachment; filename="my-awesome-calendar.ics"',
-         ]);
+        return response($calendar->get())->header('Content-Type', 'text/calendar; charset=utf-8');//Devolver el calendario
     }
 }
