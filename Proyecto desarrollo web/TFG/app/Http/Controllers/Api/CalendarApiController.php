@@ -42,15 +42,15 @@ class CalendarApiController extends Controller
     {
         //
         $calendar=Calendar::create()->name('Calendario de usuario');//Crear el calendario
-        $sprints=$user()->sprints;//Conseguir todos los sprints del usuario
+        $sprints=$user->sprints;//Conseguir todos los sprints del usuario
         foreach($sprints as $sprint){//Recorrer los sprints del usuario para crear los eventos del usuario
             $event=Event::create()->name($sprint->name)->description($sprint->description)->startsAt(Carbon::parse($sprint->start_date))->endsAt(Carbon::parse($sprint->limit_date));//Definir un evento por cada sprint
-            foreach($sprint->users as $user){//Se recorre a todos los usuarios del sprint, y se los incluye en el evento
-                $event->attendee($user->email, $user->name);
+            foreach($sprint->users as $usuario){//Se recorre a todos los usuarios del sprint, y se los incluye en el evento
+                $event->attendee($usuario->email, $usuario->name);
             }
             $calendar->event($event);//Una vez creado el evento, se incluye en el calendario
         }
-        return response($calendar->get())->header('Content-Type', 'text/calendar; charset=utf-8');//Devolver el calendario
+        return response($calendar->get())->header('Content-Type', 'text/calendar; charset=UTF-8')->header('Content-Disposition', 'attachment; filename="calendar.ics"');//Devolver el calendario
     }
 
     /**
