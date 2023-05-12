@@ -58,5 +58,6 @@
     "enviar":"Send",
     "escribir-comment":"Write a comment...",
     "imprimir":"Print",
-    "calendario":"Calendar"
+    "calendario":"Calendar",
+    "imprimir-calendario":"Print calendar"
 }

@@ -5,9 +5,9 @@
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Scrum Admin</h5>
-                <p class="card-text">{{__('desarrolla')}}<br><br>
-                    {{__('facil')}}</p>
-                <a href="{{ route('registro') }}" class="btn btn-primary">{{__('registrarme')}}</a>
+                <p class="card-text">{{ __('desarrolla') }}<br><br>
+                    {{ __('facil') }}</p>
+                <a href="{{ route('registro') }}" class="btn btn-primary">{{ __('registrarme') }}</a>
             </div>
         </div>
     @endif
@@ -15,10 +15,14 @@
         {{-- Aquí irán las novedades --}}
         <h1>
             @if (!isset(Auth::user()->name))
-            {{__('crea-desarrolla')}}
+                {{ __('crea-desarrolla') }}
             @else
-            {{__('bienvenido')}} {{Auth::user()->name}}
+                {{ __('bienvenido') }} {{ Auth::user()->name }}
             @endif
+            <br>
+            <input type="hidden" id="id" value="{{ Auth::user()->id }}">
+            <button type="button" id="calendario" class="btn btn-primary">{{ __('imprimir-calendario') }}</button>
+            <script src="{{ asset('scripts/download-calendar.js') }}"></script>
         </h1>
     </section>
 @endsection
