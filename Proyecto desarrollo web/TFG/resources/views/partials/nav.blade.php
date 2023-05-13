@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="#"><img src="{{ asset('img/Scrum Admin.png') }}"
                 alt="{{__('logo-app')}}"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="nav-boton">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -65,6 +65,7 @@
                         >Català</option>
                     </select>
                     <script src="{{ asset('scripts/select-lang.js') }}"></script>
+                    <script src="{{ asset('scripts/show-navigation.js') }}"></script>
                 </li>
             </ul>
         </div>

@@ -18,10 +18,9 @@
                 {{ __('crea-desarrolla') }}
             @else
                 {{ __('bienvenido') }} {{ Auth::user()->name }}
+                <br>
+                <a href="{{ route('calendar') }}" class="btn btn-primary">{{ __('imprimir-calendario') }}</a>
             @endif
-            <br>
-            <input type="hidden" id="id" value="{{ Auth::user()->id }}">
-            <a href="{{ route('calendar') }}" class="btn btn-primary">{{ __('imprimir-calendario') }}</a>
         </h1>
     </section>
 @endsection
