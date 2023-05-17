@@ -145,10 +145,17 @@ form label {
     width: 100%;
 }
 
-.listado-users ul {
+.listado-users ul.list-group {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    margin-bottom: .5em;
+}
+
+.listado-users ul.list-group select{
+    min-width: 9em;
 }
 
 .listado-users ul li {
@@ -157,6 +164,10 @@ form label {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.listado-users ul.list-group li, .listado-users ul.list-group li:first-child, .listado-users ul.list-group li:last-child{
+    min-height: 4em;
 }
 
 main section {
@@ -246,13 +257,13 @@ ul.list-group {
     align-items: center;
 }
 
-ul.list-group li:last-child {
+/* ul.list-group li:last-child {
     min-width: 70%;
 }
 
 ul.list-group li:first-child {
     min-width: 35%;
-}
+} */
 
 .borrar-user {
     color: red;

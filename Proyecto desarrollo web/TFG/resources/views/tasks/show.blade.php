@@ -68,10 +68,10 @@
                 @forelse ($task->users as $user)
                     <ul class="list-group" id="lista-{{ $user->id }}">
                         <li>{{ $user->name }}</li>
+                        <li class="pequenyo"><br><br>{{ $user->email }}</li>
                         @if (Auth::user()->id == $task->sprint->project->owner or Auth::user()->rol == 'admin')
                             <li class="borrar-user" id="borrar-user-{{ $user->id . '-' . $task->id }}">x</li>
                         @endif
-                        <li class="pequenyo">{{ $user->email }}</li>
                     </ul>
                 @empty
                     <h4>{{ __('no-trabajadores') }}</h4>
