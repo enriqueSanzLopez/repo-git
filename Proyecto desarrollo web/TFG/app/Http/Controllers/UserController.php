@@ -13,7 +13,7 @@ class UserController extends Controller
         if(Auth::user()->rol=='admin'){
             return view('contacts.borrar', compact('user'));
         }else{
-            return redirect('inicio');
+            return redirect('/');
         }
     }
     public function destroy(User $user){
@@ -21,7 +21,7 @@ class UserController extends Controller
             User::findOrFail($user->id)->delete();
             return redirect('contacts');
         }else{
-            return redirect('inicio');
+            return redirect('/');
         }
     }
 }
