@@ -63,10 +63,20 @@ function apuntar() {
                     let trabajadores=document.getElementById('listado-trabajadores');//Conseguir el listado de trabajadores actual para incluir al nuevo trabajador
                     let trabajador=document.createElement('ul');
                     trabajador.classList.add('list-group');
+                    trabajador.setAttribute('id', 'lista-'+user);
                     let lista_nombre=document.createElement('li');
                     let lista_nombre_texto=document.createTextNode(nombre);
                     lista_nombre.appendChild(lista_nombre_texto);
                     trabajador.appendChild(lista_nombre);
+                    let lista_email=document.createElement('li');
+                    let salto1=document.createElement('br');
+                    let salto2=document.createElement('br');
+                    lista_email.appendChild(salto1);
+                    lista_email.appendChild(salto2);
+                    lista_email.classList.add('pequenyo');
+                    let lista_email_texto=document.createTextNode(email);
+                    lista_email.appendChild(lista_email_texto);
+                    trabajador.appendChild(lista_email);
                     let rol=document.getElementById('rol');
                     if(rol.value=='true'){
                         let lista_borrar=document.createElement('li');
@@ -76,11 +86,6 @@ function apuntar() {
                         lista_borrar.appendChild(lista_borrar_texto);
                         trabajador.appendChild(lista_borrar);
                     }
-                    let lista_email=document.createElement('li');
-                    lista_email.classList.add('pequenyo');
-                    let lista_email_texto=document.createTextNode(email);
-                    lista_email.appendChild(lista_email_texto);
-                    trabajador.appendChild(lista_email);
                     trabajadores.appendChild(trabajador);
                     desapuntar();
                 },
